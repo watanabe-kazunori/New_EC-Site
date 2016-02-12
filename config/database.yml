@@ -9,14 +9,13 @@ default: &default
   encoding: utf8
   reconnect: false
   pool: 5
-  username: root
-  password:
-  host: localhost
 
 development:
   <<: *default
   database: New_EC-Site_development
-
+  username: jrckinmu  
+  password: jrckinmu
+  host: localhost
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
@@ -27,5 +26,5 @@ test:
 production:
   <<: *default
   database: New_EC-Site_production
-  username: New_EC-Site
-  password: <%= ENV['NEW_EC-SITE_DATABASE_PASSWORD'] %>
+  username: bf2b27e600c2a8
+  password: 17c42617 %>
