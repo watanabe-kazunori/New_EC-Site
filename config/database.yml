@@ -27,4 +27,4 @@ production:
   <<: *default
   database: New_EC-Site_production
   username: bf2b27e600c2a8
-  password: 17c42617 %>
+  password: 17c42617
