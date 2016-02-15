@@ -11,24 +11,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160209095602) do
+ActiveRecord::Schema.define(version: 20160215010318) do
 
-  create_table "cpn_m_sales_dsts", id: false, force: :cascade do |t|
-    t.integer "CPN_ID",   limit: 4,  null: false
-    t.string  "ACCNT_CD", limit: 30, null: false
+  create_table "accnts", id: false, force: :cascade do |t|
+    t.string   "accnt_cd",        limit: 30,   null: false
+    t.string   "accnt_type_1",    limit: 1,    null: false
+    t.string   "accnt_type_2",    limit: 1,    null: false
+    t.string   "com_ind",         limit: 1,    null: false
+    t.string   "accnt_name",      limit: 50
+    t.string   "accnt_name_e",    limit: 50
+    t.string   "country_cd",      limit: 4
+    t.string   "zip",             limit: 10
+    t.string   "prefecture_no",   limit: 2
+    t.string   "city",            limit: 20
+    t.string   "area",            limit: 20
+    t.string   "bld",             limit: 50
+    t.string   "print_address",   limit: 100
+    t.string   "print_address_e", limit: 100
+    t.string   "tel",             limit: 20
+    t.string   "email",           limit: 50
+    t.string   "fax",             limit: 20
+    t.string   "memo",            limit: 2000
+    t.string   "regstr_usr",      limit: 16
+    t.string   "lst_upd_usr",     limit: 16
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
   end
-
-  add_index "cpn_m_sales_dsts", ["CPN_ID", "ACCNT_CD"], name: "index_cpn_m_sales_dsts_on_CPN_ID_and_ACCNT_CD", unique: true, using: :btree
-
-  create_table "cpn_m_total_sales_dscnts", id: false, force: :cascade do |t|
-    t.integer "CPN_ID",                limit: 4,                          null: false
-    t.integer "SALES_RANGE_NO",        limit: 4,                          null: false
-    t.decimal "SALES_RANGE_MIN_VALUE",           precision: 20, scale: 2
-    t.decimal "DSCNT_VALUE",                     precision: 20, scale: 2
-    t.decimal "DSCNT_RATEE",                     precision: 5,  scale: 2
-  end
-
-  add_index "cpn_m_total_sales_dscnts", ["CPN_ID", "SALES_RANGE_NO"], name: "index_cpn_m_total_sales_dscnts_on_CPN_ID_and_SALES_RANGE_NO", unique: true, using: :btree
 
   create_table "cpn_ms", primary_key: "CPN_ID", force: :cascade do |t|
     t.string   "CPN_CD",          limit: 30,                            null: false
@@ -44,27 +52,6 @@ ActiveRecord::Schema.define(version: 20160209095602) do
     t.decimal  "DSCNT_RATE",                   precision: 5,  scale: 2
     t.string   "TRGT_PRD_CNDTN",  limit: 2000
     t.string   "EXCLD_PRD_CNDTN", limit: 2000
-  end
-
-  create_table "nfr_media_ms", primary_key: "NFR_MEDIA_MNG_NO", force: :cascade do |t|
-    t.string "SKU",            limit: 30
-    t.string "NFR_MEDIA_STTS", limit: 1,  null: false
-  end
-
-  create_table "nfr_media_rents", primary_key: "NFR_MEDIA_RENT_ID", force: :cascade do |t|
-    t.string "RENT_PRSN",        limit: 30, null: false
-    t.date   "RENT_DT",                     null: false
-    t.date   "RTRN_DT"
-    t.string "ORDER_NO",         limit: 30, null: false
-    t.string "nfr_media_mng_no", limit: 30
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.string   "name",       limit: 255
-    t.string   "email",      limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "update_at"
-    t.datetime "updated_at",             null: false
   end
 
 end
