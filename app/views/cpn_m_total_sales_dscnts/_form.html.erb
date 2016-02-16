@@ -1,0 +1,37 @@
+<%= form_for(@cpn_m_total_sales_dscnt) do |f| %>
+  <% if @cpn_m_total_sales_dscnt.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@cpn_m_total_sales_dscnt.errors.count, "error") %> prohibited this cpn_m_total_sales_dscnt from being saved:</h2>
+
+      <ul>
+      <% @cpn_m_total_sales_dscnt.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :cpn_id %><br>
+    <%= f.number_field :cpn_id %>
+  </div>
+  <div class="field">
+    <%= f.label :sales_range_no %><br>
+    <%= f.number_field :sales_range_no %>
+  </div>
+  <div class="field">
+    <%= f.label :sales_range_min_value %><br>
+    <%= f.number_field :sales_range_min_value %>
+  </div>
+  <div class="field">
+    <%= f.label :dscnt_value %><br>
+    <%= f.number_field :dscnt_value %>
+  </div>
+  <div class="field">
+    <%= f.label :dscnt_rate %><br>
+    <%= f.number_field :dscnt_rate %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

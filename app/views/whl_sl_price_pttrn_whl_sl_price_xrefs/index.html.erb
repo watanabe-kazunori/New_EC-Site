@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Whl Sl Price Pttrn Whl Sl Price Xrefs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Ptrn cd</th>
+      <th>Sku</th>
+      <th>Whl sl price type</th>
+      <th>Whl sl price ver</th>
+      <th>String</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @whl_sl_price_pttrn_whl_sl_price_xrefs.each do |whl_sl_price_pttrn_whl_sl_price_xref| %>
+      <tr>
+        <td><%= whl_sl_price_pttrn_whl_sl_price_xref.ptrn_cd %></td>
+        <td><%= whl_sl_price_pttrn_whl_sl_price_xref.sku %></td>
+        <td><%= whl_sl_price_pttrn_whl_sl_price_xref.whl_sl_price_type %></td>
+        <td><%= whl_sl_price_pttrn_whl_sl_price_xref.whl_sl_price_ver %></td>
+        <td><%= whl_sl_price_pttrn_whl_sl_price_xref.string %></td>
+        <td><%= link_to 'Show', whl_sl_price_pttrn_whl_sl_price_xref %></td>
+        <td><%= link_to 'Edit', edit_whl_sl_price_pttrn_whl_sl_price_xref_path(whl_sl_price_pttrn_whl_sl_price_xref) %></td>
+        <td><%= link_to 'Destroy', whl_sl_price_pttrn_whl_sl_price_xref, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Whl sl price pttrn whl sl price xref', new_whl_sl_price_pttrn_whl_sl_price_xref_path %>

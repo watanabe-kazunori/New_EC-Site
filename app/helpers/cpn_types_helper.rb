@@ -1,0 +1,2 @@
+module CpnTypesHelper
+end

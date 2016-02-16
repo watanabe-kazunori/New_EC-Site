@@ -1,0 +1,2 @@
+module CommRateMsHelper
+end

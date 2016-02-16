@@ -1,0 +1,37 @@
+<%= form_for(@whl_sl_price_pttrn_whl_sl_price_xref) do |f| %>
+  <% if @whl_sl_price_pttrn_whl_sl_price_xref.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@whl_sl_price_pttrn_whl_sl_price_xref.errors.count, "error") %> prohibited this whl_sl_price_pttrn_whl_sl_price_xref from being saved:</h2>
+
+      <ul>
+      <% @whl_sl_price_pttrn_whl_sl_price_xref.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :ptrn_cd %><br>
+    <%= f.text_field :ptrn_cd %>
+  </div>
+  <div class="field">
+    <%= f.label :sku %><br>
+    <%= f.text_field :sku %>
+  </div>
+  <div class="field">
+    <%= f.label :whl_sl_price_type %><br>
+    <%= f.text_field :whl_sl_price_type %>
+  </div>
+  <div class="field">
+    <%= f.label :whl_sl_price_ver %><br>
+    <%= f.text_field :whl_sl_price_ver %>
+  </div>
+  <div class="field">
+    <%= f.label :string %><br>
+    <%= f.text_field :string %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

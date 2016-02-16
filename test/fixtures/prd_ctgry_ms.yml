@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  PRD_CTGRY_CD: MyString
+  PRD_CTGRY_NAME: MyString
+
+two:
+  PRD_CTGRY_CD: MyString
+  PRD_CTGRY_NAME: MyString

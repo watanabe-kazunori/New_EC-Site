@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Currency cd:</strong>
+  <%= @currency_m.currency_cd %>
+</p>
+
+<p>
+  <strong>Currency sign:</strong>
+  <%= @currency_m.currency_sign %>
+</p>
+
+<p>
+  <strong>Currency name:</strong>
+  <%= @currency_m.currency_name %>
+</p>
+
+<p>
+  <strong>Currency name e:</strong>
+  <%= @currency_m.currency_name_e %>
+</p>
+
+<p>
+  <strong>Currency unit:</strong>
+  <%= @currency_m.currency_unit %>
+</p>
+
+<p>
+  <strong>Currency unit e:</strong>
+  <%= @currency_m.currency_unit_e %>
+</p>
+
+<%= link_to 'Edit', edit_currency_m_path(@currency_m) %> |
+<%= link_to 'Back', currency_ms_path %>

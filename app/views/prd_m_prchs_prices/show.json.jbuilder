@@ -1,0 +1,1 @@
+json.extract! @prd_m_prchs_price, :id, :sku, :prchs_price_ver, :list_price, :prchs_price_rate, :prchs_price, :start_date, :end_date, :currency_cd, :rgstr_dt, :rgstr_usr, :lst_upd_dt, :lst_upda_usr, :created_at, :updated_at

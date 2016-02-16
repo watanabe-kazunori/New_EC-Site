@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sku: MyString
+  prchs_price_ver: MyString
+  list_price: 1
+  prchs_price_rate: 1
+  prchs_price: 1
+  start_date: 2016-02-15
+  end_date: 2016-02-15
+  currency_cd: MyString
+  rgstr_dt: 2016-02-15 18:30:34
+  rgstr_usr: 1
+  lst_upd_dt: 2016-02-15 18:30:34
+  lst_upda_usr: 1
+
+two:
+  sku: MyString
+  prchs_price_ver: MyString
+  list_price: 1
+  prchs_price_rate: 1
+  prchs_price: 1
+  start_date: 2016-02-15
+  end_date: 2016-02-15
+  currency_cd: MyString
+  rgstr_dt: 2016-02-15 18:30:34
+  rgstr_usr: 1
+  lst_upd_dt: 2016-02-15 18:30:34
+  lst_upda_usr: 1

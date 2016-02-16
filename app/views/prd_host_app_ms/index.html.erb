@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Prd Host App Ms</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>App cd</th>
+      <th>App name</th>
+      <th>App ver</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @prd_host_app_ms.each do |prd_host_app_m| %>
+      <tr>
+        <td><%= prd_host_app_m.APP_CD %></td>
+        <td><%= prd_host_app_m.APP_NAME %></td>
+        <td><%= prd_host_app_m.APP_VER %></td>
+        <td><%= link_to 'Show', prd_host_app_m %></td>
+        <td><%= link_to 'Edit', edit_prd_host_app_m_path(prd_host_app_m) %></td>
+        <td><%= link_to 'Destroy', prd_host_app_m, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Prd host app m', new_prd_host_app_m_path %>

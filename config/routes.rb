@@ -1,4 +1,28 @@
 Rails.application.routes.draw do
+  resources :cpn_types
+  resources :dstrbtr_whl_sl_prices
+  resources :prd_m_set_contents
+  resources :prd_m_dstrbtr_hide_prds
+  resources :prd_m_prchs_prices
+  resources :dstrbtr_ms
+  resources :currency_ms
+  resources :currency_m_excng_rates
+  resources :whl_sl_price_pttrn_ms
+  resources :whl_sl_price_pttrn_ds
+  resources :fbj_prd_sell_price_ms
+  resources :whl_sl_price_pttrn_whl_sl_price_xrefs
+  resources :tax_ms
+  resources :comm_rate_ms
+  resources :prd_m_whl_sl_prices
+  resources :prd_m_host_apps
+  resources :prd_host_app_ms
+  resources :prd_m_effect_csls
+  resources :prd_effect_cls_ms
+  resources :prd_ctgry_ms
+  resources :vndr_ms
+  resources :prd_ms
+  resources :cpn_m_sales_dsts
+  resources :cpn_m_total_sales_dscnts
   resources :cpn_ms
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

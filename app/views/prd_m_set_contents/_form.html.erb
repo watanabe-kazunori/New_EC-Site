@@ -1,0 +1,25 @@
+<%= form_for(@prd_m_set_content) do |f| %>
+  <% if @prd_m_set_content.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@prd_m_set_content.errors.count, "error") %> prohibited this prd_m_set_content from being saved:</h2>
+
+      <ul>
+      <% @prd_m_set_content.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :sku %><br>
+    <%= f.text_field :sku %>
+  </div>
+  <div class="field">
+    <%= f.label :sku_content %><br>
+    <%= f.text_field :sku_content %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

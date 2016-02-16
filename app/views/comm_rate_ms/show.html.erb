@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Comm rate ver:</strong>
+  <%= @comm_rate_m.comm_rate_ver %>
+</p>
+
+<p>
+  <strong>Comm rate:</strong>
+  <%= @comm_rate_m.comm_rate %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @comm_rate_m.start_date %>
+</p>
+
+<p>
+  <strong>End date:</strong>
+  <%= @comm_rate_m.end_date %>
+</p>
+
+<%= link_to 'Edit', edit_comm_rate_m_path(@comm_rate_m) %> |
+<%= link_to 'Back', comm_rate_ms_path %>

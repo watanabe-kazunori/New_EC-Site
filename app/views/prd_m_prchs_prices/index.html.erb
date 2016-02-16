@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Prd M Prchs Prices</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sku</th>
+      <th>Prchs price ver</th>
+      <th>List price</th>
+      <th>Prchs price rate</th>
+      <th>Prchs price</th>
+      <th>Start date</th>
+      <th>End date</th>
+      <th>Currency cd</th>
+      <th>Rgstr dt</th>
+      <th>Rgstr usr</th>
+      <th>Lst upd dt</th>
+      <th>Lst upda usr</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @prd_m_prchs_prices.each do |prd_m_prchs_price| %>
+      <tr>
+        <td><%= prd_m_prchs_price.sku %></td>
+        <td><%= prd_m_prchs_price.prchs_price_ver %></td>
+        <td><%= prd_m_prchs_price.list_price %></td>
+        <td><%= prd_m_prchs_price.prchs_price_rate %></td>
+        <td><%= prd_m_prchs_price.prchs_price %></td>
+        <td><%= prd_m_prchs_price.start_date %></td>
+        <td><%= prd_m_prchs_price.end_date %></td>
+        <td><%= prd_m_prchs_price.currency_cd %></td>
+        <td><%= prd_m_prchs_price.rgstr_dt %></td>
+        <td><%= prd_m_prchs_price.rgstr_usr %></td>
+        <td><%= prd_m_prchs_price.lst_upd_dt %></td>
+        <td><%= prd_m_prchs_price.lst_upda_usr %></td>
+        <td><%= link_to 'Show', prd_m_prchs_price %></td>
+        <td><%= link_to 'Edit', edit_prd_m_prchs_price_path(prd_m_prchs_price) %></td>
+        <td><%= link_to 'Destroy', prd_m_prchs_price, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Prd m prchs price', new_prd_m_prchs_price_path %>

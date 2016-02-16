@@ -1,0 +1,93 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  SKU: MyString
+  SKU_DVLPR: MyString
+  SKU_SOURCE_PRD: MyString
+  PRD_NAME: MyString
+  PRD_NAME: MyString
+  PRD_NAME_SUBTITLE: MyString
+  PRD_DVLPR_ORG_NAME: MyString
+  PRD_CTGRY_CD: MyString
+  PRD_TYPE: MyString
+  SP_PRD_TYPE: MyString
+  SET_PRD_F: MyString
+  SET_PRD_TYPE: MyString
+  SALE_F: MyString
+  RCVNG_PLCNT_PRD_F: MyString
+  DLVRY_LD_TIME: MyString
+  DB_PRD_DLVRY_MTHD: MyString
+  LIC_TYPE: MyString
+  LIC_FROM: 1
+  LIC_TO: 1
+  DSTRBTR_DISP_F: MyString
+  PRD_ST: MyString
+  ACDMC_LIC_F: MyString
+  PRD_DLVRY_MTHD: MyString
+  PRD_DESC: MyString
+  PRD_NOTE: MyString
+  PRD_NOTICE: MyString
+  PRD_OTHER_INFO: MyString
+  URL_PRD: MyString
+  URL_INSTALL_GUID: MyString
+  URL_LIC_AUTH_GUID: MyString
+  URL_INSTALLER: MyString
+  URL_PRD_IMAGE: MyString
+  URL_DL: MyString
+  MEMO: MyString
+  SUBSCRIPTION_LIC_TERM: 1
+  SUBSCRIPTION_LIC_TERM_UNIT: MyString
+  MNT_LIC_TERM: 1
+  MNT_LIC_TERM_UNIT: MyString
+  ACCNT_CD_DVLPR: MyString
+  ACCNT_CD_VNDR: MyString
+  RGSTR_DT: 2016-02-15 17:33:05
+  RGSTR_USR: 1
+  LST_UPD_DT: 2016-02-15 17:33:05
+  LST_UPD_USR: 1
+
+two:
+  SKU: MyString
+  SKU_DVLPR: MyString
+  SKU_SOURCE_PRD: MyString
+  PRD_NAME: MyString
+  PRD_NAME: MyString
+  PRD_NAME_SUBTITLE: MyString
+  PRD_DVLPR_ORG_NAME: MyString
+  PRD_CTGRY_CD: MyString
+  PRD_TYPE: MyString
+  SP_PRD_TYPE: MyString
+  SET_PRD_F: MyString
+  SET_PRD_TYPE: MyString
+  SALE_F: MyString
+  RCVNG_PLCNT_PRD_F: MyString
+  DLVRY_LD_TIME: MyString
+  DB_PRD_DLVRY_MTHD: MyString
+  LIC_TYPE: MyString
+  LIC_FROM: 1
+  LIC_TO: 1
+  DSTRBTR_DISP_F: MyString
+  PRD_ST: MyString
+  ACDMC_LIC_F: MyString
+  PRD_DLVRY_MTHD: MyString
+  PRD_DESC: MyString
+  PRD_NOTE: MyString
+  PRD_NOTICE: MyString
+  PRD_OTHER_INFO: MyString
+  URL_PRD: MyString
+  URL_INSTALL_GUID: MyString
+  URL_LIC_AUTH_GUID: MyString
+  URL_INSTALLER: MyString
+  URL_PRD_IMAGE: MyString
+  URL_DL: MyString
+  MEMO: MyString
+  SUBSCRIPTION_LIC_TERM: 1
+  SUBSCRIPTION_LIC_TERM_UNIT: MyString
+  MNT_LIC_TERM: 1
+  MNT_LIC_TERM_UNIT: MyString
+  ACCNT_CD_DVLPR: MyString
+  ACCNT_CD_VNDR: MyString
+  RGSTR_DT: 2016-02-15 17:33:05
+  RGSTR_USR: 1
+  LST_UPD_DT: 2016-02-15 17:33:05
+  LST_UPD_USR: 1

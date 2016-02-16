@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  currency_cd: MyString
+  exchng_rate_ver: MyString
+  exchng_rate: 1
+  start_date: 2016-02-15
+  end_date: 2016-02-15
+  rgstr_dt: 2016-02-15 18:22:29
+  rgstr_usr: 1
+  lst_upd_dt: 2016-02-15 18:22:29
+  lst_upd_usr: 1
+
+two:
+  currency_cd: MyString
+  exchng_rate_ver: MyString
+  exchng_rate: 1
+  start_date: 2016-02-15
+  end_date: 2016-02-15
+  rgstr_dt: 2016-02-15 18:22:29
+  rgstr_usr: 1
+  lst_upd_dt: 2016-02-15 18:22:29
+  lst_upd_usr: 1
