@@ -1,6 +1,6 @@
 class CreateAccnts < ActiveRecord::Migration
   def change
-    create_table :accnts, id: false do |t|
+    create_table :accnts do |t|
     	t.string :accnt_cd, limit: 30, null: false
 		t.string :accnt_type_1, limit: 1, null: false
 		t.string :accnt_type_2, limit: 1, null: false
@@ -19,7 +19,7 @@ class CreateAccnts < ActiveRecord::Migration
 		t.string :email, limit: 50
 		t.string :fax, limit: 20
 		t.string :memo, limit: 2000
-		t.string :regstr_usr, limit: 16
+		t.string :rgstr_usr, limit: 16
 		t.string :lst_upd_usr, limit: 16
       	t.timestamps null: false
     end

@@ -1,0 +1,2 @@
+class AccntStaffsController < ApplicationController
+end

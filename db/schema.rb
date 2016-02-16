@@ -11,9 +11,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160215010318) do
+ActiveRecord::Schema.define(version: 20160215050548) do
 
-  create_table "accnts", id: false, force: :cascade do |t|
+  create_table "accnt_staffs", force: :cascade do |t|
+    t.string   "accnt_no",         limit: 30
+    t.string   "dept_name",        limit: 50
+    t.string   "dept_name_e",      limit: 50
+    t.string   "staff_name",       limit: 50
+    t.string   "staff_name_e",     limit: 50
+    t.string   "country_cd",       limit: 4
+    t.string   "zip",              limit: 10
+    t.string   "prefecture_no",    limit: 2
+    t.string   "city",             limit: 20
+    t.string   "area",             limit: 20
+    t.string   "bld",              limit: 50
+    t.string   "print_address",    limit: 100
+    t.string   "print_address_e",  limit: 100
+    t.string   "tel",              limit: 20
+    t.string   "email",            limit: 50
+    t.string   "fax",              limit: 20
+    t.string   "accnt_cd_billing", limit: 30
+    t.integer  "staff_id_billing", limit: 4
+    t.integer  "regstr_usr",       limit: 4
+    t.integer  "lst_upd_user",     limit: 4
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+  end
+
+  create_table "accnts", force: :cascade do |t|
     t.string   "accnt_cd",        limit: 30,   null: false
     t.string   "accnt_type_1",    limit: 1,    null: false
     t.string   "accnt_type_2",    limit: 1,    null: false
@@ -32,10 +57,19 @@ ActiveRecord::Schema.define(version: 20160215010318) do
     t.string   "email",           limit: 50
     t.string   "fax",             limit: 20
     t.string   "memo",            limit: 2000
-    t.string   "regstr_usr",      limit: 16
+    t.string   "rgstr_usr",       limit: 16
     t.string   "lst_upd_usr",     limit: 16
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
+  end
+
+  create_table "countries", force: :cascade do |t|
+    t.string   "country_cd",     limit: 4
+    t.string   "country_name",   limit: 50
+    t.string   "country_name_e", limit: 50
+    t.string   "currency_cd",    limit: 4
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
   create_table "cpn_ms", primary_key: "CPN_ID", force: :cascade do |t|
@@ -52,6 +86,13 @@ ActiveRecord::Schema.define(version: 20160215010318) do
     t.decimal  "DSCNT_RATE",                   precision: 5,  scale: 2
     t.string   "TRGT_PRD_CNDTN",  limit: 2000
     t.string   "EXCLD_PRD_CNDTN", limit: 2000
+  end
+
+  create_table "prefectures", force: :cascade do |t|
+    t.string   "prefecture_no",   limit: 2
+    t.string   "prefecture_name", limit: 6
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
 end

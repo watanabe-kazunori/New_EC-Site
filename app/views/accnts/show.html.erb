@@ -1,0 +1,103 @@
+<p id="notice"><%= notice %></p>
+<h1>取引先マスタ詳細画面</h1>
+<table class="accnt-show" border=1>
+
+  <tr>
+  <th><strong>取引先コード:</strong></th>
+  <td><%= @accnt.accnt_cd %></td>
+  </tr>
+
+  <tr>
+  <th><strong>取引先種別1:</strong></th>
+  <td><%= @accnt.accnt_type_1 %></td>
+  </tr>
+
+  <tr>
+  <th><strong>取引先種別2:</strong></th>
+  <td><%= @accnt.accnt_type_2 %></td>
+  </tr>
+
+  <tr>
+  <th><strong>法人個人区分:</strong></th>
+  <td><%= @accnt.com_ind %></td>
+  </tr>
+
+  <tr>
+  <th><strong>取引先名:</strong></th>
+  <td><%= @accnt.accnt_name %></td>
+  </tr>
+
+  <tr>
+  <th><strong>取引先名英語表記:</strong></th>
+  <td><%= @accnt.accnt_name_e %></td>
+  </tr>
+
+  <tr>
+  <th><strong>国地域コード (FK):</strong></th>
+  <td><%= @accnt.country_cd %></td>
+  </tr>
+
+  <tr>
+  <th><strong>郵便番号:</strong></th>
+  <td><%= @accnt.zip %></td>
+  </tr>
+
+  <tr>
+  <th><strong>都道府県番号 (FK):</strong></th>
+  <td><%= @accnt.prefecture_no %></td>
+  </tr>
+
+  <tr>
+  <th><strong>市区町村:</strong></th>
+  <td><%= @accnt.city %></td>
+  </tr>
+
+  <tr>
+  <th><strong>町丁目:</strong></th>
+  <td><%= @accnt.area %></td>
+  </tr>
+
+  <tr>
+  <th><strong>ビル名部屋番号:</strong></th>
+  <td><%= @accnt.bld %></td>
+  </tr>
+
+  <tr>
+  <th><strong>印字用表記:</strong></th>
+  <td><%= @accnt.print_address %></td>
+  </tr>
+
+  <tr>
+  <th><strong>印字用英語表記:</strong></th>
+  <td><%= @accnt.print_address_e %></td>
+  </tr>
+
+  <tr>
+  <th><strong>Eメールアドレス:</strong></th>
+  <td><%= @accnt.email %></td>
+  </tr>
+
+  <tr>
+  <th><strong>FAX番号:</strong></th>
+  <td><%= @accnt.fax %></td>
+  </tr>
+
+  <tr>
+  <th><strong>メモ:</strong></th>
+  <td><%= @accnt.memo %></td>
+  </tr>
+
+  <tr>
+  <th><strong>登録ユーザ:</strong></th>
+  <td><%= @accnt.rgstr_usr %></td>
+  </tr>
+
+  <tr>
+  <th><strong>最終更新ユーザ:</strong></th>
+  <td><%= @accnt.lst_upd_usr %></td>
+  </tr>
+
+</table>
+
+<%= link_to '編集', edit_accnt_path(@accnt) %> |
+<%= link_to '戻る', accnts_path %>

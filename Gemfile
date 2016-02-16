@@ -13,7 +13,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
-gem 'composite_primary_keys'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
@@ -22,6 +22,12 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
+
+# add gem by takabe 20160215
+gem 'composite_primary_keys'
+gem 'kaminari' 
+gem 'date_validator', '~> 0.7.0'
+gem 'email_validator', '~> 1.4.0'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -38,8 +44,9 @@ group :development, :test do
 end
 
 group :development do
-  # Access an IRB console on exception pages or by using <%= console %> in views
+  # add gem by takabe 20160215
   gem 'web-console', '~> 2.0'
+  gem 'quiet_assets', '~> 1.0.2', group: :development
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
