@@ -1,0 +1,77 @@
+<%= form_for(@prd_m_whl_sl_price) do |f| %>
+  <% if @prd_m_whl_sl_price.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@prd_m_whl_sl_price.errors.count, "error") %> prohibited this prd_m_whl_sl_price from being saved:</h2>
+
+      <ul>
+      <% @prd_m_whl_sl_price.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :SKU %><br>
+    <%= f.text_field :SKU %>
+  </div>
+  <div class="field">
+    <%= f.label :WHL_SL_PRICE_TYPE %><br>
+    <%= f.text_field :WHL_SL_PRICE_TYPE %>
+  </div>
+  <div class="field">
+    <%= f.label :WHL_SL_PRICE_VER %><br>
+    <%= f.text_field :WHL_SL_PRICE_VER %>
+  </div>
+  <div class="field">
+    <%= f.label :WHL_SL_PRICE_RATE %><br>
+    <%= f.number_field :WHL_SL_PRICE_RATE %>
+  </div>
+  <div class="field">
+    <%= f.label :WHL_SL_PRICE %><br>
+    <%= f.number_field :WHL_SL_PRICE %>
+  </div>
+  <div class="field">
+    <%= f.label :PRE_CP_WHL_SL_PRIE_RATE %><br>
+    <%= f.number_field :PRE_CP_WHL_SL_PRIE_RATE %>
+  </div>
+  <div class="field">
+    <%= f.label :PRE_CP_WHL_SL_PRICE %><br>
+    <%= f.number_field :PRE_CP_WHL_SL_PRICE %>
+  </div>
+  <div class="field">
+    <%= f.label :CP_PRICE_DSCNT_RATE %><br>
+    <%= f.number_field :CP_PRICE_DSCNT_RATE %>
+  </div>
+  <div class="field">
+    <%= f.label :CP_PRICE_DSCNT %><br>
+    <%= f.number_field :CP_PRICE_DSCNT %>
+  </div>
+  <div class="field">
+    <%= f.label :START_DATE %><br>
+    <%= f.date_select :START_DATE %>
+  </div>
+  <div class="field">
+    <%= f.label :END_DATE %><br>
+    <%= f.date_select :END_DATE %>
+  </div>
+  <div class="field">
+    <%= f.label :RGSTR_DT %><br>
+    <%= f.datetime_select :RGSTR_DT %>
+  </div>
+  <div class="field">
+    <%= f.label :RGSTR_USR %><br>
+    <%= f.number_field :RGSTR_USR %>
+  </div>
+  <div class="field">
+    <%= f.label :LST_UPD_DT %><br>
+    <%= f.datetime_select :LST_UPD_DT %>
+  </div>
+  <div class="field">
+    <%= f.label :LST_UPD_USR %><br>
+    <%= f.number_field :LST_UPD_USR %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

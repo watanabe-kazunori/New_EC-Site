@@ -1,0 +1,193 @@
+<%= form_for(@prd_m) do |f| %>
+  <% if @prd_m.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@prd_m.errors.count, "error") %> prohibited this prd_m from being saved:</h2>
+
+      <ul>
+      <% @prd_m.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :SKU %><br>
+    <%= f.text_field :SKU %>
+  </div>
+  <div class="field">
+    <%= f.label :SKU_DVLPR %><br>
+    <%= f.text_field :SKU_DVLPR %>
+  </div>
+  <div class="field">
+    <%= f.label :SKU_SOURCE_PRD %><br>
+    <%= f.text_field :SKU_SOURCE_PRD %>
+  </div>
+  <div class="field">
+    <%= f.label :PRD_NAME %><br>
+    <%= f.text_field :PRD_NAME %>
+  </div>
+  <div class="field">
+    <%= f.label :PRD_NAME %><br>
+    <%= f.text_field :PRD_NAME %>
+  </div>
+  <div class="field">
+    <%= f.label :PRD_NAME_SUBTITLE %><br>
+    <%= f.text_field :PRD_NAME_SUBTITLE %>
+  </div>
+  <div class="field">
+    <%= f.label :PRD_DVLPR_ORG_NAME %><br>
+    <%= f.text_field :PRD_DVLPR_ORG_NAME %>
+  </div>
+  <div class="field">
+    <%= f.label :PRD_CTGRY_CD %><br>
+    <%= f.text_field :PRD_CTGRY_CD %>
+  </div>
+  <div class="field">
+    <%= f.label :PRD_TYPE %><br>
+    <%= f.text_field :PRD_TYPE %>
+  </div>
+  <div class="field">
+    <%= f.label :SP_PRD_TYPE %><br>
+    <%= f.text_field :SP_PRD_TYPE %>
+  </div>
+  <div class="field">
+    <%= f.label :SET_PRD_F %><br>
+    <%= f.text_field :SET_PRD_F %>
+  </div>
+  <div class="field">
+    <%= f.label :SET_PRD_TYPE %><br>
+    <%= f.text_field :SET_PRD_TYPE %>
+  </div>
+  <div class="field">
+    <%= f.label :SALE_F %><br>
+    <%= f.text_field :SALE_F %>
+  </div>
+  <div class="field">
+    <%= f.label :RCVNG_PLCNT_PRD_F %><br>
+    <%= f.text_field :RCVNG_PLCNT_PRD_F %>
+  </div>
+  <div class="field">
+    <%= f.label :DLVRY_LD_TIME %><br>
+    <%= f.text_field :DLVRY_LD_TIME %>
+  </div>
+  <div class="field">
+    <%= f.label :DB_PRD_DLVRY_MTHD %><br>
+    <%= f.text_field :DB_PRD_DLVRY_MTHD %>
+  </div>
+  <div class="field">
+    <%= f.label :LIC_TYPE %><br>
+    <%= f.text_field :LIC_TYPE %>
+  </div>
+  <div class="field">
+    <%= f.label :LIC_FROM %><br>
+    <%= f.number_field :LIC_FROM %>
+  </div>
+  <div class="field">
+    <%= f.label :LIC_TO %><br>
+    <%= f.number_field :LIC_TO %>
+  </div>
+  <div class="field">
+    <%= f.label :DSTRBTR_DISP_F %><br>
+    <%= f.text_field :DSTRBTR_DISP_F %>
+  </div>
+  <div class="field">
+    <%= f.label :PRD_ST %><br>
+    <%= f.text_field :PRD_ST %>
+  </div>
+  <div class="field">
+    <%= f.label :ACDMC_LIC_F %><br>
+    <%= f.text_field :ACDMC_LIC_F %>
+  </div>
+  <div class="field">
+    <%= f.label :PRD_DLVRY_MTHD %><br>
+    <%= f.text_field :PRD_DLVRY_MTHD %>
+  </div>
+  <div class="field">
+    <%= f.label :PRD_DESC %><br>
+    <%= f.text_field :PRD_DESC %>
+  </div>
+  <div class="field">
+    <%= f.label :PRD_NOTE %><br>
+    <%= f.text_field :PRD_NOTE %>
+  </div>
+  <div class="field">
+    <%= f.label :PRD_NOTICE %><br>
+    <%= f.text_field :PRD_NOTICE %>
+  </div>
+  <div class="field">
+    <%= f.label :PRD_OTHER_INFO %><br>
+    <%= f.text_field :PRD_OTHER_INFO %>
+  </div>
+  <div class="field">
+    <%= f.label :URL_PRD %><br>
+    <%= f.text_field :URL_PRD %>
+  </div>
+  <div class="field">
+    <%= f.label :URL_INSTALL_GUID %><br>
+    <%= f.text_field :URL_INSTALL_GUID %>
+  </div>
+  <div class="field">
+    <%= f.label :URL_LIC_AUTH_GUID %><br>
+    <%= f.text_field :URL_LIC_AUTH_GUID %>
+  </div>
+  <div class="field">
+    <%= f.label :URL_INSTALLER %><br>
+    <%= f.text_field :URL_INSTALLER %>
+  </div>
+  <div class="field">
+    <%= f.label :URL_PRD_IMAGE %><br>
+    <%= f.text_field :URL_PRD_IMAGE %>
+  </div>
+  <div class="field">
+    <%= f.label :URL_DL %><br>
+    <%= f.text_field :URL_DL %>
+  </div>
+  <div class="field">
+    <%= f.label :MEMO %><br>
+    <%= f.text_field :MEMO %>
+  </div>
+  <div class="field">
+    <%= f.label :SUBSCRIPTION_LIC_TERM %><br>
+    <%= f.number_field :SUBSCRIPTION_LIC_TERM %>
+  </div>
+  <div class="field">
+    <%= f.label :SUBSCRIPTION_LIC_TERM_UNIT %><br>
+    <%= f.text_field :SUBSCRIPTION_LIC_TERM_UNIT %>
+  </div>
+  <div class="field">
+    <%= f.label :MNT_LIC_TERM %><br>
+    <%= f.number_field :MNT_LIC_TERM %>
+  </div>
+  <div class="field">
+    <%= f.label :MNT_LIC_TERM_UNIT %><br>
+    <%= f.text_field :MNT_LIC_TERM_UNIT %>
+  </div>
+  <div class="field">
+    <%= f.label :ACCNT_CD_DVLPR %><br>
+    <%= f.text_field :ACCNT_CD_DVLPR %>
+  </div>
+  <div class="field">
+    <%= f.label :ACCNT_CD_VNDR %><br>
+    <%= f.text_field :ACCNT_CD_VNDR %>
+  </div>
+  <div class="field">
+    <%= f.label :RGSTR_DT %><br>
+    <%= f.datetime_select :RGSTR_DT %>
+  </div>
+  <div class="field">
+    <%= f.label :RGSTR_USR %><br>
+    <%= f.number_field :RGSTR_USR %>
+  </div>
+  <div class="field">
+    <%= f.label :LST_UPD_DT %><br>
+    <%= f.datetime_select :LST_UPD_DT %>
+  </div>
+  <div class="field">
+    <%= f.label :LST_UPD_USR %><br>
+    <%= f.number_field :LST_UPD_USR %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

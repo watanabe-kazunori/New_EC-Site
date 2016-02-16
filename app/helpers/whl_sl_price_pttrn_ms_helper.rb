@@ -1,0 +1,2 @@
+module WhlSlPricePttrnMsHelper
+end

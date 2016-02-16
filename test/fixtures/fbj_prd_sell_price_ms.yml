@@ -1,0 +1,37 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sku: MyString
+  sell_price_ver: MyString
+  tax_ex_price: 1
+  tax_in_price: 1
+  pre_cp_sell_price: 1
+  cp_dscnt_rate: 1
+  applctn_start_dt: 2016-02-15
+  applctn_end_dt: 2016-02-15
+  currency_cd: MyString
+  exchng_rate_ver: 1
+  comm_rate_ver: MyString
+  tax_ver: MyString
+  rgstr_dtrgstr_dt: 2016-02-15 18:14:07
+  rgstr_usr: 1
+  lst_updt_dt: 2016-02-15 18:14:07
+  lst_updt_usr: 1
+
+two:
+  sku: MyString
+  sell_price_ver: MyString
+  tax_ex_price: 1
+  tax_in_price: 1
+  pre_cp_sell_price: 1
+  cp_dscnt_rate: 1
+  applctn_start_dt: 2016-02-15
+  applctn_end_dt: 2016-02-15
+  currency_cd: MyString
+  exchng_rate_ver: 1
+  comm_rate_ver: MyString
+  tax_ver: MyString
+  rgstr_dtrgstr_dt: 2016-02-15 18:14:07
+  rgstr_usr: 1
+  lst_updt_dt: 2016-02-15 18:14:07
+  lst_updt_usr: 1

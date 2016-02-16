@@ -1,0 +1,45 @@
+<%= form_for(@vndr_m) do |f| %>
+  <% if @vndr_m.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@vndr_m.errors.count, "error") %> prohibited this vndr_m from being saved:</h2>
+
+      <ul>
+      <% @vndr_m.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :ACCNT_CD %><br>
+    <%= f.text_field :ACCNT_CD %>
+  </div>
+  <div class="field">
+    <%= f.label :CNTRCT_START_DTE %><br>
+    <%= f.datetime_select :CNTRCT_START_DTE %>
+  </div>
+  <div class="field">
+    <%= f.label :CNTRCT_LST_UPD_DATE %><br>
+    <%= f.datetime_select :CNTRCT_LST_UPD_DATE %>
+  </div>
+  <div class="field">
+    <%= f.label :CNTRCT_EXP_DATE %><br>
+    <%= f.datetime_select :CNTRCT_EXP_DATE %>
+  </div>
+  <div class="field">
+    <%= f.label :SALES_REPORT_METHOD %><br>
+    <%= f.text_field :SALES_REPORT_METHOD %>
+  </div>
+  <div class="field">
+    <%= f.label :MONTHLY_REPORT_TYPE %><br>
+    <%= f.text_field :MONTHLY_REPORT_TYPE %>
+  </div>
+  <div class="field">
+    <%= f.label :PAY_METHOD %><br>
+    <%= f.text_field :PAY_METHOD %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

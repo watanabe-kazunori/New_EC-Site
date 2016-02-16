@@ -1,0 +1,49 @@
+<%= form_for(@dstrbtr_m) do |f| %>
+  <% if @dstrbtr_m.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@dstrbtr_m.errors.count, "error") %> prohibited this dstrbtr_m from being saved:</h2>
+
+      <ul>
+      <% @dstrbtr_m.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :accnt_cd %><br>
+    <%= f.text_field :accnt_cd %>
+  </div>
+  <div class="field">
+    <%= f.label :cntrct_start_date %><br>
+    <%= f.datetime_select :cntrct_start_date %>
+  </div>
+  <div class="field">
+    <%= f.label :cntrct_start_date %><br>
+    <%= f.datetime_select :cntrct_start_date %>
+  </div>
+  <div class="field">
+    <%= f.label :cntrct_renewal_date %><br>
+    <%= f.datetime_select :cntrct_renewal_date %>
+  </div>
+  <div class="field">
+    <%= f.label :cntrct_next_renewal_date %><br>
+    <%= f.datetime_select :cntrct_next_renewal_date %>
+  </div>
+  <div class="field">
+    <%= f.label :cntrct_end_date %><br>
+    <%= f.datetime_select :cntrct_end_date %>
+  </div>
+  <div class="field">
+    <%= f.label :rgstr_date %><br>
+    <%= f.datetime_select :rgstr_date %>
+  </div>
+  <div class="field">
+    <%= f.label :ptrn_cd %><br>
+    <%= f.text_field :ptrn_cd %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

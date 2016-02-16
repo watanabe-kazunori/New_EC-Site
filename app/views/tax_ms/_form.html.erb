@@ -1,0 +1,33 @@
+<%= form_for(@tax_m) do |f| %>
+  <% if @tax_m.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tax_m.errors.count, "error") %> prohibited this tax_m from being saved:</h2>
+
+      <ul>
+      <% @tax_m.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :tax_ver %><br>
+    <%= f.text_field :tax_ver %>
+  </div>
+  <div class="field">
+    <%= f.label :tax_rate %><br>
+    <%= f.number_field :tax_rate %>
+  </div>
+  <div class="field">
+    <%= f.label :start_date %><br>
+    <%= f.datetime_select :start_date %>
+  </div>
+  <div class="field">
+    <%= f.label :end_date %><br>
+    <%= f.datetime_select :end_date %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

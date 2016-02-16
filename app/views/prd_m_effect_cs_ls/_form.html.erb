@@ -1,0 +1,25 @@
+<%= form_for(@prd_m_effect_csl) do |f| %>
+  <% if @prd_m_effect_csl.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@prd_m_effect_csl.errors.count, "error") %> prohibited this prd_m_effect_csl from being saved:</h2>
+
+      <ul>
+      <% @prd_m_effect_csl.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :SKU %><br>
+    <%= f.text_field :SKU %>
+  </div>
+  <div class="field">
+    <%= f.label :PRD_EFFECT_CLS_CD %><br>
+    <%= f.text_field :PRD_EFFECT_CLS_CD %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

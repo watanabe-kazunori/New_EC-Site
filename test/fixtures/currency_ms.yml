@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  currency_cd: MyString
+  currency_sign: MyString
+  currency_name: MyString
+  currency_name_e: MyString
+  currency_unit: MyString
+  currency_unit_e: MyString
+
+two:
+  currency_cd: MyString
+  currency_sign: MyString
+  currency_name: MyString
+  currency_name_e: MyString
+  currency_unit: MyString
+  currency_unit_e: MyString

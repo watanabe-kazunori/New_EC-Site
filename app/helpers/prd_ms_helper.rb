@@ -1,0 +1,2 @@
+module PrdMsHelper
+end

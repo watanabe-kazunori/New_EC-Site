@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cpn_id: 1
+  sales_range_no: 1
+  sales_range_min_value: 1
+  dscnt_value: 1
+  dscnt_rate: 1
+
+two:
+  cpn_id: 1
+  sales_range_no: 1
+  sales_range_min_value: 1
+  dscnt_value: 1
+  dscnt_rate: 1

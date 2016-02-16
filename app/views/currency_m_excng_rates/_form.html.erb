@@ -1,0 +1,53 @@
+<%= form_for(@currency_m_excng_rate) do |f| %>
+  <% if @currency_m_excng_rate.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@currency_m_excng_rate.errors.count, "error") %> prohibited this currency_m_excng_rate from being saved:</h2>
+
+      <ul>
+      <% @currency_m_excng_rate.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :currency_cd %><br>
+    <%= f.text_field :currency_cd %>
+  </div>
+  <div class="field">
+    <%= f.label :exchng_rate_ver %><br>
+    <%= f.text_field :exchng_rate_ver %>
+  </div>
+  <div class="field">
+    <%= f.label :exchng_rate %><br>
+    <%= f.number_field :exchng_rate %>
+  </div>
+  <div class="field">
+    <%= f.label :start_date %><br>
+    <%= f.date_select :start_date %>
+  </div>
+  <div class="field">
+    <%= f.label :end_date %><br>
+    <%= f.date_select :end_date %>
+  </div>
+  <div class="field">
+    <%= f.label :rgstr_dt %><br>
+    <%= f.datetime_select :rgstr_dt %>
+  </div>
+  <div class="field">
+    <%= f.label :rgstr_usr %><br>
+    <%= f.number_field :rgstr_usr %>
+  </div>
+  <div class="field">
+    <%= f.label :lst_upd_dt %><br>
+    <%= f.datetime_select :lst_upd_dt %>
+  </div>
+  <div class="field">
+    <%= f.label :lst_upd_usr %><br>
+    <%= f.number_field :lst_upd_usr %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

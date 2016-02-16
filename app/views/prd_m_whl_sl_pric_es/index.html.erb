@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Prd M Whl Sl Prices</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sku</th>
+      <th>Whl sl price type</th>
+      <th>Whl sl price ver</th>
+      <th>Whl sl price rate</th>
+      <th>Whl sl price</th>
+      <th>Pre cp whl sl prie rate</th>
+      <th>Pre cp whl sl price</th>
+      <th>Cp price dscnt rate</th>
+      <th>Cp price dscnt</th>
+      <th>Start date</th>
+      <th>End date</th>
+      <th>Rgstr dt</th>
+      <th>Rgstr usr</th>
+      <th>Lst upd dt</th>
+      <th>Lst upd usr</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @prd_m_whl_sl_prices.each do |prd_m_whl_sl_price| %>
+      <tr>
+        <td><%= prd_m_whl_sl_price.SKU %></td>
+        <td><%= prd_m_whl_sl_price.WHL_SL_PRICE_TYPE %></td>
+        <td><%= prd_m_whl_sl_price.WHL_SL_PRICE_VER %></td>
+        <td><%= prd_m_whl_sl_price.WHL_SL_PRICE_RATE %></td>
+        <td><%= prd_m_whl_sl_price.WHL_SL_PRICE %></td>
+        <td><%= prd_m_whl_sl_price.PRE_CP_WHL_SL_PRIE_RATE %></td>
+        <td><%= prd_m_whl_sl_price.PRE_CP_WHL_SL_PRICE %></td>
+        <td><%= prd_m_whl_sl_price.CP_PRICE_DSCNT_RATE %></td>
+        <td><%= prd_m_whl_sl_price.CP_PRICE_DSCNT %></td>
+        <td><%= prd_m_whl_sl_price.START_DATE %></td>
+        <td><%= prd_m_whl_sl_price.END_DATE %></td>
+        <td><%= prd_m_whl_sl_price.RGSTR_DT %></td>
+        <td><%= prd_m_whl_sl_price.RGSTR_USR %></td>
+        <td><%= prd_m_whl_sl_price.LST_UPD_DT %></td>
+        <td><%= prd_m_whl_sl_price.LST_UPD_USR %></td>
+        <td><%= link_to 'Show', prd_m_whl_sl_price %></td>
+        <td><%= link_to 'Edit', edit_prd_m_whl_sl_price_path(prd_m_whl_sl_price) %></td>
+        <td><%= link_to 'Destroy', prd_m_whl_sl_price, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Prd m whl sl price', new_prd_m_whl_sl_price_path %>

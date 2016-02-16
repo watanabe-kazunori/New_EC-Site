@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Whl Sl Price Pttrn Ms</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Ptrn cd</th>
+      <th>Pttrn name</th>
+      <th>Pttrn desc</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @whl_sl_price_pttrn_ms.each do |whl_sl_price_pttrn_m| %>
+      <tr>
+        <td><%= whl_sl_price_pttrn_m.ptrn_cd %></td>
+        <td><%= whl_sl_price_pttrn_m.pttrn_name %></td>
+        <td><%= whl_sl_price_pttrn_m.pttrn_desc %></td>
+        <td><%= link_to 'Show', whl_sl_price_pttrn_m %></td>
+        <td><%= link_to 'Edit', edit_whl_sl_price_pttrn_m_path(whl_sl_price_pttrn_m) %></td>
+        <td><%= link_to 'Destroy', whl_sl_price_pttrn_m, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Whl sl price pttrn m', new_whl_sl_price_pttrn_m_path %>

@@ -1,0 +1,25 @@
+<%= form_for(@prd_m_dstrbtr_hide_prd) do |f| %>
+  <% if @prd_m_dstrbtr_hide_prd.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@prd_m_dstrbtr_hide_prd.errors.count, "error") %> prohibited this prd_m_dstrbtr_hide_prd from being saved:</h2>
+
+      <ul>
+      <% @prd_m_dstrbtr_hide_prd.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :sku %><br>
+    <%= f.text_field :sku %>
+  </div>
+  <div class="field">
+    <%= f.label :accnt_cd %><br>
+    <%= f.text_field :accnt_cd %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

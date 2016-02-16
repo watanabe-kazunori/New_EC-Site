@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  APP_CD: MyString
+  APP_NAME: MyString
+  APP_VER: MyString
+
+two:
+  APP_CD: MyString
+  APP_NAME: MyString
+  APP_VER: MyString

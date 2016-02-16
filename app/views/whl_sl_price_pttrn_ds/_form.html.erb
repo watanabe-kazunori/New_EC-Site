@@ -1,0 +1,29 @@
+<%= form_for(@whl_sl_price_pttrn_d) do |f| %>
+  <% if @whl_sl_price_pttrn_d.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@whl_sl_price_pttrn_d.errors.count, "error") %> prohibited this whl_sl_price_pttrn_d from being saved:</h2>
+
+      <ul>
+      <% @whl_sl_price_pttrn_d.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :ptrn_cd %><br>
+    <%= f.text_field :ptrn_cd %>
+  </div>
+  <div class="field">
+    <%= f.label :sku %><br>
+    <%= f.text_field :sku %>
+  </div>
+  <div class="field">
+    <%= f.label :whl_sl_price_type %><br>
+    <%= f.text_field :whl_sl_price_type %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
