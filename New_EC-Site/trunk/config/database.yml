@@ -13,8 +13,8 @@ default: &default
 development:
   <<: *default
   database: New_EC-Site_development
-  username: jrckinmu
-  password: jrckinmu
+  username: root
+  password: 
   host: localhost
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -25,7 +25,7 @@ test:
 
 production:
   <<: *default
-  database: heroku_beda55efd49a1c8
-  username: bf2b27e600c2a8
-  password: 17c42617
-  host: us-cdbr-iron-east-03.cleardb.net
+  database: 
+  username: 
+  password: 
+  host: 

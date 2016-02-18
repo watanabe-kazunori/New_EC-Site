@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Dstrbtr Ms</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Accnt cd</th>
+      <th>Cntrct start date</th>
+      <th>Cntrct start date</th>
+      <th>Cntrct renewal date</th>
+      <th>Cntrct next renewal date</th>
+      <th>Cntrct end date</th>
+      <th>Rgstr date</th>
+      <th>Ptrn cd</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @dstrbtr_ms.each do |dstrbtr_m| %>
+      <tr>
+        <td><%= dstrbtr_m.accnt_cd %></td>
+        <td><%= dstrbtr_m.cntrct_start_date %></td>
+        <td><%= dstrbtr_m.cntrct_start_date %></td>
+        <td><%= dstrbtr_m.cntrct_renewal_date %></td>
+        <td><%= dstrbtr_m.cntrct_next_renewal_date %></td>
+        <td><%= dstrbtr_m.cntrct_end_date %></td>
+        <td><%= dstrbtr_m.rgstr_date %></td>
+        <td><%= dstrbtr_m.ptrn_cd %></td>
+        <td><%= link_to 'Show', dstrbtr_m %></td>
+        <td><%= link_to 'Edit', edit_dstrbtr_m_path(dstrbtr_m) %></td>
+        <td><%= link_to 'Destroy', dstrbtr_m, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Dstrbtr m', new_dstrbtr_m_path %>

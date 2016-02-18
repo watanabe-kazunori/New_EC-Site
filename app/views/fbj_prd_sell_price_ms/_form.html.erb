@@ -1,0 +1,81 @@
+<%= form_for(@fbj_prd_sell_price_m) do |f| %>
+  <% if @fbj_prd_sell_price_m.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@fbj_prd_sell_price_m.errors.count, "error") %> prohibited this fbj_prd_sell_price_m from being saved:</h2>
+
+      <ul>
+      <% @fbj_prd_sell_price_m.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :sku %><br>
+    <%= f.text_field :sku %>
+  </div>
+  <div class="field">
+    <%= f.label :sell_price_ver %><br>
+    <%= f.text_field :sell_price_ver %>
+  </div>
+  <div class="field">
+    <%= f.label :tax_ex_price %><br>
+    <%= f.number_field :tax_ex_price %>
+  </div>
+  <div class="field">
+    <%= f.label :tax_in_price %><br>
+    <%= f.number_field :tax_in_price %>
+  </div>
+  <div class="field">
+    <%= f.label :pre_cp_sell_price %><br>
+    <%= f.number_field :pre_cp_sell_price %>
+  </div>
+  <div class="field">
+    <%= f.label :cp_dscnt_rate %><br>
+    <%= f.number_field :cp_dscnt_rate %>
+  </div>
+  <div class="field">
+    <%= f.label :applctn_start_dt %><br>
+    <%= f.date_select :applctn_start_dt %>
+  </div>
+  <div class="field">
+    <%= f.label :applctn_end_dt %><br>
+    <%= f.date_select :applctn_end_dt %>
+  </div>
+  <div class="field">
+    <%= f.label :currency_cd %><br>
+    <%= f.text_field :currency_cd %>
+  </div>
+  <div class="field">
+    <%= f.label :exchng_rate_ver %><br>
+    <%= f.number_field :exchng_rate_ver %>
+  </div>
+  <div class="field">
+    <%= f.label :comm_rate_ver %><br>
+    <%= f.text_field :comm_rate_ver %>
+  </div>
+  <div class="field">
+    <%= f.label :tax_ver %><br>
+    <%= f.text_field :tax_ver %>
+  </div>
+  <div class="field">
+    <%= f.label :rgstr_dtrgstr_dt %><br>
+    <%= f.datetime_select :rgstr_dtrgstr_dt %>
+  </div>
+  <div class="field">
+    <%= f.label :rgstr_usr %><br>
+    <%= f.number_field :rgstr_usr %>
+  </div>
+  <div class="field">
+    <%= f.label :lst_updt_dt %><br>
+    <%= f.datetime_select :lst_updt_dt %>
+  </div>
+  <div class="field">
+    <%= f.label :lst_updt_usr %><br>
+    <%= f.number_field :lst_updt_usr %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

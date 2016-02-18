@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ACCNT_CD: MyString
+  CNTRCT_START_DTE: 2016-02-15 17:39:22
+  CNTRCT_LST_UPD_DATE: 2016-02-15 17:39:22
+  CNTRCT_EXP_DATE: 2016-02-15 17:39:22
+  SALES_REPORT_METHOD: MyString
+  MONTHLY_REPORT_TYPE: MyString
+  PAY_METHOD: MyString
+
+two:
+  ACCNT_CD: MyString
+  CNTRCT_START_DTE: 2016-02-15 17:39:22
+  CNTRCT_LST_UPD_DATE: 2016-02-15 17:39:22
+  CNTRCT_EXP_DATE: 2016-02-15 17:39:22
+  SALES_REPORT_METHOD: MyString
+  MONTHLY_REPORT_TYPE: MyString
+  PAY_METHOD: MyString

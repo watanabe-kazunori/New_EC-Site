@@ -1,0 +1,2 @@
+module WhlSlPricePttrnWhlSlPriceXrefsHelper
+end

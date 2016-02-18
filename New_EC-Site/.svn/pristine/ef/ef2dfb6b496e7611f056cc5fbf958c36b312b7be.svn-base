@@ -1,0 +1,85 @@
+<p id="notice"><%= notice %></p>
+<h1>クーポンマスタ詳細画面</h1>
+<style type="text/css">
+.table1 {
+  border-collapse: collapse;
+}
+.table1 th{
+ text-align:left
+}
+</style>
+<table class="table1" border=1>
+
+  <tr>
+  <th><strong>クーポンID:</strong></th>
+  <td><%= @cpn_m.CPN_ID %></td>
+  </tr>
+
+  <tr>
+  <th><strong>クーポンコード:</strong></th>
+  <td><%= @cpn_m.CPN_CD %></td>
+  </tr>
+
+  <tr>
+  <th><strong>クーポン効力:</strong></th>
+  <td><%= @cpn_m.CPN_ST %></td>
+  </tr>
+
+  <tr>
+  <th><strong>タイトル:</strong></th>
+  <td><%= @cpn_m.CPN_TITLE %></td>
+  </tr>
+
+  <tr>
+  <th><strong>クーポンクラス:</strong></th>
+  <td><%= @cpn_m.CPN_CLS %></td>
+  </tr>
+
+  <tr>
+  <th><strong>クーポン値引タイプ:</strong></th>
+  <td><%= @cpn_m.CPN_DISCNT_TYPE %></td>
+  </tr>
+
+  <tr>
+  <th><strong>ベンダー仕切クーポン:</strong></th>
+  <td><%= @cpn_m.VNDR_CPN %></td>
+  </tr>
+
+  <tr>
+  <th><strong>使用回数制限:</strong></th>
+  <td><%= @cpn_m.USE_LIMIT %></td>
+  </tr>
+
+  <tr>
+  <th><strong>有効期限開始日時:</strong></th>
+  <td><%= @cpn_m.START_DT %></td>
+  </tr>
+
+  <tr>
+  <th><strong>有効期限終了日時:</strong></th>
+  <td><%= @cpn_m.EXPIRATION_DT %></td>
+  </tr>
+
+  <tr>
+  <th><strong>割引額:</strong></th>
+  <td><%= @cpn_m.DSCNT_VALUE %></td>
+  </tr>
+
+  <tr>
+  <th><strong>割引率:</strong></th>
+  <td><%= @cpn_m.DSCNT_RATE %></td>
+  </tr>
+
+  <tr>
+  <th><strong>対象製品条件:</strong></th>
+  <td><%= @cpn_m.TRGT_PRD_CNDTN %></td>
+  </tr>
+
+  <tr>
+  <th><strong>対象除外製品条件:</strong></th>
+  <td><%= @cpn_m.EXCLD_PRD_CNDTN %></td>
+  </tr>
+</table>
+
+<%= link_to '編集', edit_cpn_m_path(@cpn_m) %> |
+<%= link_to '戻る', cpn_ms_path %>

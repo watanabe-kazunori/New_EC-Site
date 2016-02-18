@@ -1,0 +1,2 @@
+module CurrencyMsHelper
+end

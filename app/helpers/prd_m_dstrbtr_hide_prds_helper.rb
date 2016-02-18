@@ -1,0 +1,2 @@
+module PrdMDstrbtrHidePrdsHelper
+end

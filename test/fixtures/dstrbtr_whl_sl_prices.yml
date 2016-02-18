@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  accnt_cd: MyString
+  sku: MyString
+  whl_sl_price_ver: MyString
+  whl_price_rate: 1
+  whl_sl_price: 1
+  pre_cp_whl_sl_prie_rate: 1
+  pre_cp_whl_sl_price: 1
+  cp_price_dscnt_rate: 1
+  cp_price_dscnt: 1
+  start_date: 2016-02-15
+  end_date: 2016-02-15
+  rgstr_dt: 2016-02-15 18:37:27
+  rgstr_usr: 1
+  lst_upd_dt: 2016-02-15 18:37:27
+  lst_upd_usr: 1
+
+two:
+  accnt_cd: MyString
+  sku: MyString
+  whl_sl_price_ver: MyString
+  whl_price_rate: 1
+  whl_sl_price: 1
+  pre_cp_whl_sl_prie_rate: 1
+  pre_cp_whl_sl_price: 1
+  cp_price_dscnt_rate: 1
+  cp_price_dscnt: 1
+  start_date: 2016-02-15
+  end_date: 2016-02-15
+  rgstr_dt: 2016-02-15 18:37:27
+  rgstr_usr: 1
+  lst_upd_dt: 2016-02-15 18:37:27
+  lst_upd_usr: 1

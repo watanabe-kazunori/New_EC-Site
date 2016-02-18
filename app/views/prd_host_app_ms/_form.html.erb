@@ -1,0 +1,29 @@
+<%= form_for(@prd_host_app_m) do |f| %>
+  <% if @prd_host_app_m.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@prd_host_app_m.errors.count, "error") %> prohibited this prd_host_app_m from being saved:</h2>
+
+      <ul>
+      <% @prd_host_app_m.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :APP_CD %><br>
+    <%= f.text_field :APP_CD %>
+  </div>
+  <div class="field">
+    <%= f.label :APP_NAME %><br>
+    <%= f.text_field :APP_NAME %>
+  </div>
+  <div class="field">
+    <%= f.label :APP_VER %><br>
+    <%= f.text_field :APP_VER %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

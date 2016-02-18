@@ -1,0 +1,57 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Fbj Prd Sell Price Ms</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sku</th>
+      <th>Sell price ver</th>
+      <th>Tax ex price</th>
+      <th>Tax in price</th>
+      <th>Pre cp sell price</th>
+      <th>Cp dscnt rate</th>
+      <th>Applctn start dt</th>
+      <th>Applctn end dt</th>
+      <th>Currency cd</th>
+      <th>Exchng rate ver</th>
+      <th>Comm rate ver</th>
+      <th>Tax ver</th>
+      <th>Rgstr dtrgstr dt</th>
+      <th>Rgstr usr</th>
+      <th>Lst updt dt</th>
+      <th>Lst updt usr</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fbj_prd_sell_price_ms.each do |fbj_prd_sell_price_m| %>
+      <tr>
+        <td><%= fbj_prd_sell_price_m.sku %></td>
+        <td><%= fbj_prd_sell_price_m.sell_price_ver %></td>
+        <td><%= fbj_prd_sell_price_m.tax_ex_price %></td>
+        <td><%= fbj_prd_sell_price_m.tax_in_price %></td>
+        <td><%= fbj_prd_sell_price_m.pre_cp_sell_price %></td>
+        <td><%= fbj_prd_sell_price_m.cp_dscnt_rate %></td>
+        <td><%= fbj_prd_sell_price_m.applctn_start_dt %></td>
+        <td><%= fbj_prd_sell_price_m.applctn_end_dt %></td>
+        <td><%= fbj_prd_sell_price_m.currency_cd %></td>
+        <td><%= fbj_prd_sell_price_m.exchng_rate_ver %></td>
+        <td><%= fbj_prd_sell_price_m.comm_rate_ver %></td>
+        <td><%= fbj_prd_sell_price_m.tax_ver %></td>
+        <td><%= fbj_prd_sell_price_m.rgstr_dtrgstr_dt %></td>
+        <td><%= fbj_prd_sell_price_m.rgstr_usr %></td>
+        <td><%= fbj_prd_sell_price_m.lst_updt_dt %></td>
+        <td><%= fbj_prd_sell_price_m.lst_updt_usr %></td>
+        <td><%= link_to 'Show', fbj_prd_sell_price_m %></td>
+        <td><%= link_to 'Edit', edit_fbj_prd_sell_price_m_path(fbj_prd_sell_price_m) %></td>
+        <td><%= link_to 'Destroy', fbj_prd_sell_price_m, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Fbj prd sell price m', new_fbj_prd_sell_price_m_path %>

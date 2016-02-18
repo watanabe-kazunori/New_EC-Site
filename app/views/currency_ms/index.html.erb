@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Currency Ms</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Currency cd</th>
+      <th>Currency sign</th>
+      <th>Currency name</th>
+      <th>Currency name e</th>
+      <th>Currency unit</th>
+      <th>Currency unit e</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @currency_ms.each do |currency_m| %>
+      <tr>
+        <td><%= currency_m.currency_cd %></td>
+        <td><%= currency_m.currency_sign %></td>
+        <td><%= currency_m.currency_name %></td>
+        <td><%= currency_m.currency_name_e %></td>
+        <td><%= currency_m.currency_unit %></td>
+        <td><%= currency_m.currency_unit_e %></td>
+        <td><%= link_to 'Show', currency_m %></td>
+        <td><%= link_to 'Edit', edit_currency_m_path(currency_m) %></td>
+        <td><%= link_to 'Destroy', currency_m, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Currency m', new_currency_m_path %>

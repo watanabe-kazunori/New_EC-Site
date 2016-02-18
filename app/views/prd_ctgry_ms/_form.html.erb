@@ -1,0 +1,25 @@
+<%= form_for(@prd_ctgry_m) do |f| %>
+  <% if @prd_ctgry_m.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@prd_ctgry_m.errors.count, "error") %> prohibited this prd_ctgry_m from being saved:</h2>
+
+      <ul>
+      <% @prd_ctgry_m.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :PRD_CTGRY_CD %><br>
+    <%= f.text_field :PRD_CTGRY_CD %>
+  </div>
+  <div class="field">
+    <%= f.label :PRD_CTGRY_NAME %><br>
+    <%= f.text_field :PRD_CTGRY_NAME %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

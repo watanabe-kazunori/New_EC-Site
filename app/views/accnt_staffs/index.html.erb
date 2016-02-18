@@ -1,0 +1,71 @@
+<h1>取引先マスタ管理</h1>
+
+<table class="accnt_staffs-table" border=1>
+  <thead>
+    <tr>
+      <th>取引先担当者ID</th>
+      <th>取引先コード</th>
+      <th>部署名</th>
+      <th>部署名英語表記</th>
+      <th>氏名</th>
+      <th>氏名英語表記</th>
+      <th>国地域コード (FK)</th>
+      <th>郵便番号</th>
+      <th>都道府県番号 (FK)</th>
+      <th>市区町村</th>
+      <th>町丁目</th>
+      <th>ビル名部屋番号</th>
+      <th>印字用表記</th>
+      <th>印字用英語表記</th>
+      <th>TEL</th>
+      <th>Eメールアドレス</th>
+      <th>FAX番号</th>
+      <th>流通代理店請求先コード</th>
+      <th>流通代理店請求先担当者ID</th>
+      <th>登録日時</th>
+      <th>登録ユーザ</th>
+      <th>最終更新日時</th>
+      <th>最終更新ユーザ</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @accnt_staffs.each do |accnt_staff| %>
+      <tr>
+        <td><%= accnt_staff.staff_id %></td>
+        <td><%= accnt_staff.accnt_cd %></td>
+        <td><%= accnt_staff.dept_name %></td>
+        <td><%= accnt_staff.dept_name_e %></td>
+        <td><%= accnt_staff.emp_name %></td>
+        <td><%= accnt_staff.emp_name_e %></td>
+        <td><%= accnt_staff.country_cd %></td>
+        <td><%= accnt_staff.zip %></td>
+        <td><%= accnt_staff.prefecture_no %></td>
+        <td><%= accnt_staff.city %></td>
+        <td><%= accnt_staff.area %></td>
+        <td><%= accnt_staff.bld %></td>
+        <td><%= accnt_staff.print_address %></td>
+        <td><%= accnt_staff.print_address_e %></td>
+        <td><%= accnt_staff.tel %></td>
+        <td><%= accnt_staff.email %></td>
+        <td><%= accnt_staff.fax %></td>
+        <td><%= accnt_staff.accnt_cd_billing %></td>
+        <td><%= accnt_staff.staff_id_billing %></td>
+        <td><%= accnt_staff.created_at %></td>
+        <td><%= accnt_staff.rgstr_usr %></td>
+        <td><%= accnt_staff.updated_at %></td>
+        <td><%= accnt_staff.lst_upd_usr %></td>
+        <td><%= link_to '表示', accnt_staff %></td>
+        <td><%= link_to '更新', edit_accnt_staff_path(accnt_staff) %></td>
+        <td><%= link_to '削除', accnt_staff, method: :delete, data: { confirm: '削除してよろしいですか？' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to '新しい取引先', new_accnt_staff_path %>
+
+

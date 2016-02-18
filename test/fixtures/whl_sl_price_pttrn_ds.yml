@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ptrn_cd: MyString
+  sku: MyString
+  whl_sl_price_type: MyString
+
+two:
+  ptrn_cd: MyString
+  sku: MyString
+  whl_sl_price_type: MyString

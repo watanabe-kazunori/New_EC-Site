@@ -52,5 +52,4 @@ class AccntsController < ApplicationController
     def accnt_params
       params.require(:accnt).permit(:accnt_cd, :accnt_type_1, :accnt_type_2, :com_ind, :accnt_name, :accnt_name_e, :country_cd, :zip, :prefecture_no, :city, :area, :bld, :print_address, :print_address_e, :tel, :email, :fax, :memo, :rgstr_usr, :last_upd_usr )
     end
-
 end

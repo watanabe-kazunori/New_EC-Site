@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Accnt cd:</strong>
+  <%= @vndr_m.ACCNT_CD %>
+</p>
+
+<p>
+  <strong>Cntrct start dte:</strong>
+  <%= @vndr_m.CNTRCT_START_DTE %>
+</p>
+
+<p>
+  <strong>Cntrct lst upd date:</strong>
+  <%= @vndr_m.CNTRCT_LST_UPD_DATE %>
+</p>
+
+<p>
+  <strong>Cntrct exp date:</strong>
+  <%= @vndr_m.CNTRCT_EXP_DATE %>
+</p>
+
+<p>
+  <strong>Sales report method:</strong>
+  <%= @vndr_m.SALES_REPORT_METHOD %>
+</p>
+
+<p>
+  <strong>Monthly report type:</strong>
+  <%= @vndr_m.MONTHLY_REPORT_TYPE %>
+</p>
+
+<p>
+  <strong>Pay method:</strong>
+  <%= @vndr_m.PAY_METHOD %>
+</p>
+
+<%= link_to 'Edit', edit_vndr_m_path(@vndr_m) %> |
+<%= link_to 'Back', vndr_ms_path %>

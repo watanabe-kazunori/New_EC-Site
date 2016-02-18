@@ -1,0 +1,65 @@
+<%= form_for(@prd_m_prchs_price) do |f| %>
+  <% if @prd_m_prchs_price.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@prd_m_prchs_price.errors.count, "error") %> prohibited this prd_m_prchs_price from being saved:</h2>
+
+      <ul>
+      <% @prd_m_prchs_price.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :sku %><br>
+    <%= f.text_field :sku %>
+  </div>
+  <div class="field">
+    <%= f.label :prchs_price_ver %><br>
+    <%= f.text_field :prchs_price_ver %>
+  </div>
+  <div class="field">
+    <%= f.label :list_price %><br>
+    <%= f.number_field :list_price %>
+  </div>
+  <div class="field">
+    <%= f.label :prchs_price_rate %><br>
+    <%= f.number_field :prchs_price_rate %>
+  </div>
+  <div class="field">
+    <%= f.label :prchs_price %><br>
+    <%= f.number_field :prchs_price %>
+  </div>
+  <div class="field">
+    <%= f.label :start_date %><br>
+    <%= f.date_select :start_date %>
+  </div>
+  <div class="field">
+    <%= f.label :end_date %><br>
+    <%= f.date_select :end_date %>
+  </div>
+  <div class="field">
+    <%= f.label :currency_cd %><br>
+    <%= f.text_field :currency_cd %>
+  </div>
+  <div class="field">
+    <%= f.label :rgstr_dt %><br>
+    <%= f.datetime_select :rgstr_dt %>
+  </div>
+  <div class="field">
+    <%= f.label :rgstr_usr %><br>
+    <%= f.number_field :rgstr_usr %>
+  </div>
+  <div class="field">
+    <%= f.label :lst_upd_dt %><br>
+    <%= f.datetime_select :lst_upd_dt %>
+  </div>
+  <div class="field">
+    <%= f.label :lst_upda_usr %><br>
+    <%= f.number_field :lst_upda_usr %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

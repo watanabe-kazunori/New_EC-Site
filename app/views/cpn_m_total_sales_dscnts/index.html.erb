@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Cpn M Total Sales Dscnts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Cpn</th>
+      <th>Sales range no</th>
+      <th>Sales range min value</th>
+      <th>Dscnt value</th>
+      <th>Dscnt rate</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cpn_m_total_sales_dscnts.each do |cpn_m_total_sales_dscnt| %>
+      <tr>
+        <td><%= cpn_m_total_sales_dscnt.cpn_id %></td>
+        <td><%= cpn_m_total_sales_dscnt.sales_range_no %></td>
+        <td><%= cpn_m_total_sales_dscnt.sales_range_min_value %></td>
+        <td><%= cpn_m_total_sales_dscnt.dscnt_value %></td>
+        <td><%= cpn_m_total_sales_dscnt.dscnt_rate %></td>
+        <td><%= link_to 'Show', cpn_m_total_sales_dscnt %></td>
+        <td><%= link_to 'Edit', edit_cpn_m_total_sales_dscnt_path(cpn_m_total_sales_dscnt) %></td>
+        <td><%= link_to 'Destroy', cpn_m_total_sales_dscnt, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Cpn m total sales dscnt', new_cpn_m_total_sales_dscnt_path %>

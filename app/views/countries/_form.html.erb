@@ -1,0 +1,22 @@
+<%= form_for(@country) do |f| %>
+<table class="country-form" border=1>
+  <div class="field">
+    <%= f.label :国地域コード %><br>
+    <%= f.number_field :country_cd %>
+  </div>
+  <div class="field">
+    <%= f.label :国地域名 %><br>
+    <%= f.text_field :country_name %>
+  </div>
+  <div class="field">
+    <%= f.label :国地域名英語表記 %><br>
+    <%= f.text_field :country_name_e %>
+  </div>
+  <div class="field">
+    <%= f.label :通貨コード %><br>
+    <%= f.text_field :currency_cd %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %> 

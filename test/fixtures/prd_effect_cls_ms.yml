@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  PRD_EFFECT_CLS_CD: MyString
+  PRD_EFFECT_CLS_NAME: MyString
+
+two:
+  PRD_EFFECT_CLS_CD: MyString
+  PRD_EFFECT_CLS_NAME: MyString

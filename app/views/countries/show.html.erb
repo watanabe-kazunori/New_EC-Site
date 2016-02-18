@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+<h1>国地域マスタ詳細画面</h1>
+<table class="country-show" border=1>
+
+  <tr>
+  <th><strong>国地域コード:</strong></th>
+  <td><%= @country.country_cd %></td>
+  </tr>
+
+  <tr>
+  <th><strong>国地域名:</strong></th>
+  <td><%= @country.country_type_1 %></td>
+  </tr>Ï
+
+  <tr>
+  <th><strong>国地域名英語表記:</strong></th>
+  <td><%= @country.country_type_2 %></td>
+  </tr>
+
+  <tr>
+  <th><strong>通貨コード_FK:</strong></th>
+  <td><%= @country.com_ind %></td>
+  </tr>
+
+  <tr>
+  <th><strong>取引先名:</strong></th>
+  <td><%= @country.country_name %></td>
+  </tr>
+
+</table>
+
+<%= link_to '編集', edit_country_path(@country) %> |
+<%= link_to '戻る', countries_path %>

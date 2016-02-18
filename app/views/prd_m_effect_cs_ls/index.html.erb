@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Prd M Effect Csls</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sku</th>
+      <th>Prd effect cls cd</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @prd_m_effect_csls.each do |prd_m_effect_csl| %>
+      <tr>
+        <td><%= prd_m_effect_csl.SKU %></td>
+        <td><%= prd_m_effect_csl.PRD_EFFECT_CLS_CD %></td>
+        <td><%= link_to 'Show', prd_m_effect_csl %></td>
+        <td><%= link_to 'Edit', edit_prd_m_effect_csl_path(prd_m_effect_csl) %></td>
+        <td><%= link_to 'Destroy', prd_m_effect_csl, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Prd m effect csl', new_prd_m_effect_csl_path %>

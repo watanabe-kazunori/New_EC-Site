@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Prd Effect Cls Ms</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Prd effect cls cd</th>
+      <th>Prd effect cls name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @prd_effect_cls_ms.each do |prd_effect_cls_m| %>
+      <tr>
+        <td><%= prd_effect_cls_m.PRD_EFFECT_CLS_CD %></td>
+        <td><%= prd_effect_cls_m.PRD_EFFECT_CLS_NAME %></td>
+        <td><%= link_to 'Show', prd_effect_cls_m %></td>
+        <td><%= link_to 'Edit', edit_prd_effect_cls_m_path(prd_effect_cls_m) %></td>
+        <td><%= link_to 'Destroy', prd_effect_cls_m, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Prd effect cls m', new_prd_effect_cls_m_path %>

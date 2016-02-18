@@ -1,0 +1,2 @@
+module PrdHostAppMsHelper
+end
