@@ -3,9 +3,18 @@
 <style type="text/css">
 .table1 {
   border-collapse: collapse;
+  text-align:center
 }
+.table1 th {
+  background-color: #999999;
+  color:white;
+}
+
 .table1 th{
- text-align:left
+ text-align:center;
+  border:1;
+  background-color: #999999;
+  color:white;
 }
 </style>
 <table class="table1" border=1>
@@ -32,7 +41,10 @@
 
   <tr>
   <th><strong>クーポンクラス:</strong></th>
-  <td><%= @cpn_m.CPN_CLS %></td>
+  <td>
+  <%= Cpn_m.cpn_type[@cpn_m.CPN_CLS] %>
+
+  </td>
   </tr>
 
   <tr>

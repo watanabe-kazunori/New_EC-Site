@@ -18,7 +18,7 @@ class CpnMsControllerTest < ActionController::TestCase
 
   test "should create cpn_m" do
     assert_difference('CpnM.count') do
-      post :create, cpn_m: { CPN_CD: @cpn_m.CPN_CD, CPN_CLS: @cpn_m.CPN_CLS, CPN_DISCNT_TYPE: @cpn_m.CPN_DISCNT_TYPE, CPN_ID: @cpn_m.CPN_ID, CPN_ST: @cpn_m.CPN_ST, CPN_TITLE: @cpn_m.CPN_TITLE, DSCNT_RATE: @cpn_m.DSCNT_RATE, DSCNT_VALUE: @cpn_m.DSCNT_VALUE, EXCLD_PRD_CNDTN: @cpn_m.EXCLD_PRD_CNDTN, EXPIRATION_DT: @cpn_m.EXPIRATION_DT, START_DT: @cpn_m.START_DT, TRGT_PRD_CNDTN: @cpn_m.TRGT_PRD_CNDTN, USE_LIMIT: @cpn_m.USE_LIMIT, VNDR_CPN: @cpn_m.VNDR_CPN }
+      post :create, cpn_m: { con_discnt_type: @cpn_m.con_discnt_type, cpn_cd: @cpn_m.cpn_cd, cpn_cls: @cpn_m.cpn_cls, cpn_id: @cpn_m.cpn_id, cpn_st: @cpn_m.cpn_st, cpn_title: @cpn_m.cpn_title, dscnt_rate: @cpn_m.dscnt_rate, dscnt_value: @cpn_m.dscnt_value, excld_prd_cndtn: @cpn_m.excld_prd_cndtn, expiration_dt: @cpn_m.expiration_dt, memo: @cpn_m.memo, start_dt: @cpn_m.start_dt, trgt_prd_cndtn: @cpn_m.trgt_prd_cndtn, use_limit: @cpn_m.use_limit, vndr_cpn: @cpn_m.vndr_cpn }
     end
 
     assert_redirected_to cpn_m_path(assigns(:cpn_m))
@@ -35,7 +35,7 @@ class CpnMsControllerTest < ActionController::TestCase
   end
 
   test "should update cpn_m" do
-    patch :update, id: @cpn_m, cpn_m: { CPN_CD: @cpn_m.CPN_CD, CPN_CLS: @cpn_m.CPN_CLS, CPN_DISCNT_TYPE: @cpn_m.CPN_DISCNT_TYPE, CPN_ID: @cpn_m.CPN_ID, CPN_ST: @cpn_m.CPN_ST, CPN_TITLE: @cpn_m.CPN_TITLE, DSCNT_RATE: @cpn_m.DSCNT_RATE, DSCNT_VALUE: @cpn_m.DSCNT_VALUE, EXCLD_PRD_CNDTN: @cpn_m.EXCLD_PRD_CNDTN, EXPIRATION_DT: @cpn_m.EXPIRATION_DT, START_DT: @cpn_m.START_DT, TRGT_PRD_CNDTN: @cpn_m.TRGT_PRD_CNDTN, USE_LIMIT: @cpn_m.USE_LIMIT, VNDR_CPN: @cpn_m.VNDR_CPN }
+    patch :update, id: @cpn_m, cpn_m: { con_discnt_type: @cpn_m.con_discnt_type, cpn_cd: @cpn_m.cpn_cd, cpn_cls: @cpn_m.cpn_cls, cpn_id: @cpn_m.cpn_id, cpn_st: @cpn_m.cpn_st, cpn_title: @cpn_m.cpn_title, dscnt_rate: @cpn_m.dscnt_rate, dscnt_value: @cpn_m.dscnt_value, excld_prd_cndtn: @cpn_m.excld_prd_cndtn, expiration_dt: @cpn_m.expiration_dt, memo: @cpn_m.memo, start_dt: @cpn_m.start_dt, trgt_prd_cndtn: @cpn_m.trgt_prd_cndtn, use_limit: @cpn_m.use_limit, vndr_cpn: @cpn_m.vndr_cpn }
     assert_redirected_to cpn_m_path(assigns(:cpn_m))
   end
 

@@ -44,10 +44,15 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-<<<<<<< HEAD
 gem 'coffee-script-source', '1.8.0'
-=======
-gem 'coffee-script-source', '1.8.0'
-
 gem 'activerecord-mysql-unsigned'
->>>>>>> d8f920519bf4981484e2bb17f63a6c51cf72a3bd
+gem 'bootstrap-datetimepicker-rails'
+
+gem 'momentjs-rails', '>= 2.9.0'
+gem 'bootstrap3-datetimepicker-rails', '~> 4.17.37'
+
+gem 'composite_primary_keys'
+gem 'kaminari' 
+gem 'date_validator', '~> 0.7.0'
+gem 'email_validator', '~> 1.4.0'
+gem 'bootstrap_form'

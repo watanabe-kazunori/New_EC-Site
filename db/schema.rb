@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
@@ -12,78 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160209095602) do
+ActiveRecord::Schema.define(version: 20160218115103) do
 
-  create_table "cpn_m_sales_dsts", id: false, force: :cascade do |t|
-    t.integer "CPN_ID",   limit: 4,  null: false
-    t.string  "ACCNT_CD", limit: 30, null: false
+  create_table "accnts", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
-
-  add_index "cpn_m_sales_dsts", ["CPN_ID", "ACCNT_CD"], name: "index_cpn_m_sales_dsts_on_CPN_ID_and_ACCNT_CD", unique: true, using: :btree
-
-  create_table "cpn_m_total_sales_dscnts", id: false, force: :cascade do |t|
-    t.integer "CPN_ID",                limit: 4,                          null: false
-    t.integer "SALES_RANGE_NO",        limit: 4,                          null: false
-    t.decimal "SALES_RANGE_MIN_VALUE",           precision: 20, scale: 2
-    t.decimal "DSCNT_VALUE",                     precision: 20, scale: 2
-    t.decimal "DSCNT_RATEE",                     precision: 5,  scale: 2
-  end
-
-  add_index "cpn_m_total_sales_dscnts", ["CPN_ID", "SALES_RANGE_NO"], name: "index_cpn_m_total_sales_dscnts_on_CPN_ID_and_SALES_RANGE_NO", unique: true, using: :btree
-
-  create_table "cpn_ms", primary_key: "CPN_ID", force: :cascade do |t|
-    t.string   "CPN_CD",          limit: 30,                            null: false
-    t.string   "CPN_ST",          limit: 1,                             null: false
-    t.string   "CPN_TITLE",       limit: 2000,                          null: false
-    t.string   "CPN_CLS",         limit: 1,                             null: false
-    t.string   "CPN_DISCNT_TYPE", limit: 1,                             null: false
-    t.string   "VNDR_CPN",        limit: 1,                             null: false
-    t.integer  "USE_LIMIT",       limit: 1,                             null: false
-    t.datetime "START_DT",                                              null: false
-    t.datetime "EXPIRATION_DT"
-    t.decimal  "DSCNT_VALUE",                  precision: 20, scale: 2
-    t.decimal  "DSCNT_RATE",                   precision: 5,  scale: 2
-    t.string   "TRGT_PRD_CNDTN",  limit: 2000
-    t.string   "EXCLD_PRD_CNDTN", limit: 2000
-  end
-
-  create_table "nfr_media_ms", primary_key: "NFR_MEDIA_MNG_NO", force: :cascade do |t|
-    t.string "SKU",            limit: 30
-    t.string "NFR_MEDIA_STTS", limit: 1,  null: false
-  end
-
-  create_table "nfr_media_rents", primary_key: "NFR_MEDIA_RENT_ID", force: :cascade do |t|
-    t.string "RENT_PRSN",        limit: 30, null: false
-    t.date   "RENT_DT",                     null: false
-    t.date   "RTRN_DT"
-    t.string "ORDER_NO",         limit: 30, null: false
-    t.string "nfr_media_mng_no", limit: 30
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.string   "name",       limit: 255
-    t.string   "email",      limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "update_at"
-    t.datetime "updated_at",             null: false
-  end
-
-end
-=======
-# encoding: UTF-8
-# This file is auto-generated from the current state of the database. Instead
-# of editing this file, please use the migrations feature of Active Record to
-# incrementally modify your database, and then regenerate this schema definition.
-#
-# Note that this schema.rb definition is the authoritative source for your
-# database schema. If you need to create the application database on another
-# system, you should be using db:schema:load, not running all the migrations
-# from scratch. The latter is a flawed and unsustainable approach (the more migrations
-# you'll amass, the slower it'll run and the greater likelihood for issues).
-#
-# It's strongly recommended that you check this file into your version control system.
-
-ActiveRecord::Schema.define(version: 20160216055941) do
 
   create_table "cpn_m_sales_dsts", primary_key: "CPN_ID", force: :cascade do |t|
     t.string "ACCNT_CD", limit: 30, null: false
@@ -113,11 +46,14 @@ ActiveRecord::Schema.define(version: 20160216055941) do
     t.decimal  "DSCNT_RATE",                   precision: 5,  scale: 2
     t.string   "TRGT_PRD_CNDTN",  limit: 2000
     t.string   "EXCLD_PRD_CNDTN", limit: 2000
+    t.string   "MEMO",            limit: 2000
   end
 
-  create_table "cpn_types", force: :cascade do |t|
-    t.string   "type_id",    limit: 255
+  add_index "cpn_ms", ["CPN_ID"], name: "index_cpn_ms_on_CPN_ID", unique: true, using: :btree
+
+  create_table "friends", force: :cascade do |t|
     t.string   "name",       limit: 255
+    t.string   "address",    limit: 255
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
@@ -134,6 +70,13 @@ ActiveRecord::Schema.define(version: 20160216055941) do
     t.datetime "updated_at",                     null: false
   end
 
+  create_table "prd_host_app_ms", primary_key: "APP_CD", force: :cascade do |t|
+    t.string   "APP_NAME",   limit: 50, null: false
+    t.string   "APP_VER",    limit: 50
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+  end
+
   create_table "prd_m_effect_csls", id: false, force: :cascade do |t|
     t.string   "SKU",               limit: 30, null: false
     t.string   "PRD_EFFECT_CLS_CD", limit: 30, null: false
@@ -142,6 +85,35 @@ ActiveRecord::Schema.define(version: 20160216055941) do
   end
 
   add_index "prd_m_effect_csls", ["SKU", "PRD_EFFECT_CLS_CD"], name: "index_prd_m_effect_csls_on_SKU_and_PRD_EFFECT_CLS_CD", unique: true, using: :btree
+
+  create_table "prd_m_host_apps", id: false, force: :cascade do |t|
+    t.string   "SKU",        limit: 30, null: false
+    t.string   "APP_CD",     limit: 30, null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+  end
+
+  add_index "prd_m_host_apps", ["SKU", "APP_CD"], name: "index_prd_m_host_apps_on_SKU_and_APP_CD", unique: true, using: :btree
+
+  create_table "prd_m_whl_sl_prices", id: false, force: :cascade do |t|
+    t.string   "SKU",                     limit: 30,                                      null: false
+    t.string   "WHL_SL_PRICE_TYPE",       limit: 1,                                       null: false
+    t.string   "WHL_SL_PRICE_VER",        limit: 30,                                      null: false
+    t.decimal  "WHL_SL_PRICE_RATE",                  precision: 5,  scale: 2,             null: false
+    t.decimal  "WHL_SL_PRICE",                       precision: 20, scale: 2,             null: false
+    t.decimal  "PRE_CP_WHL_SL_PRIE_RATE",            precision: 5,  scale: 2
+    t.decimal  "PRE_CP_WHL_SL_PRICE",                precision: 20, scale: 2
+    t.decimal  "CP_PRICE_DSCNT_RATE",                precision: 5,  scale: 2
+    t.decimal  "CP_PRICE_DSCNT",                     precision: 20, scale: 2
+    t.datetime "START_DATE",                                                              null: false
+    t.date     "END_DATE"
+    t.datetime "RGSTR_DT"
+    t.integer  "RGSTR_USR",               limit: 4,                           default: 0,              unsigned: true
+    t.datetime "LST_UPD_DT"
+    t.integer  "LST_UPD_USR",             limit: 4,                           default: 0,              unsigned: true
+    t.datetime "created_at",                                                              null: false
+    t.datetime "updated_at",                                                              null: false
+  end
 
   create_table "prd_ms", primary_key: "SKU", force: :cascade do |t|
     t.string   "SKU_DVLPR",                  limit: 30
@@ -202,4 +174,3 @@ ActiveRecord::Schema.define(version: 20160216055941) do
   end
 
 end
->>>>>>> d8f920519bf4981484e2bb17f63a6c51cf72a3bd

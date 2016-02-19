@@ -14,8 +14,8 @@
   <tbody>
     <% @cpn_m_sales_dsts.each do |cpn_m_sales_dst| %>
       <tr>
-        <td><%= cpn_m_sales_dst.cpn_id %></td>
-        <td><%= cpn_m_sales_dst.accnt_cd %></td>
+        <td><%= cpn_m_sales_dst.CPN_ID %></td>
+        <td><%= cpn_m_sales_dst.ACCNT_CD %></td>
         <td><%= link_to 'Show', cpn_m_sales_dst %></td>
         <td><%= link_to 'Edit', edit_cpn_m_sales_dst_path(cpn_m_sales_dst) %></td>
         <td><%= link_to 'Destroy', cpn_m_sales_dst, method: :delete, data: { confirm: 'Are you sure?' } %></td>

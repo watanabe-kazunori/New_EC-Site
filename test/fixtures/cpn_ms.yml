@@ -1,33 +1,35 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  CPN_ID: 1
-  CPN_CD: MyString
-  CPN_ST: MyString
-  CPN_TITLE: 
-  CPN_CLS: 
-  CPN_DISCNT_TYPE: 
-  VNDR_CPN: 
-  USE_LIMIT: 
-  START_DT: 
-  EXPIRATION_DT: 
-  DSCNT_VALUE: 
-  DSCNT_RATE: 
-  TRGT_PRD_CNDTN: 
-  EXCLD_PRD_CNDTN: 
+  cpn_id: 1
+  cpn_cd: MyString
+  cpn_st: 
+  cpn_title: MyString
+  cpn_cls: MyString
+  con_discnt_type: MyString
+  vndr_cpn: MyString
+  use_limit: 1
+  start_dt: 2016-02-18 20:51:02
+  expiration_dt: 2016-02-18 20:51:02
+  dscnt_value: 1
+  dscnt_rate: 1
+  trgt_prd_cndtn: MyString
+  excld_prd_cndtn: MyString
+  memo: MyString
 
 two:
-  CPN_ID: 1
-  CPN_CD: MyString
-  CPN_ST: MyString
-  CPN_TITLE: 
-  CPN_CLS: 
-  CPN_DISCNT_TYPE: 
-  VNDR_CPN: 
-  USE_LIMIT: 
-  START_DT: 
-  EXPIRATION_DT: 
-  DSCNT_VALUE: 
-  DSCNT_RATE: 
-  TRGT_PRD_CNDTN: 
-  EXCLD_PRD_CNDTN: 
+  cpn_id: 1
+  cpn_cd: MyString
+  cpn_st: 
+  cpn_title: MyString
+  cpn_cls: MyString
+  con_discnt_type: MyString
+  vndr_cpn: MyString
+  use_limit: 1
+  start_dt: 2016-02-18 20:51:02
+  expiration_dt: 2016-02-18 20:51:02
+  dscnt_value: 1
+  dscnt_rate: 1
+  trgt_prd_cndtn: MyString
+  excld_prd_cndtn: MyString
+  memo: MyString

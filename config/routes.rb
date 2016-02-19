@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :cpn_ms
+  resources :friends
   resources :cpn_types
   resources :dstrbtr_whl_sl_prices
   resources :prd_m_set_contents
@@ -28,11 +30,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-<<<<<<< HEAD
   root 'cpn_ms#index'
-=======
-  # root 'welcome#index'
->>>>>>> d8f920519bf4981484e2bb17f63a6c51cf72a3bd
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

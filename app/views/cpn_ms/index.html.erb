@@ -1,32 +1,185 @@
 <p id="notice"><%= notice %></p>
-
-<h1>クーポンマスタ管理画面</h1>
-
+<html>
 <style type="text/css">
+.area {
+  /* boxレイアウトの指定 */
+  display: box;
+  display: -webkit-box;
+  display: -moz-box;
+
+  /* 配置したボックスを左右中央寄せにする */
+  box-pack: center;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+
+}
+.item {
+
+  text-align: center;
+  color: #444;
+  margin: 10px;
+}
+
+
+ul{
+  margin-left:0;
+  padding-left:0;
+  list-style-type:none;
+  width:1120px;
+  border-top:1px solid #cccccc;
+  border-bottom:1px solid #cccccc;
+  border-left:1px solid #cccccc;
+}
+
+a.navi{
+  display:block;
+  padding-top:5px;
+  padding-bottom:5px;
+  border-right:1px solid #cccccc;
+  text-decoration:none;
+  background-color:black;
+  color:white;
+  width:159px;
+  text-align:center;
+}
+
+a.navi1{
+  display:block;
+  padding-top:5px;
+  padding-bottom:5px;
+  border-right:1px solid #cccccc;
+  text-align:left;
+  text-decoration:none;
+  background-color:black;
+  color:white;
+  width:159px;
+}
+a.navi1:hover{
+  background-color:#0066CC;
+}
+
+p.navi{
+  display:block;
+  padding-top:5px;
+  padding-bottom:5px;
+  border-right:1px solid #cccccc;
+  text-align:left;
+  background-color:black;
+  color:white;
+  width:159px;
+}
+
+li{
+  float:left;
+  width:160px;
+}
+
 .table1 {
   border-collapse: collapse;
+  text-align:center
 }
 .table1 th {
-  background-color: #cccccc;
+  background-color: #999999;
+  color:white;
 }
+
+.table1 th{
+  text-align:center;
+  border:1;
+  background-color: #999999;
+  color:white;
+}
+
 </style>
+<div>
+<ul>
+  <li><a class="navi">製品管理システム</a></li>
+  <li><a class="navi1">製品情報管理</a></li>
+  <li><a class="navi1">製品カテゴリ管理</a></li>
+  <li><a class="navi1">製品パッケージ在庫管理</a></li> 
+  <li><a class="navi1">価格データ管理</a></li>
+  <li><a class="navi1">クーポン管理</a></li>
+  <li><a class="navi1">流通代理店向け価格表管理</a></li>
+</ul>
+</div>
+</br>
+<h1>クーポン　検索</h1>
+<table class="table1"  border=1 align=center>
+  <div class="field">
+  <tr>
+	<th><strong>クーポン種別</th>
+    <td>　　　　　　　　△　</td>
+  </tr>
+  </div>
+    <div class="filed">
+  <tr>
+	<th><strong>有効・無効</th>
+    <td></td>
+  </tr>
+  </div>
+    <div class="field">
+  <tr>
+	<th><strong>クーポンコード</th>
+    <td></td>
+  </tr>
+  </div>
+    <div class="field">
+  <tr>
+	<th><strong>クーポンタイトル</th>
+    <td></td>
+  </tr>
+  </div>    <div class="field">
+  <tr>
+	<th><strong>クーポン対象製品SKU条件</th>
+    <td></td>
+  </tr>
+  </div>
+
+</table>
 <table class="table1" border=1>
+
+<h2 align=center><%= submit_tag("検索") %></h2>
+
+</table>
+
+<h1>クーポン　結果一覧</h1>
+<table class="table1" border=1>
+<div class="area">
+<div class="item"><%= submit_tag("エクスポート") %></div>
+
+<div class="item"><%= submit_tag("一括更新") %></div>
+
+<div class="item"><%= submit_tag("一括削除") %></div>
+</div>
+</table>
+<!--
+<div style=width:100%;height:100%;overflow-y:scroll;margin:0;padding:8">
+-->
+</br>
+<table class="table1" border=1 align=center>
   <thead>
     <tr>
-      <th nowrap>クーポンID</th>
+      <th nowrap>□</th>
+      <th nowrap>　　　　</th>
       <th nowrap>クーポンコード</th>
-      <th nowrap>クーポン効力</th>
-      <th nowrap>タイトル</th>
-      <th nowrap>クーポンクラス</th>
+      <th nowrap>クーポンタイトル</th>
+      <th nowrap>有効・無効</th>
+      <th nowrap>クーポンタイプ</th>      
+      <!-- クーポンクラスからクーポンタイプに変更しました。 -->
+      <th nowrap>有効期限開始日時</th>
+      <th nowrap>有効期限終了日時</th>
+      
+<!--      
+      <th nowrap>クーポンID</th>
+
       <th nowrap>クーポン値引タイプ</th>
       <th nowrap>ベンダー仕切クーポン</th>
       <th nowrap>使用回数制限</th>
-      <th nowrap>有効期限開始日時</th>
-      <th nowrap>有効期限終了日時</th>
       <th nowrap>割引額</th>
       <th nowrap>割引率</th>
       <th nowrap>対象製品条件</th>
       <th nowrap>対象除外製品条件</th>
+-->
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -34,28 +187,36 @@
   <tbody>
     <% @cpn_ms.each do |cpn_m| %>
       <tr>
-        <td><%= cpn_m.CPN_ID %></td>
+        <td>□</td>
+        <td><%= link_to '［詳細］', cpn_m %></td>
         <td><%= cpn_m.CPN_CD %></td>
-        <td><%= cpn_m.CPN_ST %></td>
         <td><%= cpn_m.CPN_TITLE %></td>
+        <td><%= cpn_m.CPN_ST %></td>
         <td><%= cpn_m.CPN_CLS %></td>
+        <td><%= cpn_m.START_DT %></td>
+        <td><%= cpn_m.EXPIRATION_DT %></td>
+<!--
+        <td><%= cpn_m.CPN_ID %></td>
+      
+
+
         <td><%= cpn_m.CPN_DISCNT_TYPE %></td>
         <td><%= cpn_m.VNDR_CPN %></td>
         <td><%= cpn_m.USE_LIMIT %></td>
-        <td><%= cpn_m.START_DT %></td>
-        <td><%= cpn_m.EXPIRATION_DT %></td>
         <td><%= cpn_m.DSCNT_VALUE %></td>
         <td><%= cpn_m.DSCNT_RATE %></td>
         <td><%= cpn_m.TRGT_PRD_CNDTN %></td>
         <td><%= cpn_m.EXCLD_PRD_CNDTN %></td>
-        <td><%= link_to 'Show', cpn_m %></td>
+-->
         <td><%= link_to 'Edit', edit_cpn_m_path(cpn_m) %></td>
         <td><%= link_to 'Destroy', cpn_m, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
       </tr>
     <% end %>
   </tbody>
 </table>
-
+<!-- </div>
+-->
 <br>
 
 <%= link_to 'New Cpn m', new_cpn_m_path %>
