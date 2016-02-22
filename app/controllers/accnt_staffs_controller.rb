@@ -10,6 +10,7 @@ class AccntStaffsController < ApplicationController
 
   def new
     @accnt_staff = AccntStaff.new
+    @countries = Country.all
   end
 
   def edit

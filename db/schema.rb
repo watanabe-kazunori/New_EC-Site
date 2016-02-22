@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160218025451) do
+ActiveRecord::Schema.define(version: 20160219055530) do
 
   create_table "accnt_staffs", force: :cascade do |t|
     t.string   "dept_name",        limit: 50
@@ -108,6 +108,16 @@ ActiveRecord::Schema.define(version: 20160218025451) do
     t.string   "name",       limit: 255
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
+  end
+
+  create_table "cstmr_ms", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "dstrbtr_ms", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "prd_ctgry_ms", primary_key: "PRD_CTGRY_CD", force: :cascade do |t|

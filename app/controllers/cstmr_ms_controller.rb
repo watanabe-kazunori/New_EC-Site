@@ -1,0 +1,3 @@
+class CstmrMsController < ApplicationController
+
+end

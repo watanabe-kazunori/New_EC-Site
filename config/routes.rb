@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   resources :accnt_staffs
   resources :accnts
   resources :countries
-  resources :cpn_ms
   resources :prefectures
+  resources :friends
   resources :cpn_types
   resources :dstrbtr_whl_sl_prices
   resources :prd_m_set_contents
@@ -36,7 +36,6 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
 
   root 'cpn_ms#index'
-
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

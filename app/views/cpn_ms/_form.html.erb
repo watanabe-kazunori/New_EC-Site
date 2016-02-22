@@ -25,10 +25,11 @@
   <tr>
     <th><strong><%= f.label :クーポン種別 %></strong></th>
     <td>
-<select name="example">
-<option value="1">値引額</option>
-<option value="2">値引率</option>
-</select>
+    
+ <select name="CPN_DISCNT_TYPE" id="CPN_DISCNT_TYPE">
+   <option value="1">割引額</option>
+   <option value="2">割引率</option>
+ </select>
 
     </td>
   </tr>
@@ -38,13 +39,16 @@
   <div class="field">
   <tr>
 	<th><strong> <%= f.label :ID %></strong></th>
-    <td><%= f.number_field :CPN_ID %></td>
+    <td><%= f.number_field :cpn_id %></td>
   </tr>
 
   <div class="field">
   <tr>
     <th><strong><%= f.label :有効・無効フラグ %></strong></th>
-    <td><%= f.check_box :CPN_ST %></td>
+    <td>
+    <%= f.radio_button :cpn_st, 1 %> <%= f.label :rate_1, "有効" %>
+    <%= f.radio_button :cpn_st, 2 %> <%= f.label :rate_2, "無効" %>
+    </td>
   </tr>
   </div>
 
@@ -52,7 +56,7 @@
   <div class="field">
   <tr>
     <th><strong><%= f.label :クーポンコード %></strong></th>
-    <td><%= f.text_field :CPN_CD %></td>
+    <td><%= f.text_field :cpn_cd %></td>
   </tr>
   </div>
   
@@ -60,7 +64,7 @@
   <div class="field">
   <tr>
     <th><strong><%= f.label :クーポンタイトル %></strong></th>
-    <td><%= f.text_field :CPN_TITLE %></td>
+    <td><%= f.text_field :cpn_title %></td>
   </tr>
   </div>
 
@@ -68,22 +72,31 @@
   <tr>  
     <th><strong>有効期限</strong></th>
     <th><strong><%= f.label :開始日時 %></strong></th>
-    <td><%= f.datetime_select :START_DT %></td>
+    <td><%= f.date_field :start_dt %>
+    <%= f.select :start_dt, (0..23).to_a.map { |v| "%02d" % v }, {}, class: 'form-control' %> :
+    <%= f.select :start_dt, (0..59).to_a.map { |v| "%02d" % v }, {}, class: 'form-control' %>
+    </td>
     <td>～</td>
-    <th><strong><%= f.label :終了日時 %></strong></th>
-    
-    <td><%= f.text_field :EXPIRATION_DT, :class => 'datepicker' %></td>
-  </tr>
   </div>
-
+      
+  <div class="form-group form-inline">
+    <th><strong><%= f.label :終了日時 %></strong></th>
+    <td>
+    <%= f.date_field :EXPIRATION_DT %>
+    <%= f.select :EXPIRATION_DT, (0..23).to_a.map { |v| "%02d" % v }, {}, class: 'form-control' %> :
+    <%= f.select :EXPIRATION_DT, (0..59).to_a.map { |v| "%02d" % v }, {}, class: 'form-control' %>
+    </td>
+  </div>
   
   <div class="field">
   <tr>
     <th><strong><%= f.label :対象 %></strong></th>
-    <td><select name="example">
-    <option value="1">単価</option>
-    <option value="2">総額</option>
-    </select></td>
+    <td>
+  <select name="cpn_m[CPN_CLS]" id="CPN_CLS">
+   <option value="1">単価割引</option>
+   <option value="2">総額割引</option>
+  </select>
+  </td>
   </tr>
   </div>
 
@@ -94,14 +107,6 @@
 
   </tr>
 
-  <tr>  
-    <th><stong>　　　</strong></th>
-    <td><%= f.text_field :TRGT_PRD_CNDTN %></td>
-  </tr>  
-  <tr>  
-    <th><stong>　　　</strong></th>
-    <td><%= f.text_field :TRGT_PRD_CNDTN %></td>
-  </tr>  
 
   </div>
 
@@ -111,23 +116,15 @@
     <td><%= f.text_field :EXCLD_PRD_CNDTN %></td>
   </tr>
 
-  <tr>  
-    <th><stong>　　　</strong></th>
-    <td><%= f.text_field :TRGT_PRD_CNDTN %></td>
-  </tr>  
-  <tr>  
-    <th><stong>　　　</strong></th>
-    <td><%= f.text_field :TRGT_PRD_CNDTN %></td>
-  </tr>  
-
   </div>
 
   <div class="field">
   <tr>
     <th><strong><%= f.label :ベンダー仕切割引 %></strong></th>
     <td>
-      <input type="radio" value="0" name"VNDR_CPN" id="0"><label for="0">無</label>
-      <input type="radio" value="1" name"VNDR_CPN" id="1"><label for="1">有</label>
+    <%= f.radio_button :VNDR_CPN, 1 %> <%= f.label :rate_1, "有" %>
+    <%= f.radio_button :VNDR_CPN, 2 %> <%= f.label :rate_2, "無" %>
+    
     </td>
  <!--   <td><%= f.text_field :VNDR_CPN %></td> -->
   </tr>
@@ -139,25 +136,71 @@
     <td><%= f.text_field :USE_LIMIT %></td>
   </tr>
   </div>
+
+  </div>
+  <div class="field">
+  <tr>
+    <th><strong><%= f.label :販売先コード %></strong></th>
+    <td><%= f.text_field :MEMO %></td>
+  </tr>
+  </div>
+
+  </div>
+  <div class="field">
+  <tr>
+    <th><strong><%= f.label :メモ欄 %></strong></th>
+    <td><%= f.text_field :MEMO %></td>
+  </tr>
+  </div>
+
   
 </table>
 
-
 <style type="text/css">
-.table2 {
-  float:left;
+
+.table2 th{
+ text-align:center;
   border:1;
   background-color: #999999;
   color:white;
 }
 </style>
 <table class="table2">
+<h3>単価割引設定　　　　　　　　　注文総額割引設定</h3>
+    <tr>
+    <th><strong><%= f.label :割引額・率 %></strong></th>
+    <th><strong><%= f.label :注文総額価格帯 %></strong></th>
+    <th><strong><%= f.label :割引額・率 %></strong></th>
+    </tr>
 
-<<<<<<< HEAD
+    <tr>
+    <td><%= f.text_field :MEMO %></td>
+    <td><%= f.text_field :MEMO %></td>
+    <td><%= f.text_field :MEMO %></td>
+    </tr>
+
+    <tr>
+    <td>　　　　　　　　　</td>
+    <td><%= f.text_field :MEMO %></td>
+    <td><%= f.text_field :MEMO %></td>
+    </tr>
+
+    <tr>
+    <td>　　　　　　　　　</td>
+    <td><%= f.text_field :MEMO %></td>
+    <td><%= f.text_field :MEMO %></td>
+    </tr>
+
+    <tr>
+    <td>　　　　　　　　　</td>
+    <td><%= f.text_field :MEMO %></td>
+    <td><%= f.text_field :MEMO %></td>
+    </tr>
+
   <div class="actions">
     <%= f.submit("登録する") %>
-  </div>
-=======
+  </div> 
+
     <h3>単価割引設定        　　　　　　　　　注文総額割引設定</h3>
   <tr>  
    <div class="field">
@@ -170,8 +213,14 @@
       <td><%= f.text_field :DSCNT_VALUE %></td>
   </div>
   </tr>
-</table>
+  </table>
 
->>>>>>> 45dd7fab04ed029ef342d481881a6f3582fe1f90
+  <% end %>  
 
-<% end %> 
+  <div class="actions">
+
+    <%= f.submit %>
+  </div>
+
+
+<% end %>
