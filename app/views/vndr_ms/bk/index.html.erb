@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Vndr Ms</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Accnt cd</th>
+      <th>Cntrct start dte</th>
+      <th>Cntrct lst upd date</th>
+      <th>Cntrct exp date</th>
+      <th>Sales report method</th>
+      <th>Monthly report type</th>
+      <th>Pay method</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @vndr_ms.each do |vndr_m| %>
+      <tr>
+        <td><%= vndr_m.ACCNT_CD %></td>
+        <td><%= vndr_m.CNTRCT_START_DTE %></td>
+        <td><%= vndr_m.CNTRCT_LST_UPD_DATE %></td>
+        <td><%= vndr_m.CNTRCT_EXP_DATE %></td>
+        <td><%= vndr_m.SALES_REPORT_METHOD %></td>
+        <td><%= vndr_m.MONTHLY_REPORT_TYPE %></td>
+        <td><%= vndr_m.PAY_METHOD %></td>
+        <td><%= link_to 'Show', vndr_m %></td>
+        <td><%= link_to 'Edit', edit_vndr_m_path(vndr_m) %></td>
+        <td><%= link_to 'Destroy', vndr_m, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Vndr m', new_vndr_m_path %>

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Cpn M Sales Cntcts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Cpn</th>
+      <th>Accnt cd sales cntct</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cpn_m_sales_cntcts.each do |cpn_m_sales_cntct| %>
+      <tr>
+        <td><%= cpn_m_sales_cntct.cpn_id %></td>
+        <td><%= cpn_m_sales_cntct.accnt_cd_sales_cntct %></td>
+        <td><%= link_to 'Show', cpn_m_sales_cntct %></td>
+        <td><%= link_to 'Edit', edit_cpn_m_sales_cntct_path(cpn_m_sales_cntct) %></td>
+        <td><%= link_to 'Destroy', cpn_m_sales_cntct, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Cpn m sales cntct', new_cpn_m_sales_cntct_path %>

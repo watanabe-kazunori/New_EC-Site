@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :serial_ms
+  resources :cpn_m_sales_cntcts
   resources :cpn_ms
   resources :friends
   resources :cpn_types

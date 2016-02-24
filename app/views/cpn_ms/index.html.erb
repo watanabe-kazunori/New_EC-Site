@@ -91,55 +91,65 @@ li{
 }
 
 </style>
-<div>
-<ul>
-  <li><a class="navi">製品管理システム</a></li>
-  <li><a class="navi1">製品情報管理</a></li>
-  <li><a class="navi1">製品カテゴリ管理</a></li>
-  <li><a class="navi1">製品パッケージ在庫管理</a></li> 
-  <li><a class="navi1">価格データ管理</a></li>
-  <li><a class="navi1">クーポン管理</a></li>
-  <li><a class="navi1">流通代理店向け価格表管理</a></li>
-</ul>
-</div>
+<%= render 'layouts/header' %>
 </br>
 <h1>クーポン　検索</h1>
 <table class="table1"  border=1 align=center>
   <div class="field">
   <tr>
-	<th><strong>クーポン種別</th>
-    <td>　　　　　　　　△　</td>
+  <th><strong>クーポン種別</th>
+    <td>
+    <select name="cpn_m[cpn_discnt_type]" id="cpn_discnt_type" >
+      <option value =""></option>
+      <option value="1">割引額 </option>
+      <option value="2">割引率</option>
+    </select>
+    </td>
   </tr>
   </div>
+  
     <div class="filed">
   <tr>
-	<th><strong>有効・無効</th>
+    <th><strong>有効・無効フラグ</strong></th>
+    <td>
+    <select name="cpn_m[cpn_st]" id="cpn_st">
+      <option value =""></option>
+      <option value="1">有効</option>
+      <option value="0">無効</option>
+    </select>    
+    </td>
+  </tr>
+  </div>
     <td></td>
   </tr>
   </div>
+
     <div class="field">
   <tr>
 	<th><strong>クーポンコード</th>
-    <td></td>
+    <td><%= text_field 'cpn_m','cpn_cd' %></td>
   </tr>
   </div>
+
     <div class="field">
   <tr>
 	<th><strong>クーポンタイトル</th>
-    <td></td>
+     <td><%= text_field 'cpn_m','cpn_title' %></td>
   </tr>
   </div>    <div class="field">
   <tr>
 	<th><strong>クーポン対象製品SKU条件</th>
-    <td></td>
+      <td><%= text_field 'cpn_m','trgt_prd_cndtn' %></td>
   </tr>
   </div>
 
 </table>
 <table class="table1" border=1>
 
-<h2 align=center><%= submit_tag("検索") %></h2>
 
+<h2 align=center>
+<INPUT type="Button" value="検索" name="searchbtn" style="WIDTH: 100px; HEIGHT: 20px">
+</h2>
 </table>
 
 <h1>クーポン　結果一覧</h1>
@@ -159,7 +169,9 @@ li{
 <table class="table1" border=1 align=center>
   <thead>
     <tr>
-      <th nowrap>□</th>
+
+
+      <th nowrap><input type="checkbox" id="all" />全て</th>
       <th nowrap>　　　　</th>
       <th nowrap>クーポンコード</th>
       <th nowrap>クーポンタイトル</th>
@@ -187,29 +199,31 @@ li{
   <tbody>
     <% @cpn_ms.each do |cpn_m| %>
       <tr>
-        <td>□</td>
+
+        <td><input type="checkbox"/></td>
+
         <td><%= link_to '［詳細］', cpn_m %></td>
-        <td><%= cpn_m.CPN_CD %></td>
-        <td><%= cpn_m.CPN_TITLE %></td>
-        <td><%= cpn_m.CPN_ST %></td>
-        <td><%= cpn_m.CPN_CLS %></td>
-        <td><%= cpn_m.START_DT %></td>
-        <td><%= cpn_m.EXPIRATION_DT %></td>
+        <td><%= cpn_m.cpn_cd %></td>
+        <td><%= cpn_m.cpn_title %></td>
+        <td><%= cpn_m.cpn_st %></td>
+        <td><%= cpn_m.cpn_cls %></td>
+        <td><%= cpn_m.start_dt %></td>
+        <td><%= cpn_m.expiration_dt %></td>
 <!--
-        <td><%= cpn_m.CPN_ID %></td>
+        <td><%= cpn_m.cpn_id %></td>
       
 
 
-        <td><%= cpn_m.CPN_DISCNT_TYPE %></td>
-        <td><%= cpn_m.VNDR_CPN %></td>
-        <td><%= cpn_m.USE_LIMIT %></td>
-        <td><%= cpn_m.DSCNT_VALUE %></td>
-        <td><%= cpn_m.DSCNT_RATE %></td>
-        <td><%= cpn_m.TRGT_PRD_CNDTN %></td>
-        <td><%= cpn_m.EXCLD_PRD_CNDTN %></td>
+        <td><%= cpn_m.cpn_discnt_type %></td>
+        <td><%= cpn_m.vndr_cpn %></td>
+        <td><%= cpn_m.use_limit %></td>
+        <td><%= cpn_m.dscnt_value %></td>
+        <td><%= cpn_m.dscnt_rate %></td>
+        <td><%= cpn_m.trgt_prd_cndtn %></td>
+        <td><%= cpn_m.excld_prd_cndtn %></td>
 -->
-        <td><%= link_to 'Edit', edit_cpn_m_path(cpn_m) %></td>
-        <td><%= link_to 'Destroy', cpn_m, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '編集', edit_cpn_m_path(cpn_m) %></td>
+        <td><%= link_to '削除', cpn_m, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 
       </tr>
     <% end %>
@@ -219,4 +233,4 @@ li{
 -->
 <br>
 
-<%= link_to 'New Cpn m', new_cpn_m_path %>
+<%= link_to '登録', new_cpn_m_path %>

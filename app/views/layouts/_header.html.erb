@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<style type="text/css">
+	
+	a.navi{
+		display:block;
+		padding-top:5px;
+		padding-bottom:5px;
+		border-right:1px solid #cccccc;
+		text-decoration:none;
+		background-color:black;
+		color:white;
+		width:159px;
+		text-align:center;
+	}
+	ul{
+		margin-left:0;
+		padding-left:0;
+		list-style-type:none;
+		width:1380px;
+		border-top:1px solid #cccccc;
+		border-bottom:1px solid #cccccc;
+		border-left:1px solid #cccccc;
+	}
+	a.navi1{
+		display:block;
+		padding-top:5px;
+		padding-bottom:5px;
+		border-right:1px solid #cccccc;
+		text-align:left;
+		text-decoration:none;
+		background-color:black;
+		color:white;
+		width:200px;
+	}
+	a.navi1:hover{
+		background-color:#0066CC;
+
+}
+
+	p.navi{
+		display:block;
+		padding-top:5px;
+		padding-bottom:5px;
+		border-right:1px solid #cccccc;
+		text-align:left;
+		background-color:black;
+		color:white;
+		max-width: 150px;
+	}
+	li{
+		float:left;
+	}
+
+</style>
+
+<html>
+
+<div>
+<ul>
+  <li><a class="navi">製品管理システム</a></li>
+  <li><a class="navi1">製品情報管理</a></li>
+  <li><a class="navi1">製品カテゴリ管理</a></li>
+  <li><a class="navi1">製品パッケージ在庫管理</a></li> 
+  <li><a class="navi1">価格データ管理</a></li>
+  <li><a class="navi1">クーポン管理</a></li>
+  <li><a class="navi1">流通代理店向け価格表管理</a></li>
+</ul>
+</div>
+
+
+<%= yield %>
+
+</body>
+</html>

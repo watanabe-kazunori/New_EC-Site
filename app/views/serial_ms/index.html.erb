@@ -1,0 +1,81 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Serial Ms</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Serial</th>
+      <th>Sku</th>
+      <th>Serial type</th>
+      <th>Cnsgnmnt serial st</th>
+      <th>Cnsgnmnt serial store date</th>
+      <th>Po no</th>
+      <th>Os type</th>
+      <th>Serial no 1</th>
+      <th>Serial no 2</th>
+      <th>Serial no 3</th>
+      <th>Web up serial</th>
+      <th>Dl file name</th>
+      <th>Dl pass cd</th>
+      <th>Nfr f</th>
+      <th>Nfr rsn</th>
+      <th>Accnt cd cstmr</th>
+      <th>So no</th>
+      <th>So item no</th>
+      <th>Sku serial assngd</th>
+      <th>Use type</th>
+      <th>Upgrd serial f</th>
+      <th>Upgrd pre prd serial no</th>
+      <th>Accnt cd sales cntnt</th>
+      <th>Dlvry no</th>
+      <th>Rgstr dt</th>
+      <th>Rgstr usr</th>
+      <th>Lst upd dt</th>
+      <th>Lst upd usr</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @serial_ms.each do |serial_m| %>
+      <tr>
+        <td><%= serial_m.serial_id %></td>
+        <td><%= serial_m.sku %></td>
+        <td><%= serial_m.serial_type %></td>
+        <td><%= serial_m.cnsgnmnt_serial_st %></td>
+        <td><%= serial_m.cnsgnmnt_serial_store_date %></td>
+        <td><%= serial_m.po_no %></td>
+        <td><%= serial_m.os_type %></td>
+        <td><%= serial_m.serial_no_1 %></td>
+        <td><%= serial_m.serial_no_2 %></td>
+        <td><%= serial_m.serial_no_3 %></td>
+        <td><%= serial_m.web_up_serial %></td>
+        <td><%= serial_m.dl_file_name %></td>
+        <td><%= serial_m.dl_pass_cd %></td>
+        <td><%= serial_m.nfr_f %></td>
+        <td><%= serial_m.nfr_rsn %></td>
+        <td><%= serial_m.accnt_cd_cstmr %></td>
+        <td><%= serial_m.so_no %></td>
+        <td><%= serial_m.so_item_no %></td>
+        <td><%= serial_m.sku_serial_assngd %></td>
+        <td><%= serial_m.use_type %></td>
+        <td><%= serial_m.upgrd_serial_f %></td>
+        <td><%= serial_m.upgrd_pre_prd_serial_no %></td>
+        <td><%= serial_m.accnt_cd_sales_cntnt %></td>
+        <td><%= serial_m.dlvry_no %></td>
+        <td><%= serial_m.rgstr_dt %></td>
+        <td><%= serial_m.rgstr_usr %></td>
+        <td><%= serial_m.lst_upd_dt %></td>
+        <td><%= serial_m.lst_upd_usr %></td>
+        <td><%= link_to 'Show', serial_m %></td>
+        <td><%= link_to 'Edit', edit_serial_m_path(serial_m) %></td>
+        <td><%= link_to 'Destroy', serial_m, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Serial m', new_serial_m_path %>

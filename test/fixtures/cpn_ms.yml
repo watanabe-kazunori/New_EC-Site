@@ -9,8 +9,8 @@ one:
   con_discnt_type: MyString
   vndr_cpn: MyString
   use_limit: 1
-  start_dt: 2016-02-18 20:51:02
-  expiration_dt: 2016-02-18 20:51:02
+  start_dt: 2016-02-19 12:53:29
+  expiration_dt: 2016-02-19 12:53:29
   dscnt_value: 1
   dscnt_rate: 1
   trgt_prd_cndtn: MyString
@@ -26,8 +26,8 @@ two:
   con_discnt_type: MyString
   vndr_cpn: MyString
   use_limit: 1
-  start_dt: 2016-02-18 20:51:02
-  expiration_dt: 2016-02-18 20:51:02
+  start_dt: 2016-02-19 12:53:29
+  expiration_dt: 2016-02-19 12:53:29
   dscnt_value: 1
   dscnt_rate: 1
   trgt_prd_cndtn: MyString

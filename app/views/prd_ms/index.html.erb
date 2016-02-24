@@ -1,113 +1,220 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Prd Ms</h1>
+<style type="text/css">
+th{
+  text-align: right;
+}
+table.center{
+    margin: 0 auto;
+ }
+div.center{
+    margin: 0 auto;
 
-<table>
-  <thead>
-    <tr>
-      <th>Sku</th>
-      <th>Sku dvlpr</th>
-      <th>Sku source prd</th>
-      <th>Prd name</th>
-      <th>Prd name</th>
-      <th>Prd name subtitle</th>
-      <th>Prd dvlpr org name</th>
-      <th>Prd ctgry cd</th>
-      <th>Prd type</th>
-      <th>Sp prd type</th>
-      <th>Set prd f</th>
-      <th>Set prd type</th>
-      <th>Sale f</th>
-      <th>Rcvng plcnt prd f</th>
-      <th>Dlvry ld time</th>
-      <th>Db prd dlvry mthd</th>
-      <th>Lic type</th>
-      <th>Lic from</th>
-      <th>Lic to</th>
-      <th>Dstrbtr disp f</th>
-      <th>Prd st</th>
-      <th>Acdmc lic f</th>
-      <th>Prd dlvry mthd</th>
-      <th>Prd desc</th>
-      <th>Prd note</th>
-      <th>Prd notice</th>
-      <th>Prd other info</th>
-      <th>Url prd</th>
-      <th>Url install guid</th>
-      <th>Url lic auth guid</th>
-      <th>Url installer</th>
-      <th>Url prd image</th>
-      <th>Url dl</th>
-      <th>Memo</th>
-      <th>Subscription lic term</th>
-      <th>Subscription lic term unit</th>
-      <th>Mnt lic term</th>
-      <th>Mnt lic term unit</th>
-      <th>Accnt cd dvlpr</th>
-      <th>Accnt cd vndr</th>
-      <th>Rgstr dt</th>
-      <th>Rgstr usr</th>
-      <th>Lst upd dt</th>
-      <th>Lst upd usr</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+    width: 100px;
+}
 
-  <tbody>
-    <% @prd_ms.each do |prd_m| %>
-      <tr>
-        <td><%= prd_m.SKU %></td>
-        <td><%= prd_m.SKU_DVLPR %></td>
-        <td><%= prd_m.SKU_SOURCE_PRD %></td>
-        <td><%= prd_m.PRD_NAME %></td>
-        <td><%= prd_m.PRD_NAME %></td>
-        <td><%= prd_m.PRD_NAME_SUBTITLE %></td>
-        <td><%= prd_m.PRD_DVLPR_ORG_NAME %></td>
-        <td><%= prd_m.PRD_CTGRY_CD %></td>
-        <td><%= prd_m.PRD_TYPE %></td>
-        <td><%= prd_m.SP_PRD_TYPE %></td>
-        <td><%= prd_m.SET_PRD_F %></td>
-        <td><%= prd_m.SET_PRD_TYPE %></td>
-        <td><%= prd_m.SALE_F %></td>
-        <td><%= prd_m.RCVNG_PLCNT_PRD_F %></td>
-        <td><%= prd_m.DLVRY_LD_TIME %></td>
-        <td><%= prd_m.DB_PRD_DLVRY_MTHD %></td>
-        <td><%= prd_m.LIC_TYPE %></td>
-        <td><%= prd_m.LIC_FROM %></td>
-        <td><%= prd_m.LIC_TO %></td>
-        <td><%= prd_m.DSTRBTR_DISP_F %></td>
-        <td><%= prd_m.PRD_ST %></td>
-        <td><%= prd_m.ACDMC_LIC_F %></td>
-        <td><%= prd_m.PRD_DLVRY_MTHD %></td>
-        <td><%= prd_m.PRD_DESC %></td>
-        <td><%= prd_m.PRD_NOTE %></td>
-        <td><%= prd_m.PRD_NOTICE %></td>
-        <td><%= prd_m.PRD_OTHER_INFO %></td>
-        <td><%= prd_m.URL_PRD %></td>
-        <td><%= prd_m.URL_INSTALL_GUID %></td>
-        <td><%= prd_m.URL_LIC_AUTH_GUID %></td>
-        <td><%= prd_m.URL_INSTALLER %></td>
-        <td><%= prd_m.URL_PRD_IMAGE %></td>
-        <td><%= prd_m.URL_DL %></td>
-        <td><%= prd_m.MEMO %></td>
-        <td><%= prd_m.SUBSCRIPTION_LIC_TERM %></td>
-        <td><%= prd_m.SUBSCRIPTION_LIC_TERM_UNIT %></td>
-        <td><%= prd_m.MNT_LIC_TERM %></td>
-        <td><%= prd_m.MNT_LIC_TERM_UNIT %></td>
-        <td><%= prd_m.ACCNT_CD_DVLPR %></td>
-        <td><%= prd_m.ACCNT_CD_VNDR %></td>
-        <td><%= prd_m.RGSTR_DT %></td>
-        <td><%= prd_m.RGSTR_USR %></td>
-        <td><%= prd_m.LST_UPD_DT %></td>
-        <td><%= prd_m.LST_UPD_USR %></td>
-        <td><%= link_to 'Show', prd_m %></td>
-        <td><%= link_to 'Edit', edit_prd_m_path(prd_m) %></td>
-        <td><%= link_to 'Destroy', prd_m, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  .border{
+    margin: 0 auto;
+    border-bottom:solid;
+    border-width:1px;
+    width:auto;
+  }
+    .p-area{
+    width: 1120px;
+
+  }
+</style>
+<div class="p-area" style="margin:0 auto;">
+
+<%= render 'layouts/header' %>
 
 <br>
+ <h1>製品情報　検索</h1>
+</br>
+  <div>
+    <table class="center">
+      <tr>
+          <th>製品番号（SKU）</th>
+          <td><%= text_field 'prd_m','SKU' %></td>
+      </tr>
 
-<%= link_to 'New Prd m', new_prd_m_path %>
+      <tr>
+          <th>製品名</th>
+          <td><%= text_field 'prd_m','SKU' %></td>
+      </tr>
+      
+      <tr>
+          <th>カテゴリ</th>
+          <td>
+           <select name = "example">
+           <option value ="">不明</option>
+           </select>
+          </td>
+      </tr>
+
+      <tr>
+          <th>製品タイプ</th>
+          <td>          
+            <select name = "example">
+              <option value =""></option>
+              <option value ="1">通常版</option>
+            <option value ="2">アップグレード版</option>
+              <option value ="3">限定版</option>
+              <option value ="4">その他</option> 
+            </select>
+          </td>
+      </tr>
+
+      <tr>
+          <th>製品配布方法</th>
+          <td>
+            <%= check_box 'prd_m','SKU' %>パッケージ
+            <%= check_box 'prd_m','SKU' %>ダウンロードA
+            <%= check_box 'prd_m','SKU' %>ダウンロードB
+            </td>   
+      </tr>
+
+      <tr>
+          <th>対応ホストアプリ</th>
+          <td>
+            <select name = "example">
+            <option value ="">不明</option>
+            </select>
+          </td>
+      </tr>
+
+      <tr>
+          <th>販売可</th>
+          <td><%= check_box 'prd_m','SKU' %></td>
+      </tr>
+
+          <tr>
+          <th>ベンダー名</th>
+          <td>
+            <select name = "example">
+            <option value ="">不明</option>
+            </select>
+          </td>
+      </tr>
+
+          <tr>
+          <th>代理店に表示</th>
+          <td><%= check_box 'prd_m','SKU' %></td>
+      </tr>
+
+          <tr>
+          <th>Promo</th>
+          <td><%= check_box 'prd_m','SKU' %></td>
+      </tr>
+    </table></br>
+        <div align="center"><%= submit_tag("検索") %></div>
+  </div>
+
+    <div class="border"></br></br></div>
+
+
+  <style type="text/css">
+    .area-left{
+      float: left;
+    }
+    .button{
+      float:left;
+    margin-left:20px;
+    }
+    .table1 {
+      border-collapse: collapse;
+       text-align:center;
+    }
+    .table1 th {
+      background-color: #999999;
+      color:white;
+    }
+
+.table1 th{
+  text-align:center;
+  border:1;
+  background-color: #999999;
+  color:white;
+}
+    
+  </style>
+    <h1>製品情報　結果一覧</h1>
+
+    <table class="center" frame="border" style="width: 190px">
+      <tr>
+        <th style="text-align: left">検索該当件数</th>
+        <td align="right"><%= label 'prd_m','122345' %>件</td>
+      </tr>  
+    </table>
+    <br>
+    <table class="center">
+      <tr>
+        <td class="button"　><%= submit_tag("エクスポート") %></td>
+        <td class="button"><%= submit_tag("一括変更") %></td>
+        <td class="button"><%= submit_tag("一括削除") %></td>    
+      </tr>
+    </table>
+    
+    <br>
+  <table class="table1" border=1 align=center>
+    <thead>
+      <tr>  
+        <th nowrap><%= check_box 'prd_m','chkflg' %></th>
+        <th nowrap style="width: 20px">　　　　</th>
+        <th nowrap>製品番号（SKU）</th>
+        <th nowrap>製品名</th>
+        <th nowrap>製品タイプ</th>
+        <th nowrap>ベンダー名</th>
+        <th nowrap>価格</th>
+        <th nowrap>販売可</th>
+        <th nowrap>代理店に表示</th>
+        <th nowrap>Promo</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+          
+      <tr>
+<% @prd_ms.each do |prd_m| %>
+        <td><%= check_box 'prd_m','chkflg' %></td>
+        <td><%= link_to '［詳細］', prd_m %></td>
+        <td><%= prd_m.SKU %></td>
+        <td><%= prd_m.SKU %></td>
+        <td><%= prd_m.SKU %></td>
+        <td><%= prd_m.SKU %></td>
+        <td><%= prd_m.SKU %></td>
+        <td><%= prd_m.SKU %></td>
+        <td><%= prd_m.SKU %></td>
+        <td><%= prd_m.SKU %></td>
+        <td><%= link_to 'Edit', edit_prd_m_path(prd_m) %></td>
+        <td><%= link_to 'Destroy', prd_m, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% end %>
+
+      </tr>
+     
+
+</table>   
+    <table class="center">
+      <tr>
+         <td class="button"><%= submit_tag("前へ") %></td>
+        <td class="button"　><%= submit_tag("エクスポート") %></td>
+        <td class="button"><%= submit_tag("一括変更") %></td>
+        <td class="button"><%= submit_tag("一括削除") %></td>
+        <td class="button"><%= submit_tag("次へ") %></td>      
+      </tr>
+    </table>
+</div>
+
+    <table class="center">
+      <tr>
+       
+      </tr>
+    </table>
+<br>
+<br>
+<br>
+
+<%= link_to '製品情報登録画面へ', new_prd_m_path %>
+<!--
+<%= link_to '一括画面へ', new_prd_m_path %>
+
+-->

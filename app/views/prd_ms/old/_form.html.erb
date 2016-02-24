@@ -1,0 +1,645 @@
+<%= form_for(@prd_m) do |f| %>
+  <% if @prd_m.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@prd_m.errors.count, "error") %> prohibited this prd_m from being saved:</h2>
+
+      <ul>
+      <% @prd_m.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<style type="text/css">
+	.border{
+		border-bottom:solid;
+		border-width:1px;
+		width:1000px;
+	}
+	.button{
+		float:left;
+		margin-left:20px;
+	}
+	.button-r{
+		float:right;
+		margin-right:20px;
+	}
+
+	.top-left{
+		height:300px;
+		width:300px;
+		float:left;
+		margin-left:5px;
+	}
+
+	.top-left-big{
+		float:left;
+
+	}
+	.top-right-big{
+		float:left;
+	<!--
+	background-color:grey;
+	-->
+		height:auto;
+		width:320px;
+		margin-left:5px;
+	}
+	.clear{
+		clear:both;
+	}
+
+	.top-part{
+		float:left;
+	}
+	th{
+		width: 135px;
+		text-align: left
+	}
+	select{
+		max-width:175px
+	}
+	.p-area{
+		width: 1000px;
+
+	}
+	.p-left{
+		float: left;
+		width: 330;
+		margin-left:5px;
+	}	
+	.th-width{
+		width:210px;
+	}
+	}
+</style>
+<div>
+	<h2>製品情報（詳細/登録/複製/変更/削除）</h2>
+		<div class="button"><%= submit_tag("登録") %></div>
+		<div class="button"><%= submit_tag("複製登録") %></div>
+		<div class="button"><%= submit_tag("変更") %></div>
+		<div class="button"><%= submit_tag("削除") %></div>
+
+	<div class="border"></br></br></div>
+</div>
+
+<!-- 基本情報　-->
+
+<div>
+<div class="p-area">
+	<h3>【基本情報】</h3>
+	<div class="top-left-big">
+		<div class="top-left">
+		
+			<table >
+				<tr>
+					<th>
+						<%= f.label :サムネイル画像 %>	
+					</th>
+				</tr>
+			</table>
+			<div>
+				
+				<img src="<%= asset_path "images/.jpg" %>" alt="" width="300" height="130" />
+			</div>
+				<div class="top-part" >
+					<%= f.text_field :URL_PRD_IMAGE, :size=>"25" %>
+		    		<%= f.submit :ファイル選択 %>
+				</div>
+					
+					
+		
+			<table>	
+				<tr>
+					<th>
+						<%= f.label :在庫有無 %>
+					</th>
+		    		<td>
+		    			<%= f.text_field :SKU, :value => "カラム不明" %>
+		    		</td>
+				</tr>
+				
+				<tr>
+					<th>
+						<%= f.label :在庫なしメッセージ %>	
+					</th>
+					<td>
+						<%= f.text_field :SKU, :value => "カラム不明" %>	
+					</td>
+				</tr>	
+				
+				<tr>
+					<th>
+						<%= f.label :ベンダー名 %>	
+					</th>
+					<td>
+						<select name = "example">
+			       	<option value ="">不明</option>
+					</select>	
+					</td>
+				</tr>	
+			
+				<tr>
+					<th>
+						<%= f.label :仕入元国属性 %>
+					</th>
+					<td>
+						<select name = "example">
+			       			<option value ="">不明</option>
+						</select>	
+					</td>
+				</tr>
+			    <tr>
+			      	<th>
+				      	<%= f.label :Promo %>	
+			      	</th>
+			      	<td> 
+			      		<!--
+						チェック項目　不明
+			      		-->
+						<%= f.check_box :SKU %>		      		
+			      	</td>
+			    </tr> 	
+			</table>
+		</div>
+
+		<div class="p-left">
+			<table>
+				<tr>
+					<th><%= f.label :製品番号（SKU） %></th>
+			    	<td><%= f.text_field :SKU %></td>
+				</tr>
+				<tr>
+					<th><%= f.label :販売製品名 %></th>
+			    	<td><%= f.text_field :SKU %></td>
+			    </tr>
+			    <tr>	
+			    	<th style="width: 140px"><%= f.label :販売製品名（読み方） %></th>
+			    	<td><%= f.text_field :SKU %></td>
+			   	</tr>
+			   	<tr>
+			   		<th><%= f.label :開発元SKU %></th>
+			    	<td><%= f.text_field :SKU %></td>
+				</tr>
+				<tr>
+			   		<th><%= f.label :開発元製品名 %></th>
+			    	<td><%= f.text_field :SKU %></td>
+				</tr>
+				<tr>
+			   		<th><%= f.label :製品説明 %></th>
+			    	<td ><%= f.text_field :SKU  %></td>
+				</tr>	
+				<tr>
+			   		<th><%= f.label :製品注意書き %></th>
+			    	<td><%= f.text_field :SKU %></td>
+				</tr>
+				<tr>
+			   		<th><%= f.label :製品ステータス %></th>
+			    	<td>
+			    	<select name = "example">
+			    	<option value =""></option>
+			    	<option value ="1">有効製品</option>
+			    	<option value ="2">旧製品</option> 
+			    	<option value ="3">無効製品</option>   	
+			    	<option value ="4">削除製品</option>  
+			    	</select>  	
+			    	</td>
+				</tr>
+				<tr>
+			   		<th><%= f.label :ハイブリッド用本製品 %></th>
+			    	<td><%= f.check_box :SKU %></td>
+				</tr>
+				<tr>
+			   		<th><%= f.label :製品配布方法 %></th>
+			    	<td>
+			    	<select name = "example">
+			    	<option value =""></option>
+			    	<option value ="1">パッケージ配布</option>
+			    	<option value ="2">ダウンロード配布A／受発注シリアル納品</option> 
+			    	<option value ="3">ダウンロード配布B／シリアル即納</option>   	
+			 		</select>
+			    	</td>
+				</tr>
+				<tr>
+			   		<th><%= f.label :DB本製品配布方法 %></th>
+			    	<td><%= f.text_field :SKU %></td>
+				</tr>
+			</table>
+		</div>
+		<div class="clear">
+		</div>
+
+		<div class="p-left">
+			<table>
+				<tr>
+					<th><%= f.label :他の必要な情報 %></th>
+			    	<td><%= f.text_area :SKU,rows:5,cols:"65px" %></td>
+				</tr>
+				<tr>
+					<th><%= f.label :重要なお知らせ %></th>
+			    	<td><%= f.text_area :SKU,rows:5,cols:"65px" %></td>
+				</tr>
+		</table>
+		</div>	
+	</div>
+
+
+	<div class="top-right-big">
+		<table>
+			<tr>
+		   		<th><%= f.label :製品情報登録日時 %></th>
+		    	<td><%= f.text_field :SKU %></td>
+			</tr>
+			<tr>
+		   		<th><%= f.label :製品情報更新日時 %></th>
+		    	<td><%= f.text_field :SKU %></td>
+			</tr>
+			<tr>
+		   		<th><%= f.label :製品カテゴリ %></th>
+		    	<td>
+		       	<select name = "example">
+		       	<option value =""></option>
+		    	</select>
+		    	</td>
+		    </tr>
+		   	<tr>
+		   		<th><%= f.label :対応ホストアプリ %></th>
+		    	<td>
+		       	<select name = "example">
+		       	<option value =""></option>
+		    	</select>
+		    	</td>
+			</tr>
+			<tr>
+			<th></th>
+		    	<td>
+		       	<select name = "example">
+		       	<option value =""></option>
+		    	</select>
+		    	</td>
+			</tr>
+			<tr>
+				<th></th>
+		    	<td>
+		       	<select name = "example">
+		       	<option value =""></option>
+		    	</select>
+		    	</td>
+			</tr>
+			<tr>
+				<th></th>
+				<td>
+		       	<select name = "example">
+		       	<option value =""></option>
+		    	</select>
+		    	</td>
+			</tr>
+			<tr>
+				<th></th>
+		    	<td>
+		       	<select name = "example">
+		       	<option value =""></option>
+		    	</select>
+		    	</td>
+		    </tr>
+			<tr>
+		   		<th><%= f.label :効果・分類1 %></th>
+		    	<td>
+		       	<select name = "example">
+		       	<option value =""></option>
+		    	</select>
+		    	</td>
+			</tr>
+			<tr>
+		   		<th><%= f.label :効果・分類2 %></th>
+		    	<td>
+		       	<select name = "example">
+		       	<option value =""></option>
+		    	</select>
+		    	</td>
+			</tr>
+			<tr>
+		   		<th><%= f.label :効果・分類3 %></th>
+		    	<td> 
+		    	<select name = "example">
+		       	<option value =""></option>
+		    	<option value =""></option> 
+		    	<option value =""></option>
+		    	</select>
+		    	</td>
+			</tr>
+			<tr>
+		   		<th><%= f.label :製品タイプ %></th>
+		    	<td>
+		    	<select name = "example">
+		       	<option value =""></option>
+		       	<option value ="1">通常版</option>
+		    	<option value ="2">アップグレード版</option>
+		       	<option value ="3">限定版</option>
+		       	<option value ="4">その他</option> 
+		    	</select>
+		    	</td>
+			</tr>
+			<tr>
+		   		<th><%= f.label :Set %></th>
+		    	<td>
+		    	<!-- 
+		    	Value不明
+		    	-->
+		    	<input type="radio" name ="SET_PRD_TYPE" id="0" value="0" checked><label for="0">ベンダー(バリュー不明)</label>
+				<input type="radio" name ="SET_PRD_TYPE" id="1"  value="1"><label for="1">FBJ（バリュー不明）</label>
+		    	</td>
+			</tr>
+			<tr>
+		   		<th><%= f.label :Academic %></th>
+		    	<td><%= f.text_field :SKU %></td>
+			</tr>
+			<tr>
+		   		<th><%= f.label :Floating %></th>
+			   	<td ><%= f.check_box :SKU %></td>
+			</tr>
+			<tr>
+		   		<th><%= f.label :VLP %></th>
+		    	<td><%= f.check_box :SKU %></td>
+			</tr>
+			<tr>
+		   		<th><%= f.label :ライセンス数範囲（From） %></th>
+		    	<td><%= f.text_field :SKU,size:5 %>～<%= f.text_field :SKU,size:5 %></td>
+			</tr>
+			<tr>
+		   		<th><%= f.label :サブスクリプション %></th>
+		    	<td><%= f.check_box :SKU %></td>
+			</tr>
+			<tr>
+		   		<th><%= f.label :サブスクリプション期間 %></th>
+		    	<td><%= f.text_field :SKU %></td>
+			</tr>
+			<tr>
+		   		<th><%= f.label :サブスクリプション期間単位 %></th>
+		    	<td>
+		    	<select name = "example">
+		       	<option value =""></option>
+		       	<option value ="1">日</option>
+		    	<option value ="2">週</option>
+		       	<option value ="3">月</option>
+		    	<option value ="4">年</option>
+		    	</select>
+		    	</td>
+			</tr>
+	    </table>
+	</div>
+</div>
+</div>
+<div class="clear">
+</div>
+<!-- キャンペーン　-->
+<div class="p-area">
+	<div class="p-left">
+		<h3>【キャンペーン】</h3>
+		<table>
+			<tr>
+		   		<th><%= f.label :キャンペーン %></th>
+		    	<td><%= f.check_box :SKU %></td>
+			</tr>
+			<tr>
+		   		<th><%= f.label :キャンペーン開始日時 %></th>
+		    	<td><%= f.text_field :SKU %></td>
+			</tr>
+			<tr>
+		   		<th><%= f.label :キャンペーン終了日時 %></th>
+		    	<td><%= f.text_field :SKU %></td>
+			</tr>
+		</table>
+	</div>
+</div>
+<div class="clear">
+</div>
+
+<!-- 価格　-->
+<div class="p-area">
+	<div class="p-left">
+		<h3>【価格】</h3>
+		<table>
+			<tr>
+		   		<th><%= f.label :定価 %></th>
+		    	<td><%= f.text_field :SKU,size:7 %></td>
+			</tr>
+			<tr>
+		   		<th><%= f.label :'仕入率（%）' %></th>
+		    	<td><%= f.text_field :SKU,size:5  %>％</td>
+			</tr>
+			<tr>
+		   		<th><%= f.label :仕入価格 %></th>
+		    	<td><%= f.text_field :SKU,size:7 %></td>
+			</tr>
+			<tr>
+		   		<th><%= f.label :手数料（率）FBJ %></th>
+		    	<td><%= f.text_field :SKU,size:5  %>％</td>
+			</tr>
+		</table>
+	</div>
+
+	<div class="p-left">
+		<h3>【販売価格】</h3>
+		<table>
+			<tr>
+		   		<th ><%= f.label :'FBJ販売価格(税込/日本円)' %></th>
+		    	<td><%= f.text_field :SKU,size:7 %></td>
+			</tr>
+			<tr>
+		   		<th class="th-width"><%= f.label :'FBJ海外製品販売価格（税抜)' %></th>
+		    	<td><%= f.text_field :SKU,size:7  %></td>
+			</tr>
+			<tr>
+		   		<th><%= f.label :'FBJ国内製品販売価格（税抜）' %></th>
+			   	<td><%= f.text_field :SKU,size:7 %></td>
+			</tr>
+			<tr>
+		   		<th><%= f.label :'パッケージ運賃・調整費用' %></th>
+		    	<td><%= f.text_field :SKU,size:7  %></td>
+			</tr>
+		</table>
+	</div>
+	<div class="p-left">
+		<h3></h3></br></br>
+		<table>
+			<tr>
+		   		<th><%= f.label :キャンペーン元製品価格 %></th>
+		    	<td><%= f.text_field :SKU,size:7 %></td>
+			</tr>
+			<tr>
+		  		<th style="width: 170px"><%= f.label :'キャンペーン割引率(%)' %></th>
+		    	<td><%= f.text_field :SKU,size:5  %>％</td>
+			</tr>
+			<tr>
+				<th></br><%= submit_tag("価格変更履歴") %></th>
+			</tr>
+		</table>
+	</div>
+</div>
+<div class="clear">
+</div>
+
+<!-- 代理店価格　-->
+<div class="p-area">
+	<div class="p-left">
+		<h3>【代理店価格】</h3>
+		<table>
+			<tr>
+		   		<th><%= f.label :代理店に表示 %></th>
+		    	<td><%= f.check_box :SKU %></td>
+			</tr>
+			<tr>
+		   		<th><%= f.label :代理店初回取引仕切り価格 %></th>
+		    	<td><%= f.text_field :SKU %></td>
+			</tr>
+			<tr>
+		   		<th style="width:210px";><%= f.label :'代理店初回取引仕切り率(%)' %></th>
+		    	<td><%= f.text_field :SKU,size:5  %>％</td>
+			</tr>
+			<tr>
+		   		<th><%= f.label :代理店一般仕切り価格 %></th>
+		    	<td><%= f.text_field :SKU %></td>
+			</tr>
+			<tr>
+		   		<th><%= f.label :'代理店一般仕切り率(%)' %></th>
+		    	<td><%= f.text_field :SKU,size:5  %>％</td>
+			</tr>
+			<tr>
+		   		<th><%= f.label :代理店特別仕切り価格 %></th>
+		    	<td><%= f.text_field :SKU %></td>
+			</tr>
+			<tr>
+		   		<th><%= f.label :'代理店特別仕切り率(%)' %></th>
+		    	<td><%= f.text_field :SKU,size:5  %>％</td>
+			</tr>
+		</table>
+	</div>
+
+	<div class="p-left">
+		<h3></h3></br></br>
+		<table>
+			<tr>
+		   		<th ><%= f.label :'キャンペーン仕切り	割引率(%)' %></th>
+		    	<td><%= f.text_field :SKU,size:5  %>％</td>
+			</tr>
+			<tr>
+		   		<th><%= f.label :'キャンペーン仕切り	割引額' %></th>
+		    	<td><%= f.text_field :SKU %></td>
+			</tr>
+			<tr>
+		   		<th><%= f.label :'キャンペーン元製品	仕切り価格' %></th>
+		    	<td><%= f.text_field :SKU %></td>
+			</tr>
+			<tr>
+		   		<th style="width:210px";><%= f.label :'キャンペーン元製品	仕切り率(%)' %></th>
+		    	<td><%= f.text_field :SKU,size:5  %>％</td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+		   		<th style="width:210px";><%= f.label :'特別仕切価格適用代理店' %></th>
+		    	<td>		       	
+			    	<select name = "example">
+			       	<option value =""></option>
+			    	</select>
+			    </td>
+		    	<td>
+			       	<select name = "example">
+			       	<option value =""></option>
+			    	</select>
+			    </td>
+			</tr>
+			<tr>
+		   		<th></th>
+		    	<td>
+		    	   	<select name = "example">
+			       	<option value =""></option>
+			    	</select>
+		    	</td>
+		    	<td>
+		    	   	<select name = "example">
+			       	<option value =""></option>
+			    	</select>
+			    </td>
+			</tr>
+			<tr>
+		   		<th></th>
+		    	<td>
+		    	   	<select name = "example">
+			       	<option value =""></option>
+			    	</select>
+		    	</td>
+		    	<td>
+		    	   	<select name = "example">
+			       	<option value =""></option>
+			    	</select>
+			    </td>
+			</tr>
+		</table>
+			
+		</table>
+	</div>
+</div>
+<div class="clear">
+</div>
+
+<!-- URL　-->
+<div class="p-area">
+	<div class="p-left">
+		<h3>【URL】</h3>
+		<table >
+			<tr>
+				<th><%= f.label :製品情報ページ %></th>
+		    	<td><%= f.text_field :SKU %></td>
+			</tr>
+			<tr>
+		   		<th style="width:170px";><%= f.label :インストール方法ページ %></th>
+		    	<td><%= f.text_field :SKU %></td>
+			</tr>
+			<tr>
+		   		<th><%= f.label :インストーラーページ %></th>
+		    	<td><%= f.text_field :SKU %></td>
+			</tr>
+			<tr>
+		   		<th><%= f.label :ダウンロードリンクURL %></th>
+		    	<td><%= f.text_field :SKU %></td>
+			</tr>
+		</table>
+	</div>
+
+<!-- メモ欄　-->
+<div class="p-area">
+	<div class="p-left">
+		<table>
+			<tr>
+				<td>メモ欄</td>
+			<tr>
+			</tr>
+		    	<td><%= f.text_area :SKU,rows:5,cols:"130px" %></td>
+			</tr>
+	
+		</table>
+	</div>
+</div>
+<div class="clear">
+</div>
+
+<div>
+	<div class="border"></br></div>
+<!-- floatを右にしたため削除、変更、複製登録、登録の順 -->
+</br>
+		<div class="button-r"><%= submit_tag("削除") %></div>
+		<div class="button-r"><%= submit_tag("変更") %></div>
+		<div class="button-r"><%= submit_tag("複製登録") %></div>
+		<div class="button-r"><%= submit_tag("登録") %></div>
+	
+</div>
+
+
+
+<div class="clear">
+</br><% end %>
+</div>
+  
+

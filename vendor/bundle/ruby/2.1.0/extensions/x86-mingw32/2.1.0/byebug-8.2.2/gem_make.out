@@ -1,0 +1,21 @@
+current directory: C:/temp/New_EC-Site-master/vendor/bundle/ruby/2.1.0/gems/byebug-8.2.2/ext/byebug
+C:/RailsInstaller/Ruby2.1.0/bin/ruby.exe -r ./siteconf20160220-31144-jhepam.rb extconf.rb 
+creating Makefile
+
+current directory: C:/temp/New_EC-Site-master/vendor/bundle/ruby/2.1.0/gems/byebug-8.2.2/ext/byebug
+make "DESTDIR=" clean
+
+current directory: C:/temp/New_EC-Site-master/vendor/bundle/ruby/2.1.0/gems/byebug-8.2.2/ext/byebug
+make "DESTDIR="
+generating byebug-i386-mingw32.def
+compiling breakpoint.c
+compiling byebug.c
+compiling context.c
+compiling locker.c
+compiling threads.c
+linking shared-object byebug/byebug.so
+
+current directory: C:/temp/New_EC-Site-master/vendor/bundle/ruby/2.1.0/gems/byebug-8.2.2/ext/byebug
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 byebug.so ./.gem.20160220-31144-1robqmx/byebug
+installing default byebug libraries

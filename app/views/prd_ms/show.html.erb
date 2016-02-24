@@ -1,224 +1,519 @@
-<p id="notice"><%= notice %></p>
+<%= form_for(@prd_m) do |f| %>
+  <% if @prd_m.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@prd_m.errors.count, "error") %> prohibited this prd_m from being saved:</h2>
 
-<p>
-  <strong>Sku:</strong>
-  <%= @prd_m.SKU %>
-</p>
+      <ul>
+      <% @prd_m.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<style type="text/css">
+  .border{
+    border-bottom:solid;
+    border-width:1px;
+    width:1000px;
+  }
+  .button{
+    float:left;
+    margin-left:20px;
+  }
+  .button-r{
+    float:right;
+    margin-right:20px;
+  }
 
-<p>
-  <strong>Sku dvlpr:</strong>
-  <%= @prd_m.SKU_DVLPR %>
-</p>
+  .top-left{
+    height:300px;
+    width:300px;
+    float:left;
+    margin-left:5px;
+  }
 
-<p>
-  <strong>Sku source prd:</strong>
-  <%= @prd_m.SKU_SOURCE_PRD %>
-</p>
+  .top-left-big{
+    float:left;
 
-<p>
-  <strong>Prd name:</strong>
-  <%= @prd_m.PRD_NAME %>
-</p>
+  }
+  .top-right-big{
+    float:left;
+  <!--
+  background-color:grey;
+  -->
+    height:auto;
+    width:320px;
+    margin-left:5px;
+  }
+  .clear{
+    clear:both;
+  }
 
-<p>
-  <strong>Prd name:</strong>
-  <%= @prd_m.PRD_NAME %>
-</p>
+  .top-part{
+    float:left;
+  }
+  th{
+    width: 135px;
+    text-align: left
+  }
+  select{
+    max-width:175px
+  }
+  .p-area{
+    width: 1000px;
 
-<p>
-  <strong>Prd name subtitle:</strong>
-  <%= @prd_m.PRD_NAME_SUBTITLE %>
-</p>
+  }
+  .p-left{
+    float: left;
+    width: 330;
+    margin-left:5px;
+  } 
+  .th-width{
+    width:210px;
+  }
+</style>
+<div class="p-area">
 
-<p>
-  <strong>Prd dvlpr org name:</strong>
-  <%= @prd_m.PRD_DVLPR_ORG_NAME %>
-</p>
+<%= render 'layouts/header' %>
+</div>
 
-<p>
-  <strong>Prd ctgry cd:</strong>
-  <%= @prd_m.PRD_CTGRY_CD %>
-</p>
 
-<p>
-  <strong>Prd type:</strong>
-  <%= @prd_m.PRD_TYPE %>
-</p>
+<!-- 基本情報　-->
 
-<p>
-  <strong>Sp prd type:</strong>
-  <%= @prd_m.SP_PRD_TYPE %>
-</p>
+<div>
+<div class="p-area">
+<br>
+<h1>製品情報　詳細画面</h1>
+  <h3>【基本情報】</h3>
+  <div class="top-left-big">
+    <div class="top-left">
+    
+      <table >
+        <tr>
+          <th>
+            <%= f.label :サムネイル画像 %> 
+          </th>
+        </tr>
+      </table>
+      <div>
+        
+        <img src="<%= asset_path "images/.jpg" %>" alt="" width="300" height="130" />
+      </div>
+        <div class="top-part" >
+          <%= f.label :'仮データ' %>
+        </div>
+          
+          <br>
+    
+      <table> 
+        <tr>
+          <th>
+            <%= f.label :在庫有無 %>
+          </th>
+            <td>
+              <%= f.label :'仮データ' %>
+            </td>
+        </tr>
+        
+        <tr>
+          <th>
+            <%= f.label :在庫なしメッセージ %> 
+          </th>
+          <td>
+            <%= f.label :'仮データ' %>  
+          </td>
+        </tr> 
+        
+        <tr>
+          <th>
+            <%= f.label :ベンダー名 %> 
+          </th>
+          <td><%= f.label :'仮データ' %></tr> 
+      
+        <tr>
+          <th>
+            <%= f.label :仕入元国属性 %>
+          </th>
+          <td><%= f.label :'仮データ' %></td>
+        </tr>
+          <tr>
+              <th>
+                <%= f.label :Promo %> 
+              </th>
+              <td><%= f.label :'仮データ' %></td>
+          </tr>   
+      </table>
+    </div>
 
-<p>
-  <strong>Set prd f:</strong>
-  <%= @prd_m.SET_PRD_F %>
-</p>
+    <div class="p-left">
+      <table>
+        <tr>
+          <th><%= f.label :製品番号（SKU） %></th>
+            <td><%= f.label :'仮データ' %></td>
+        </tr>
+        <tr>
+          <th><%= f.label :販売製品名 %></th>
+            <td><%= f.label :'仮データ' %></td>
+          </tr>
+          <tr>  
+            <th style="width: 140px"><%= f.label :販売製品名（読み方） %></th>
+            <td><%= f.label :'仮データ' %></td>
+          </tr>
+          <tr>
+            <th><%= f.label :開発元SKU %></th>
+            <td><%= f.label :'仮データ' %></td>
+        </tr>
+        <tr>
+            <th><%= f.label :開発元製品名 %></th>
+            <td><%= f.label :'仮データ' %></td>
+        </tr>
+        <tr>
+            <th><%= f.label :製品説明 %></th>
+            <td ><%= f.label :'仮データ' %></td>
+        </tr> 
+        <tr>
+            <th><%= f.label :製品注意書き %></th>
+            <td><%= f.label :'仮データ' %></td>
+        </tr>
+        <tr>
+            <th><%= f.label :製品ステータス %></th>
+            <td><%= f.label :'仮データ' %></td>
+        </tr>
+        <tr>
+            <th><%= f.label :ハイブリッド用本製品 %></th>
+            <td><%= f.label :'仮データ' %></td>
+        </tr>
+        <tr>
+            <th><%= f.label :製品配布方法 %></th>
+            <td><%= f.label :'仮データ' %></td>
+        </tr>
+        <tr>
+            <th><%= f.label :DB本製品配布方法 %></th>
+            <td><%= f.label :'仮データ' %></td>
+        </tr>
+      </table>
+    </div>
+    <div class="clear">
+    </div>
 
-<p>
-  <strong>Set prd type:</strong>
-  <%= @prd_m.SET_PRD_TYPE %>
-</p>
+    <div class="p-left">
+      <table>
+        <tr>
+          <th><%= f.label :他の必要な情報 %></th>
+            <td><%= f.label :'仮データ' %></td>
+        </tr>
+        <tr>
+          <th><%= f.label :重要なお知らせ %></th>
+            <td><%= f.label :'仮データ' %></td>
+        </tr>
+    </table>
+    </div>  
+  </div>
 
-<p>
-  <strong>Sale f:</strong>
-  <%= @prd_m.SALE_F %>
-</p>
 
-<p>
-  <strong>Rcvng plcnt prd f:</strong>
-  <%= @prd_m.RCVNG_PLCNT_PRD_F %>
-</p>
+  <div class="top-right-big">
+    <table>
+      <tr>
+          <th><%= f.label :製品情報登録日時 %></th>
+          <td><%= f.label :'仮データ' %></td>
+      </tr>
+      <tr>
+          <th><%= f.label :製品情報更新日時 %></th>
+          <td><%= f.label :'仮データ' %></td>
+      </tr>
+      <tr>
+          <th><%= f.label :製品カテゴリ %></th>
+          <td><%= f.label :'仮データ' %></td>
+        </tr>
+        <tr>
+          <th><%= f.label :対応ホストアプリ %></th>
+          <td><%= f.label :'仮データ' %></td>
+      </tr>
+      <tr>
+      <th></th>
+          <td><%= f.label :'仮データ' %></td>
+      </tr>
+      <tr>
+        <th></th>
+          <td><%= f.label :'仮データ' %></td>
+      </tr>
+      <tr>
+        <th></th>
+        <td><%= f.label :'仮データ' %></td>
+      </tr>
+      <tr>
+        <th></th>
+          <td><%= f.label :'仮データ' %></td>
+        </tr>
+      <tr>
+          <th><%= f.label :効果・分類1 %></th>
+          <td><%= f.label :'仮データ' %></td>
+      </tr>
+      <tr>
+          <th><%= f.label :効果・分類2 %></th>
+          <td><%= f.label :'仮データ' %></td>
+      </tr>
+      <tr>
+          <th><%= f.label :効果・分類3 %></th>
+          <td><%= f.label :'仮データ' %></td>
+      </tr>
+      <tr>
+          <th><%= f.label :製品タイプ %></th>
+          <td><%= f.label :'仮データ' %></td>
+      </tr>
+      <tr>
+          <th><%= f.label :Set %></th>
+          <td><%= f.label :'仮データ' %></td>
+      </tr>
+      <tr>
+          <th><%= f.label :Academic %></th>
+          <td><%= f.label :'仮データ' %></td>
+      </tr>
+      <tr>
+          <th><%= f.label :Floating %></th>
+          <td><%= f.label :'仮データ' %></td>
+      </tr>
+      <tr>
+          <th><%= f.label :VLP %></th>
+          <td><%= f.label :'仮データ' %></td>
+      </tr>
+      <tr>
+          <th><%= f.label :ライセンス数範囲（From） %></th>
+          <td><%= f.label :'仮データ' %></td>
+      </tr>
+      <tr>
+          <th><%= f.label :サブスクリプション %></th>
+          <td><%= f.label :'仮データ' %></td>
+      </tr>
+      <tr>
+          <th><%= f.label :サブスクリプション期間 %></th>
+          <td><%= f.label :'仮データ' %></td>
+      </tr>
+      <tr>
+          <th><%= f.label :サブスクリプション期間単位 %></th>
+          <td><%= f.label :'仮データ' %></td>
+      </tr>
+      </table>
+  </div>
+</div>
+</div>
+<div class="clear">
+</div>
+<!-- キャンペーン　-->
+<div class="p-area">
+  <div class="p-left">
+    <h3>【キャンペーン】</h3>
+    <table>
+      <tr>
+          <th><%= f.label :キャンペーン %></th>
+          <td><%= f.label :'仮データ' %></td>
+      </tr>
+      <tr>
+          <th><%= f.label :キャンペーン開始日時 %></th>
+          <td><%= f.label :'仮データ' %></td>
+      </tr>
+      <tr>
+          <th><%= f.label :キャンペーン終了日時 %></th>
+          <td><%= f.label :'仮データ' %></td>
+      </tr>
+    </table>
+  </div>
+</div>
+<div class="clear">
+</div>
 
-<p>
-  <strong>Dlvry ld time:</strong>
-  <%= @prd_m.DLVRY_LD_TIME %>
-</p>
+<!-- 価格　-->
+<div class="p-area">
+  <div class="p-left">
+    <h3>【価格】</h3>
+    <table>
+      <tr>
+          <th><%= f.label :定価 %></th>
+          <td><%= f.label :'仮データ' %></td>
+      </tr>
+      <tr>
+          <th><%= f.label :'仕入率（%）' %></th>
+          <td><%= f.label :'仮データ' %>％</td>
+      </tr>
+      <tr>
+          <th><%= f.label :仕入価格 %></th>
+          <td><%= f.label :'仮データ' %></td>
+      </tr>
+      <tr>
+          <th><%= f.label :手数料（率）FBJ %></th>
+          <td><%= f.label :'仮データ' %>％</td>
+      </tr>
+    </table>
+  </div>
 
-<p>
-  <strong>Db prd dlvry mthd:</strong>
-  <%= @prd_m.DB_PRD_DLVRY_MTHD %>
-</p>
+  <div class="p-left">
+    <h3>【販売価格】</h3>
+    <table>
+      <tr>
+          <th ><%= f.label :'FBJ販売価格(税込/日本円)' %></th>
+          <td><%= f.label :'仮データ' %></td>
+      </tr>
+      <tr>
+          <th class="th-width"><%= f.label :'FBJ海外製品販売価格（税抜)' %></th>
+          <td><%= f.label :'仮データ' %></td>
+      </tr>
+      <tr>
+          <th><%= f.label :'FBJ国内製品販売価格（税抜）' %></th>
+          <td><%= f.label :'仮データ' %></td>
+      </tr>
+      <tr>
+          <th><%= f.label :'パッケージ運賃・調整費用' %></th>
+          <td><%= f.label :'仮データ' %></td>
+      </tr>
+    </table>
+  </div>
+  <div class="p-left">
+    <h3></h3></br></br>
+    <table>
+      <tr>
+          <th><%= f.label :キャンペーン元製品価格 %></th>
+          <td><%= f.label :'仮データ' %></td>
+      </tr>
+      <tr>
+          <th style="width: 170px"><%= f.label :'キャンペーン割引率(%)' %></th>
+          <td><%= f.label :'仮データ' %>％</td>
+      </tr>
+      <tr>
+        <th></br><%= submit_tag("価格変更履歴") %></th>
+      </tr>
+    </table>
+  </div>
+</div>
+<div class="clear">
+</div>
 
-<p>
-  <strong>Lic type:</strong>
-  <%= @prd_m.LIC_TYPE %>
-</p>
+<!-- 代理店価格　-->
+<div class="p-area">
+  <div class="p-left">
+    <h3>【代理店価格】</h3>
+    <table>
+      <tr>
+          <th><%= f.label :代理店に表示 %></th>
+          <td><%= f.label :'仮データ' %></td>
+      </tr>
+      <tr>
+          <th><%= f.label :代理店初回取引仕切り価格 %></th>
+          <td><%= f.label :'仮データ' %></td>
+      </tr>
+      <tr>
+          <th style="width:210px";><%= f.label :'代理店初回取引仕切り率(%)' %></th>
+          <td><%= f.label :'仮データ' %>％</td>
+      </tr>
+      <tr>
+          <th><%= f.label :代理店一般仕切り価格 %></th>
+          <td><%= f.label :'仮データ' %></td>
+      </tr>
+      <tr>
+          <th><%= f.label :'代理店一般仕切り率(%)' %></th>
+          <td><%= f.label :'仮データ' %>％</td>
+      </tr>
+      <tr>
+          <th><%= f.label :代理店特別仕切り価格 %></th>
+          <td><%= f.label :'仮データ' %></td>
+      </tr>
+      <tr>
+          <th><%= f.label :'代理店特別仕切り率(%)' %></th>
+          <td><%= f.label :'仮データ' %>％</td>
+      </tr>
+    </table>
+  </div>
 
-<p>
-  <strong>Lic from:</strong>
-  <%= @prd_m.LIC_FROM %>
-</p>
+  <div class="p-left">
+    <h3></h3></br></br>
+    <table>
+      <tr>
+          <th ><%= f.label :'キャンペーン仕切り  割引率(%)' %></th>
+          <td><%= f.label :'仮データ' %>％</td>
+      </tr>
+      <tr>
+          <th><%= f.label :'キャンペーン仕切り 割引額' %></th>
+          <td><%= f.label :'仮データ' %></td>
+      </tr>
+      <tr>
+          <th><%= f.label :'キャンペーン元製品 仕切り価格' %></th>
+          <td><%= f.label :'仮データ' %></td>
+      </tr>
+      <tr>
+          <th style="width:210px";><%= f.label :'キャンペーン元製品  仕切り率(%)' %></th>
+          <td><%= f.label :'仮データ' %>％</td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+          <th style="width:210px";><%= f.label :'特別仕切価格適用代理店' %></th>
+          <td><%= f.label :'仮データ' %></td>
+          <td><%= f.label :'仮データ' %></td>
+      </tr>
+      <tr>
+          <th></th>
+          <td><%= f.label :'仮データ' %></td>
+          <td><%= f.label :'仮データ' %></td>
+      </tr>
+      <tr>
+          <th></th>
+          <td><%= f.label :'仮データ' %></td>
+          <td><%= f.label :'仮データ' %></td>
+      </tr>
+    </table>
+      
+    </table>
+  </div>
+</div>
+<div class="clear">
+</div>
 
-<p>
-  <strong>Lic to:</strong>
-  <%= @prd_m.LIC_TO %>
-</p>
+<!-- URL　-->
+<div class="p-area" style="width: 1000px">
+  <div class="p-left">
+    <h3>【URL】</h3>
+    <table >
+      <tr>
+        <th><%= f.label :製品情報ページ %></th>
+          <td><%= f.label :'仮データ' %></td>
+      </tr>
+      <tr>
+          <th style="width:170px";><%= f.label :インストール方法ページ %></th>
+          <td><%= f.label :'仮データ' %></td>
+      </tr>
+      <tr>
+          <th><%= f.label :インストーラーページ %></th>
+          <td><%= f.label :'仮データ' %></td>
+      </tr>
+      <tr>
+          <th><%= f.label :ダウンロードリンクURL %></th>
+          <td><%= f.label :'仮データ' %></td>
+      </tr>
+    </table><br>
+  </div>
 
-<p>
-  <strong>Dstrbtr disp f:</strong>
-  <%= @prd_m.DSTRBTR_DISP_F %>
-</p>
+<!-- メモ欄　-->
+<div class="p-area">
+  <div class="p-left">
+    <table width="1100px">
+      <tr>
+        <th>メモ欄</th>
+      <tr>
+      </tr>
+          <td><%= f.label :'仮データ' %></td>
+      </tr>
+  
+    </table>
+  </div>
+</div>
+<div class="clear">
+</div>
 
-<p>
-  <strong>Prd st:</strong>
-  <%= @prd_m.PRD_ST %>
-</p>
 
-<p>
-  <strong>Acdmc lic f:</strong>
-  <%= @prd_m.ACDMC_LIC_F %>
-</p>
+<div class="clear">
+</br><% end %>
 
-<p>
-  <strong>Prd dlvry mthd:</strong>
-  <%= @prd_m.PRD_DLVRY_MTHD %>
-</p>
+<%= link_to '検索画面へ', prd_ms_path %>
+<%= link_to '製品情報登録画面へ', new_prd_m_path %>
 
-<p>
-  <strong>Prd desc:</strong>
-  <%= @prd_m.PRD_DESC %>
-</p>
-
-<p>
-  <strong>Prd note:</strong>
-  <%= @prd_m.PRD_NOTE %>
-</p>
-
-<p>
-  <strong>Prd notice:</strong>
-  <%= @prd_m.PRD_NOTICE %>
-</p>
-
-<p>
-  <strong>Prd other info:</strong>
-  <%= @prd_m.PRD_OTHER_INFO %>
-</p>
-
-<p>
-  <strong>Url prd:</strong>
-  <%= @prd_m.URL_PRD %>
-</p>
-
-<p>
-  <strong>Url install guid:</strong>
-  <%= @prd_m.URL_INSTALL_GUID %>
-</p>
-
-<p>
-  <strong>Url lic auth guid:</strong>
-  <%= @prd_m.URL_LIC_AUTH_GUID %>
-</p>
-
-<p>
-  <strong>Url installer:</strong>
-  <%= @prd_m.URL_INSTALLER %>
-</p>
-
-<p>
-  <strong>Url prd image:</strong>
-  <%= @prd_m.URL_PRD_IMAGE %>
-</p>
-
-<p>
-  <strong>Url dl:</strong>
-  <%= @prd_m.URL_DL %>
-</p>
-
-<p>
-  <strong>Memo:</strong>
-  <%= @prd_m.MEMO %>
-</p>
-
-<p>
-  <strong>Subscription lic term:</strong>
-  <%= @prd_m.SUBSCRIPTION_LIC_TERM %>
-</p>
-
-<p>
-  <strong>Subscription lic term unit:</strong>
-  <%= @prd_m.SUBSCRIPTION_LIC_TERM_UNIT %>
-</p>
-
-<p>
-  <strong>Mnt lic term:</strong>
-  <%= @prd_m.MNT_LIC_TERM %>
-</p>
-
-<p>
-  <strong>Mnt lic term unit:</strong>
-  <%= @prd_m.MNT_LIC_TERM_UNIT %>
-</p>
-
-<p>
-  <strong>Accnt cd dvlpr:</strong>
-  <%= @prd_m.ACCNT_CD_DVLPR %>
-</p>
-
-<p>
-  <strong>Accnt cd vndr:</strong>
-  <%= @prd_m.ACCNT_CD_VNDR %>
-</p>
-
-<p>
-  <strong>Rgstr dt:</strong>
-  <%= @prd_m.RGSTR_DT %>
-</p>
-
-<p>
-  <strong>Rgstr usr:</strong>
-  <%= @prd_m.RGSTR_USR %>
-</p>
-
-<p>
-  <strong>Lst upd dt:</strong>
-  <%= @prd_m.LST_UPD_DT %>
-</p>
-
-<p>
-  <strong>Lst upd usr:</strong>
-  <%= @prd_m.LST_UPD_USR %>
-</p>
-
-<%= link_to 'Edit', edit_prd_m_path(@prd_m) %> |
-<%= link_to 'Back', prd_ms_path %>
+</div>
+  

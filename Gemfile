@@ -46,13 +46,18 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'coffee-script-source', '1.8.0'
 gem 'activerecord-mysql-unsigned'
-gem 'bootstrap-datetimepicker-rails'
 
 gem 'momentjs-rails', '>= 2.9.0'
-gem 'bootstrap3-datetimepicker-rails', '~> 4.17.37'
+#gem 'bootstrap3-datetimepicker-rails', '~> 4.17.37'
+
 
 gem 'composite_primary_keys'
 gem 'kaminari' 
 gem 'date_validator', '~> 0.7.0'
 gem 'email_validator', '~> 1.4.0'
-gem 'bootstrap_form'
+
+gem "select2-rails"
+gem 'foreigner'
+
+gem 'devise', '3.0.0.rc' 
+gem 'protected_attributes'

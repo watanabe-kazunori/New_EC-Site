@@ -16,8 +16,12 @@
 //= require_tree .
 //= require moment
 //= require bootstrap-datetimepicker
+//= require jquery.turbolinks
+//= require select2
+
 
 $('.date-picker').datetimepicker(pickTime: false);
+$('#datetimepicker').data("DateTimePicker").FUNCTION() 
 
 var data = {'data-date-format': 'YYYY-MM-DD hh:mm:ss' };
 $(function(){

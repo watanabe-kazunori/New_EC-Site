@@ -1,39 +1,185 @@
+
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Vndr Ms</h1>
+<style type="text/css">
+th{
+  text-align: right;
+}
+table.center{
+    margin: 0 auto;
+ }
+div.center{
+    margin: 0 auto;
 
-<table>
-  <thead>
-    <tr>
-      <th>Accnt cd</th>
-      <th>Cntrct start dte</th>
-      <th>Cntrct lst upd date</th>
-      <th>Cntrct exp date</th>
-      <th>Sales report method</th>
-      <th>Monthly report type</th>
-      <th>Pay method</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+    width: 100px;
+}
 
-  <tbody>
-    <% @vndr_ms.each do |vndr_m| %>
+  .border{
+    margin: 0 auto;
+    border-bottom:solid;
+    border-width:1px;
+    width:auto;
+  }
+    .p-area{
+    width: 1120px;
+
+  }
+
+li{
+  float:left;
+}
+</style>
+<div class="p-area" style="margin:0 auto;">
+
+
+
+<%= render 'layouts/header' %><br>
+ <h1>ベンダー情報　検索</h1>
+</br>
+  <div>
+    <table class="center">
       <tr>
-        <td><%= vndr_m.ACCNT_CD %></td>
-        <td><%= vndr_m.CNTRCT_START_DTE %></td>
-        <td><%= vndr_m.CNTRCT_LST_UPD_DATE %></td>
-        <td><%= vndr_m.CNTRCT_EXP_DATE %></td>
-        <td><%= vndr_m.SALES_REPORT_METHOD %></td>
-        <td><%= vndr_m.MONTHLY_REPORT_TYPE %></td>
-        <td><%= vndr_m.PAY_METHOD %></td>
-        <td><%= link_to 'Show', vndr_m %></td>
-        <td><%= link_to 'Edit', edit_vndr_m_path(vndr_m) %></td>
-        <td><%= link_to 'Destroy', vndr_m, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <th>ベンダーコード</th>
+          <td><%= text_field 'cpn_m','SKU' %></td>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+
+      <tr>
+          <th>ベンダー種別</th>
+          <td>            
+      <input type="radio" value="0" name="CPN_ST" id="1" checked="checked"><label for="0">開発元企業</label>
+      <input type="radio" value="1" name="CPN_ST" id="2"><label for="2">仕入代理店</label>
+            </td>
+      </tr>
+      
+      <tr>
+          <th>ベンダー名</th>
+          <td><%= text_field 'cpn_m','SKU' %></td>
+      </tr>
+
+      <tr>
+          <th>ベンダー名（英語）</th>
+          <td><%= text_field 'cpn_m','SKU' %></td>
+      </tr>
+
+      <tr>
+          <th>担当者氏名</th>
+          <td><%= text_field 'cpn_m','SKU' %></td>
+      </tr>
+
+      <tr>
+          <th>担当者指名（英語）</th>
+          <td><%= text_field 'cpn_m','SKU' %></td>
+      </tr>
+
+      <tr>
+          <th>Eメールアドレス</th>
+          <td><%= text_field 'cpn_m','SKU' %></td>
+      </tr>
+
+      <tr>
+          <th>納品名</th>
+          <td><%= text_field 'cpn_m','SKU', :size=>"40" %></td>
+      </tr>
+
+    </table></br>
+        <div align="center"><%= submit_tag("検索") %></div>
+  </div>
+
+    <div class="border"></br></br></div>
+
+
+  <style type="text/css">
+    .area-left{
+      float: left;
+    }
+    .button{
+      float:left;
+    margin-left:20px;
+    }
+    .table1 {
+      border-collapse: collapse;
+       text-align:center;
+    }
+    .table1 th {
+      background-color: #999999;
+      color:white;
+    }
+
+.table1 th{
+  text-align:center;
+  border:1;
+  background-color: #999999;
+  color:white;
+}
+    
+  </style>
+    <h1>ベンダー情報　結果一覧</h1>
+
+    <table class="center" frame="border" style="width: 190px">
+      <tr>
+        <th style="text-align: left">検索該当件数</th>
+        <td align="right"><%= label 'prd_m','122345' %>件</td>
+      </tr>  
+    </table>
+    <br>
+    <table class="center">
+      <tr>
+        <td class="button"　><%= submit_tag("エクスポート") %></td>
+        <td class="button"><%= submit_tag("一括メール送信") %></td>
+      </tr>
+    </table>
+    
+    <br>
+  <table class="table1" border=1 align=center>
+    <thead>
+      <tr>  
+        <th nowrap><%= check_box 'prd_m','chkflg' %></th>
+        <th nowrap style="width: 20px">　　　　</th>
+        <th nowrap>ベンダーコード</th>
+        <th nowrap>種別</th>
+        <th nowrap>ベンダー名</th>
+        <th nowrap>ベンダー名（英語）</th>
+        <th nowrap>担当者指名</th>
+        <th nowrap>担当者指名（英語）</th>
+        <th nowrap>Eメールアドレス</th>
+        <th nowrap>製品名</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <% @vndr_ms.each do |vndr_m| %>
+
+<!-- データを取ってる先は合ってません　-->
+      <tr>
+          <td><%= check_box 'prd_m','chkflg' %></td>
+          <td><%= link_to '詳細', vndr_m %></td>
+          <td><%= vndr_m.ACCNT_CD %></td>
+          <td><%= vndr_m.CNTRCT_START_DTE %></td>
+          <td><%= vndr_m.CNTRCT_LST_UPD_DATE %></td>
+          <td><%= vndr_m.CNTRCT_EXP_DATE %></td>
+          <td><%= vndr_m.SALES_REPORT_METHOD %></td>
+          <td><%= vndr_m.MONTHLY_REPORT_TYPE %></td>
+          <td><%= vndr_m.PAY_METHOD %></td>
+          <td>なし</td>
+          <td><%= link_to '修正', edit_vndr_m_path(vndr_m) %></td>
+          <td><%= link_to '削除', vndr_m, method: :delete, data: { confirm: '本当に削除しますか?' } %></td>
+      </tr>
+          <% end %>
+</table>   
+    <table class="center">
+      <tr>
+         <td class="button"><%= submit_tag("前へ") %></td>
+        <td class="button"　><%= submit_tag("エクスポート") %></td>
+        <td class="button"><%= submit_tag("一括メール送信") %></td>
+        <td class="button"><%= submit_tag("次へ") %></td>      
+      </tr>
+
+    </table>
 
 <br>
 
-<%= link_to 'New Vndr m', new_vndr_m_path %>
+<%= link_to '登録画面へ', new_vndr_m_path %>
+
+</div>
+
+

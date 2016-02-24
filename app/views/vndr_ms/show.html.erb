@@ -1,39 +1,231 @@
+<%= render 'layouts/header' %><br>
+<p id="notice"><%= notice %></p>
+<!--
+<%= form_for(@vndr_m) do |f| %>
+  <% if @vndr_m.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@vndr_m.errors.count, "error") %> prohibited this vndr_m from being saved:</h2>
+
+      <ul>
+      <% @vndr_m.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+-->
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Accnt cd:</strong>
-  <%= @vndr_m.ACCNT_CD %>
-</p>
+<style type="text/css">
+th{
+  text-align: right;
+}
+div.center{
+    margin: 0 auto;
 
-<p>
-  <strong>Cntrct start dte:</strong>
-  <%= @vndr_m.CNTRCT_START_DTE %>
-</p>
+    width: 100px;
+}
 
-<p>
-  <strong>Cntrct lst upd date:</strong>
-  <%= @vndr_m.CNTRCT_LST_UPD_DATE %>
-</p>
+  .border{
+    margin: 0 auto;
+    border-bottom:solid;
+    border-width:1px;
+    width:auto;
+  }
+    .p-area{
+    width: 1120px;
 
-<p>
-  <strong>Cntrct exp date:</strong>
-  <%= @vndr_m.CNTRCT_EXP_DATE %>
-</p>
+  }
 
-<p>
-  <strong>Sales report method:</strong>
-  <%= @vndr_m.SALES_REPORT_METHOD %>
-</p>
+class.center th{
+  width:200px 
+}
 
-<p>
-  <strong>Monthly report type:</strong>
-  <%= @vndr_m.MONTHLY_REPORT_TYPE %>
-</p>
+    .area-left{
+      float: left;
+    }
+    .button{
+      float:left;
+    margin-left:20px;
+    }
+    .table1 {
+      border-collapse: collapse;
+       text-align:center;
+    }
+    .table1 th {
+      background-color: #999999;
+      color:white;
+      width: 170px
+    }
 
-<p>
-  <strong>Pay method:</strong>
-  <%= @vndr_m.PAY_METHOD %>
-</p>
+.list1{
+ margin-left: 250px
+ }
+ .list1 th{
+  width: 250px
+ } 
+  .list1 td{
+  max-width: 400px
+ } 
+table.center{
+    margin: 0 auto; 
+}
+.table1 th{
+  text-align:center;
+  border:1;
+  background-color: #999999;
+  color:white;
+}
+    
+  </style>
+<div class="p-area" style="margin:0 auto;">
 
-<%= link_to 'Edit', edit_vndr_m_path(@vndr_m) %> |
-<%= link_to 'Back', vndr_ms_path %>
+
+<br>
+ <h1>ベンダー情報（詳細表示/登録/変更/複製/削除）</h1>
+  <div>
+  <!--
+      <table class="center">
+      <tr>
+        <td class="button"　><%= submit_tag("登録") %></td>
+        <td class="button"><%= submit_tag("更新") %></td>
+        <td class="button"><%= submit_tag("複製") %></td>    
+        <td class="button"><%= submit_tag("削除") %></td> 
+      </tr>
+    </table><br>
+
+    -->
+    <table class="list1">
+
+      <tr>
+          <th>ベンダーコード</th>
+          <!-- f.labelであってますか？ -->
+          <td><%= f.label :'仮データ' %></td>
+      </tr>
+
+      <tr>
+          <th>ベンダー種別</th>
+          <td><%= f.label :'仮データ' %></td>
+      </tr>
+      
+      <tr>
+          <th>ベンダー名</th>
+          <td><%= f.label :'仮データ' %></td>
+      </tr>
+
+      <tr>
+          <th>ベンダー名（英語）</th>
+          <td><%= f.label :'仮データ' %></td>
+      </tr>
+
+      <tr>
+          <th>住所（国）</th>
+          <td><%= f.label :'仮データ' %></td>   
+      </tr>
+
+      <tr>
+          <th>郵便番号</th>
+          <td><%= f.label :'仮データ' %></td>
+      </tr>
+
+      <tr>
+          <th>住所</th>
+          <td><%= f.label :'仮データ' %></td>
+      </tr>
+
+      <tr>
+          <th>住所（英語）</th>
+          <td><%= f.label :'仮データ' %></td>
+      </tr>
+
+      <tr>
+          <th>電話番号（代表）</th>
+          <td><%= f.label :'仮データ' %></td>
+      </tr>
+
+
+    </table></br>
+
+
+
+   
+    <table class="list1">
+
+      <tr>
+          <th>契約状況・契約更新日</th>
+          <td><%= f.label :'仮データ' %></td>
+      </tr>
+
+      <tr>
+          <th>仕入方法</th>
+          <td><%= f.label :'仮データ' %></td>
+      </tr>
+          <!-- コード定義書の買掛支払方法シート　-->      
+      <tr>
+          <th>支払方法</th>
+          <td><%= f.label :'仮データ' %></td>
+      </tr>
+      <tr>
+          <th>メモ欄</th>
+          <td><%= f.label :'仮データ' %></td>
+      </tr>
+    </table>
+<br>
+
+         <table class="table1" border=1 align=center style="padding-left=600px" max-width=200px>
+              <thead>
+                <tr>  
+                  <th nowrap>担当者氏名</th>
+                  <th nowrap>担当者氏名（英語）</th>
+                  <th nowrap>担当部署名</th>
+                  <th nowrap>Eメールアドレス</th>
+                  <th nowrap>携帯電話番号</th>
+                  <th nowrap  style="width: auto;"></th>
+                </tr>
+              </thead>
+                <tr>
+                  <td><%= f.label :'仮データ' %></td>
+                  <td><%= f.label :'仮データ' %></td>
+                  <td><%= f.label :'仮データ' %></td>
+                  <td><%= f.label :'仮データ' %></td>
+                  <td><%= f.label :'仮データ' %></td>
+                  <td>[メール送付]</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>[メール送付]</td>
+                </tr>
+               <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>[メール送付]</td>
+                </tr>
+
+          </table><br>
+          <!--
+    <table class="center">
+      <tr>
+        <td class="button"　><%= submit_tag("登録") %></td>
+        <td class="button"><%= submit_tag("更新") %></td>
+        <td class="button"><%= submit_tag("複製") %></td>    
+        <td class="button"><%= submit_tag("削除") %></td> 
+      </tr>
+    </table><br>
+
+-->
+<br>
+
+<%= link_to '編集画面へ', edit_vndr_m_path(@vndr_m) %> |
+<%= link_to '検索画面へ', vndr_ms_path %>
+
+</div>
+
+<% end %>
+

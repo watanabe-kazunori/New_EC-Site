@@ -1,1 +1,1 @@
-json.extract! @cpn_m, :id, :CPN_ID, :CPN_CD, :CPN_ST, :CPN_TITLE, :CPN_CLS, :CPN_DISCNT_TYPE, :VNDR_CPN, :USE_LIMIT, :START_DT, :EXPIRATION_DT, :DSCNT_VALUE, :DSCNT_RATE, :TRGT_PRD_CNDTN, :EXCLD_PRD_CNDTN, :created_at, :updated_at
+json.extract! @cpn_m, :id, :cpn_id, :cpn_cd, :cpn_st, :cpn_title, :cpn_cls, :con_discnt_type, :vndr_cpn, :use_limit, :start_dt, :expiration_dt, :dscnt_value, :dscnt_rate, :trgt_prd_cndtn, :excld_prd_cndtn, :memo, :created_at, :updated_at

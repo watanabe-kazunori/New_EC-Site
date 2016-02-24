@@ -1,0 +1,14 @@
+current directory: C:/temp/New_EC-Site-master/vendor/bundle/ruby/2.1.0/gems/json-1.8.3/ext/json
+C:/RailsInstaller/Ruby2.1.0/bin/ruby.exe -r ./siteconf20160220-31144-12c10eh.rb extconf.rb 
+creating Makefile
+
+current directory: C:/temp/New_EC-Site-master/vendor/bundle/ruby/2.1.0/gems/json-1.8.3/ext/json
+make "DESTDIR=" clean
+
+current directory: C:/temp/New_EC-Site-master/vendor/bundle/ruby/2.1.0/gems/json-1.8.3/ext/json
+make "DESTDIR="
+make: Nothing to be done for `all'.
+
+current directory: C:/temp/New_EC-Site-master/vendor/bundle/ruby/2.1.0/gems/json-1.8.3/ext/json
+make "DESTDIR=" install
+installing default libraries

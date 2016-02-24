@@ -1,0 +1,129 @@
+<%= form_for(@serial_m) do |f| %>
+  <% if @serial_m.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@serial_m.errors.count, "error") %> prohibited this serial_m from being saved:</h2>
+
+      <ul>
+      <% @serial_m.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :serial_id %><br>
+    <%= f.number_field :serial_id %>
+  </div>
+  <div class="field">
+    <%= f.label :sku %><br>
+    <%= f.text_field :sku %>
+  </div>
+  <div class="field">
+    <%= f.label :serial_type %><br>
+    <%= f.text_field :serial_type %>
+  </div>
+  <div class="field">
+    <%= f.label :cnsgnmnt_serial_st %><br>
+    <%= f.text_field :cnsgnmnt_serial_st %>
+  </div>
+  <div class="field">
+    <%= f.label :cnsgnmnt_serial_store_date %><br>
+    <%= f.date_select :cnsgnmnt_serial_store_date %>
+  </div>
+  <div class="field">
+    <%= f.label :po_no %><br>
+    <%= f.text_field :po_no %>
+  </div>
+  <div class="field">
+    <%= f.label :os_type %><br>
+    <%= f.text_field :os_type %>
+  </div>
+  <div class="field">
+    <%= f.label :serial_no_1 %><br>
+    <%= f.text_field :serial_no_1 %>
+  </div>
+  <div class="field">
+    <%= f.label :serial_no_2 %><br>
+    <%= f.text_field :serial_no_2 %>
+  </div>
+  <div class="field">
+    <%= f.label :serial_no_3 %><br>
+    <%= f.text_field :serial_no_3 %>
+  </div>
+  <div class="field">
+    <%= f.label :web_up_serial %><br>
+    <%= f.text_field :web_up_serial %>
+  </div>
+  <div class="field">
+    <%= f.label :dl_file_name %><br>
+    <%= f.text_field :dl_file_name %>
+  </div>
+  <div class="field">
+    <%= f.label :dl_pass_cd %><br>
+    <%= f.text_field :dl_pass_cd %>
+  </div>
+  <div class="field">
+    <%= f.label :nfr_f %><br>
+    <%= f.text_field :nfr_f %>
+  </div>
+  <div class="field">
+    <%= f.label :nfr_rsn %><br>
+    <%= f.text_field :nfr_rsn %>
+  </div>
+  <div class="field">
+    <%= f.label :accnt_cd_cstmr %><br>
+    <%= f.text_field :accnt_cd_cstmr %>
+  </div>
+  <div class="field">
+    <%= f.label :so_no %><br>
+    <%= f.text_field :so_no %>
+  </div>
+  <div class="field">
+    <%= f.label :so_item_no %><br>
+    <%= f.number_field :so_item_no %>
+  </div>
+  <div class="field">
+    <%= f.label :sku_serial_assngd %><br>
+    <%= f.text_field :sku_serial_assngd %>
+  </div>
+  <div class="field">
+    <%= f.label :use_type %><br>
+    <%= f.text_field :use_type %>
+  </div>
+  <div class="field">
+    <%= f.label :upgrd_serial_f %><br>
+    <%= f.text_field :upgrd_serial_f %>
+  </div>
+  <div class="field">
+    <%= f.label :upgrd_pre_prd_serial_no %><br>
+    <%= f.number_field :upgrd_pre_prd_serial_no %>
+  </div>
+  <div class="field">
+    <%= f.label :accnt_cd_sales_cntnt %><br>
+    <%= f.text_field :accnt_cd_sales_cntnt %>
+  </div>
+  <div class="field">
+    <%= f.label :dlvry_no %><br>
+    <%= f.text_field :dlvry_no %>
+  </div>
+  <div class="field">
+    <%= f.label :rgstr_dt %><br>
+    <%= f.datetime_select :rgstr_dt %>
+  </div>
+  <div class="field">
+    <%= f.label :rgstr_usr %><br>
+    <%= f.number_field :rgstr_usr %>
+  </div>
+  <div class="field">
+    <%= f.label :lst_upd_dt %><br>
+    <%= f.datetime_select :lst_upd_dt %>
+  </div>
+  <div class="field">
+    <%= f.label :lst_upd_usr %><br>
+    <%= f.number_field :lst_upd_usr %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

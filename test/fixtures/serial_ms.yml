@@ -1,0 +1,61 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  serial_id: 1
+  sku: 
+  serial_type: 
+  cnsgnmnt_serial_st: 
+  cnsgnmnt_serial_store_date: 2016-02-24
+  po_no: 
+  os_type: 
+  serial_no_1: 
+  serial_no_2: 
+  serial_no_3: 
+  web_up_serial: 
+  dl_file_name: 
+  dl_pass_cd: 
+  nfr_f: 
+  nfr_rsn: 
+  accnt_cd_cstmr: 
+  so_no: 
+  so_item_no: 1
+  sku_serial_assngd: 
+  use_type: 
+  upgrd_serial_f: 
+  upgrd_pre_prd_serial_no: 1
+  accnt_cd_sales_cntnt: 
+  dlvry_no: 
+  rgstr_dt: 2016-02-24 12:21:07
+  rgstr_usr: 1
+  lst_upd_dt: 2016-02-24 12:21:07
+  lst_upd_usr: 1
+
+two:
+  serial_id: 1
+  sku: 
+  serial_type: 
+  cnsgnmnt_serial_st: 
+  cnsgnmnt_serial_store_date: 2016-02-24
+  po_no: 
+  os_type: 
+  serial_no_1: 
+  serial_no_2: 
+  serial_no_3: 
+  web_up_serial: 
+  dl_file_name: 
+  dl_pass_cd: 
+  nfr_f: 
+  nfr_rsn: 
+  accnt_cd_cstmr: 
+  so_no: 
+  so_item_no: 1
+  sku_serial_assngd: 
+  use_type: 
+  upgrd_serial_f: 
+  upgrd_pre_prd_serial_no: 1
+  accnt_cd_sales_cntnt: 
+  dlvry_no: 
+  rgstr_dt: 2016-02-24 12:21:07
+  rgstr_usr: 1
+  lst_upd_dt: 2016-02-24 12:21:07
+  lst_upd_usr: 1
