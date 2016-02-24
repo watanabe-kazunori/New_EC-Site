@@ -1,3 +1,0 @@
-class CstmrMsController < ApplicationController
-
-end
