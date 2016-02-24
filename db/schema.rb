@@ -64,6 +64,17 @@ ActiveRecord::Schema.define(version: 20160219055530) do
     t.datetime "updated_at",                   null: false
   end
 
+  create_table "administrators", force: :cascade do |t|
+    t.string   "email",           limit: 255
+    t.string   "email_for_index", limit: 255
+    t.string   "hashed_password", limit: 255
+    t.boolean  "suspended",       limit: 1
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "administrators", ["email_for_index"], name: "index_administrators_on_email_for_index", unique: true, using: :btree
+
   create_table "countries", force: :cascade do |t|
     t.string   "country_cd",     limit: 4
     t.string   "country_name",   limit: 50
@@ -86,29 +97,6 @@ ActiveRecord::Schema.define(version: 20160219055530) do
   end
 
   add_index "cpn_m_total_sales_dscnts", ["CPN_ID", "SALES_RANGE_NO"], name: "index_cpn_m_total_sales_dscnts_on_CPN_ID_and_SALES_RANGE_NO", unique: true, using: :btree
-
-  create_table "cpn_ms", primary_key: "CPN_ID", force: :cascade do |t|
-    t.string   "CPN_CD",          limit: 30,                                        null: false
-    t.string   "CPN_ST",          limit: 1,                                         null: false
-    t.string   "CPN_TITLE",       limit: 2000,                                      null: false
-    t.string   "CPN_CLS",         limit: 1,                                         null: false
-    t.string   "CPN_DISCNT_TYPE", limit: 1,                                         null: false
-    t.string   "VNDR_CPN",        limit: 1,                                         null: false
-    t.integer  "USE_LIMIT",       limit: 4,                             default: 0, null: false, unsigned: true
-    t.datetime "START_DT",                                                          null: false
-    t.datetime "EXPIRATION_DT"
-    t.decimal  "DSCNT_VALUE",                  precision: 20, scale: 2
-    t.decimal  "DSCNT_RATE",                   precision: 5,  scale: 2
-    t.string   "TRGT_PRD_CNDTN",  limit: 2000
-    t.string   "EXCLD_PRD_CNDTN", limit: 2000
-  end
-
-  create_table "cpn_types", force: :cascade do |t|
-    t.string   "type_id",    limit: 255
-    t.string   "name",       limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-  end
 
   create_table "cstmr_ms", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -194,6 +182,24 @@ ActiveRecord::Schema.define(version: 20160219055530) do
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
   end
+
+  create_table "staff_members", force: :cascade do |t|
+    t.string   "email",            limit: 255,                 null: false
+    t.string   "email_for_index",  limit: 255,                 null: false
+    t.string   "family_name",      limit: 255,                 null: false
+    t.string   "given_name",       limit: 255,                 null: false
+    t.string   "family_name_kana", limit: 255,                 null: false
+    t.string   "given_name_kana",  limit: 255,                 null: false
+    t.string   "hashed_password",  limit: 255
+    t.date     "start_date",                                   null: false
+    t.date     "end_date"
+    t.boolean  "suspended",        limit: 1,   default: false, null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "staff_members", ["email_for_index"], name: "index_staff_members_on_email_for_index", unique: true, using: :btree
+  add_index "staff_members", ["family_name_kana", "given_name_kana"], name: "index_staff_members_on_family_name_kana_and_given_name_kana", using: :btree
 
   create_table "vndr_m_dvrpr_dstrbtrs", force: :cascade do |t|
     t.string   "accnt_cd_dvlpr",   limit: 30, null: false
