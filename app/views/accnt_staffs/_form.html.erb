@@ -1,0 +1,91 @@
+<%= form_for(@accnt_staff) do |f| %>
+<table class="accnt_staff-form" border=1>
+  <div class="field">
+    <%= f.label :取引先担当者ID %><br>
+    <%= f.number_field :staff_id %>
+  </div>
+  <div class="field">
+    <%= f.label :取引先コード %><br>
+    <%= f.text_field :accnt_cd %>
+  </div>
+  <div class="field">
+    <%= f.label :部署名 %><br>
+    <%= f.text_field :dept_name %>
+  </div>
+  <div class="field">
+    <%= f.label :部署名英語表記 %><br>
+    <%= f.text_field :dept_name_e %>
+  </div>
+  <div class="field">
+    <%= f.label :氏名 %><br>
+    <%= f.text_field :emp_name %>
+  </div>
+  <div class="field">
+    <%= f.label :氏名英語表記 %><br>
+    <%= f.text_field :emp_name_e %>
+  </div>
+  <div class="field">
+    <%= f.label :国地域コード %><br>
+    <%= f.select(:country_cd, options_from_collection_for_select(@countries, :country_cd, :country_name), class: "searchable") %>
+  </div>
+  <div class="field">
+    <%= f.label :都道府県 %><br>
+    <%= f.text_field :zip %>
+  </div>
+  <div class="field">
+    <%= f.label :都道府県番号_FK%><br>
+    <%= f.text_field :prefecture_no %>
+  </div>
+  <div class="field">
+    <%= f.label :市区町村 %><br>
+    <%= f.text_field :city %>
+  </div>
+  <div class="field">
+    <%= f.label :町丁目 %><br>
+    <%= f.text_field :area %>
+  </div>
+  <div class="field">
+    <%= f.label :ビル名部屋番号 %><br>
+    <%= f.text_field :bld %>
+  </div>
+  <div class="field">
+    <%= f.label :印字用表記 %><br>
+    <%= f.text_field :print_address %>
+  </div>
+  <div class="field">
+    <%= f.label :印字用英語表記 %><br>
+    <%= f.text_field :print_address_e %>
+  </div>
+  <div class="field">
+    <%= f.label :"TEL" %><br>
+    <%= f.text_field :tel %>
+  </div>
+  <div class="field">
+    <%= f.label :"Eメールアドレス" %><br>
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :"FAX番号" %><br>
+    <%= f.text_field :fax %>
+  </div>
+  <div class="field">
+    <%= f.label :流通代理店請求先コード %><br>
+    <%= f.text_field :accnt_cd_billing %>
+  </div>
+  <div class="field">
+    <%= f.label :流通代理店請求先担当者ID %><br>
+    <%= f.text_field :staff_id_billing %>
+  </div>
+  <div class="field">
+    <%= f.label :登録ユーザ %><br>
+    <%= f.text_field :rgstr_usr %>
+  </div>
+  <div class="field">
+    <%= f.label :最終更新ユーザ %><br>
+    <%= f.text_field :lst_upd_usr %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %> 

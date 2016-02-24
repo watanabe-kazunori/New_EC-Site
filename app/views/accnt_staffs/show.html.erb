@@ -1,0 +1,108 @@
+<p id="notice"><%= notice %></p>
+<h1>取引先マスタ詳細画面</h1>
+<table class="accnt_staff-show" border=1>
+
+  <tr>
+  <th><strong>取引先担当者ID:</strong></th>
+  <td><%= @accnt_staff.staff_id %></td>
+  </tr>
+
+  <tr>
+  <th><strong>取引先コード:</strong></th>
+  <td><%= @accnt_staff.accnt_cd %></td>
+  </tr>
+
+  <tr>
+  <th><strong>部署名:</strong></th>
+  <td><%= @accnt_staff.dept_name %></td>
+  </tr>
+
+  <tr>
+  <th><strong>部署名英語表記:</strong></th>
+  <td><%= @accnt_staff.dept_name_e %></td>
+  </tr>
+
+  <tr>
+  <th><strong>氏名:</strong></th>
+  <td><%= @accnt_staff.emp_name %></td>
+  </tr>
+
+  <tr>
+  <th><strong>氏名英語表記:</strong></th>
+  <td><%= @accnt_staff.emp_name_e %></td>
+  </tr>
+
+  <tr>
+  <th><strong>国地域コード (FK):</strong></th>
+  <td><%= @accnt_staff.country_cd %></td>
+  </tr>
+
+  <tr>
+  <th><strong>郵便番号:</strong></th>
+  <td><%= @accnt_staff.zip %></td>
+  </tr>
+
+  <tr>
+  <th><strong>都道府県番号 (FK):</strong></th>
+  <td><%= @accnt_staff.prefecture_no %></td>
+  </tr>
+
+  <tr>
+  <th><strong>市区町村:</strong></th>
+  <td><%= @accnt_staff.city %></td>
+  </tr>
+
+  <tr>
+  <th><strong>町丁目:</strong></th>
+  <td><%= @accnt_staff.area %></td>
+  </tr>
+
+  <tr>
+  <th><strong>ビル名部屋番号:</strong></th>
+  <td><%= @accnt_staff.bld %></td>
+  </tr>
+
+  <tr>
+  <th><strong>印字用表記:</strong></th>
+  <td><%= @accnt_staff.print_address %></td>
+  </tr>
+
+  <tr>
+  <th><strong>印字用英語表記:</strong></th>
+  <td><%= @accnt_staff.print_address_e %></td>
+  </tr>
+
+  <tr>
+  <th><strong>Eメールアドレス:</strong></th>
+  <td><%= @accnt_staff.email %></td>
+  </tr>
+
+  <tr>
+  <th><strong>FAX番号:</strong></th>
+  <td><%= @accnt_staff.fax %></td>
+  </tr>
+
+  <tr>
+  <th><strong>流通代理店請求先コード :</strong></th>
+  <td><%= @accnt_staff.accnt_cd_billing %></td>
+  </tr>
+
+  <tr>
+  <th><strong>流通代理店請求先担当者ID:</strong></th>
+  <td><%= @accnt_staff.staff_id_billing %></td>
+  </tr>
+
+  <tr>
+  <th><strong>登録ユーザ:</strong></th>
+  <td><%= @accnt_staff.rgstr_usr %></td>
+  </tr>
+
+  <tr>
+  <th><strong>最終更新ユーザ:</strong></th>
+  <td><%= @accnt_staff.lst_upd_usr %></td>
+  </tr>
+
+</table>
+
+<%= link_to '編集', edit_accnt_staff_path(@accnt_staff) %> |
+<%= link_to '戻る', accnt_staffs_path %>

@@ -13,9 +13,11 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require select2
 //= require_tree .
 //= require moment
 //= require bootstrap-datetimepicker
+//= require jquery.turbolinks
 
 $('.date-picker').datetimepicker(pickTime: false);
 

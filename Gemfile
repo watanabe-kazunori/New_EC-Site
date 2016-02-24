@@ -23,6 +23,13 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+# add gem by takabe 20160215
+gem 'composite_primary_keys'
+gem 'kaminari' 
+gem 'date_validator', '~> 0.7.0'
+gem 'email_validator', '~> 1.4.0'
+gem 'jquery-turbolinks'
+gem 'select2-rails'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -38,21 +45,19 @@ group :development, :test do
 end
 
 group :development do
-  # Access an IRB console on exception pages or by using <%= console %> in views
+  # add gem by takabe 20160215
   gem 'web-console', '~> 2.0'
+  gem 'quiet_assets', '~> 1.0.2', group: :development
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
 gem 'coffee-script-source', '1.8.0'
 gem 'activerecord-mysql-unsigned'
+
 gem 'bootstrap-datetimepicker-rails'
 
 gem 'momentjs-rails', '>= 2.9.0'
 gem 'bootstrap3-datetimepicker-rails', '~> 4.17.37'
-
-gem 'composite_primary_keys'
-gem 'kaminari' 
-gem 'date_validator', '~> 0.7.0'
-gem 'email_validator', '~> 1.4.0'
 gem 'bootstrap_form'

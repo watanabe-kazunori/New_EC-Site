@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :cpn_ms
+
+  resources :accnt_staffs
+  resources :accnts
+  resources :countries
+  resources :prefectures
   resources :friends
   resources :cpn_types
   resources :dstrbtr_whl_sl_prices
@@ -30,6 +34,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
+
   root 'cpn_ms#index'
 
   # Example of regular route:
