@@ -1,0 +1,258 @@
+<style type="text/css">
+th{
+  text-align: right;
+}
+table.center{
+    margin: 0 auto;
+ }
+div.center{
+    margin: 0 auto;
+
+    width: 100px;
+}
+
+  .border{
+    margin: 0 auto;
+    border-bottom:solid;
+    border-width:1px;
+    width:auto;
+  }
+    .p-area{
+    width: 1120px;
+
+  }
+  a.navi{
+  display:block;
+  padding-top:5px;
+  padding-bottom:5px;
+  border-right:1px solid #cccccc;
+  text-decoration:none;
+  background-color:black;
+  color:white;
+  width:159px;
+  text-align:center;
+}
+ul{
+  margin-left:0;
+  padding-left:0;
+  list-style-type:none;
+  width:1120px;
+  border-top:1px solid #cccccc;
+  border-bottom:1px solid #cccccc;
+  border-left:1px solid #cccccc;
+}
+a.navi1{
+  display:block;
+  padding-top:5px;
+  padding-bottom:5px;
+  border-right:1px solid #cccccc;
+  text-align:left;
+  text-decoration:none;
+  background-color:black;
+  color:white;
+    width:159px;}
+a.navi1:hover{
+  background-color:#0066CC;
+
+}
+
+p.navi{
+  display:block;
+  padding-top:5px;
+  padding-bottom:5px;
+  border-right:1px solid #cccccc;
+  text-align:left;
+  background-color:black;
+  color:white;
+  max-width: 159px;
+ 
+}
+li{
+  float:left;
+
+}
+class.center th{
+  width:200px 
+}
+
+.area-left{
+      float: left;
+}
+.button{
+      float:left;
+    margin-left:20px;
+}
+.table1 {
+      border-collapse: collapse;
+       text-align:center;
+}
+.table1 th {
+      background-color: #999999;
+      color:white;
+}
+
+.table1 th{
+  text-align:center;
+  border:1;
+  background-color: #999999;
+  color:white;
+}
+    
+</style>
+<%= form_for(@accnt) do |f| %>
+<div class="p-area" style="margin:0 auto;">
+
+<br>
+
+  <div>
+      <table class="center">
+      <tr>
+        <td class="button"><%= submit_tag("登録") %></td>
+        <td class="button"><%= submit_tag("更新") %></td>
+        <td class="button"><%= submit_tag("複製") %></td>    
+        <td class="button"><%= submit_tag("削除") %></td> 
+      </tr>
+    </table><br>
+    <table class="center">
+      <tr>
+          <th>ベンダーコード</th>
+          <td><%= f.text_field :accnt_cd %></td>
+      </tr>
+
+      <tr>
+          <th><%= f.label :ベンダー種別 %></th>
+          <td>            
+          <label><%= f.radio_button :accnt_type_1, "1" %>開発元企業</label>
+          <label><%= f.radio_button :accnt_type_1, "2" %>仕入代理店</label>           
+          </td>
+      </tr>
+      
+      <tr>
+          <th><%= f.label :ベンダー名 %></th>
+          <td><%= f.text_field :accnt_name %></td>
+      </tr>
+
+      <tr>
+          <th><%= f.label :"ベンダー名(英語)" %></th>
+          <td><%= f.text_field :accnt_name_e %></td>
+      </tr>
+
+      <tr>
+          <th><%= f.label :"住所(国)" %></th>
+          <td><%= f.text_field :country_cd %></td>   
+      </tr>
+
+      <tr>
+          <th><%= f.label :郵便番号 %></th>
+          <td><%= f.text_field :zip %></td>
+      </tr>
+
+      <tr>
+          <th><%= f.label :住所 %></th>
+          <td><%= f.text_field :print_address %></td>
+      </tr>
+
+      <tr>
+          <th><%= f.label :住所（英語） %></th>
+          <td><%= f.text_field :print_address_e %></td>
+      </tr>
+
+      <tr>
+          <th><%= f.label :電話番号（代表） %></th>
+          <td><%= f.text_field :tel %></td>
+      </tr>
+
+
+    </table></br>
+
+
+
+   
+    <table class="center">
+
+      <tr>
+          <th>契約状況・契約更新日</th>
+          <td><%= text_field 'cpn_m','SKU' %></td>
+      </tr>
+
+      <tr>
+          <th>仕入方法</th>
+          <td>            
+          <!-- コード定義書の製品仕入タイプシート　-->
+            <select name = "example">
+            <option value =""></option>
+            <option value ="1">受発注PO</option>
+            <option value ="2">受発注Web</option>
+            <option value ="3">委託仕入</option>
+            </select>
+          </td>
+      </tr>
+          <!-- コード定義書の買掛支払方法シート　-->      
+      <tr>
+          <th>支払方法</th>
+          <td>
+            <select name = "example">
+            <option value =""></option>
+            <option value ="1">請求支払</option>
+            <option value ="2">振込</option>
+            <option value ="3">PayPal</option>
+            <option value ="4">カード割引</option>
+            <option value ="9">その他</option>
+            </select>
+          </td>
+      </tr>
+      <tr>
+          <th>メモ欄</th>
+          <td><%= text_field 'cpn_m','SKU', :size=>"40" %></td>
+      </tr>
+    </table>
+<br>
+
+         <table class="table1" border=1 align=center style="padding-left=600px" max-width=200px>
+              <thead>
+                <tr>  
+                  <th nowrap>担当者氏名</th>
+                  <th nowrap>担当者氏名（英語）</th>
+                  <th nowrap>担当部署名</th>
+                  <th nowrap>Eメールアドレス</th>
+                  <th nowrap>携帯電話番号</th>
+                  <th nowrap></th>
+                </tr>
+              </thead>
+                <tr>
+                  <td><%= text_field 'cpn_m','SKU' %></td>
+                  <td><%= text_field 'cpn_m','SKU' %></td>
+                  <td><%= text_field 'cpn_m','SKU' %></td>
+                  <td><%= text_field 'cpn_m','SKU' %></td>
+                  <td><%= text_field 'cpn_m','SKU' %></td>
+                  <td>[メール送付]</td>
+                </tr>
+                <tr>
+                  <td><%= text_field 'cpn_m','SKU' %></td>
+                  <td><%= text_field 'cpn_m','SKU' %></td>
+                  <td><%= text_field 'cpn_m','SKU' %></td>
+                  <td><%= text_field 'cpn_m','SKU' %></td>
+                  <td><%= text_field 'cpn_m','SKU' %></td>
+                  <td>[メール送付]</td>
+                </tr>
+               <tr>
+                  <td><%= text_field 'cpn_m','SKU' %></td>
+                  <td><%= text_field 'cpn_m','SKU' %></td>
+                  <td><%= text_field 'cpn_m','SKU' %></td>
+                  <td><%= text_field 'cpn_m','SKU' %></td>
+                  <td><%= text_field 'cpn_m','SKU' %></td>
+                  <td>[メール送付]</td>
+                </tr>
+
+          </table><br>
+    <table class="center">
+      <tr>
+        <td class="button"　><%= submit_tag("登録") %></td>
+        <td class="button"><%= submit_tag("更新") %></td>
+        <td class="button"><%= submit_tag("複製") %></td>    
+        <td class="button"><%= submit_tag("削除") %></td> 
+      </tr>
+    </table><br>
+<br>
+</div>
+<% end %> 
