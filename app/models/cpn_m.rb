@@ -26,9 +26,9 @@ class CpnM < ActiveRecord::Base
   # published_at に戻す
 #  integrate_datetime_fields :published_at
 
-  validates :published_at_date, presence: true
-  validates :published_at_hour, presence: true
-  validates :published_at_minute, presence: true
+#  validates :published_at_date, presence: true
+#  validates :published_at_hour, presence: true
+#  validates :published_at_minute, presence: true
 
 
   private

@@ -17,6 +17,8 @@ class CpnMsController < ApplicationController
   def new
     @cpn_m = CpnM.new
     @cpn_m.cpn_m_sales_cntcts.build
+    @cpn_m.cpn_m_total_sales_dscnts.build
+
   end
 
   # GET /cpn_ms/1/edit
@@ -88,7 +90,8 @@ class CpnMsController < ApplicationController
         :trgt_prd_cndtn,
         :excld_prd_cndtn,
         :memo,
-        cpn_m_sales_cntct_attributes: [:cpn_id, :accnt_cd_sales_cntct]
+        cpn_m_sales_cntct_attributes: [:cpn_id, :accnt_cd_sales_cntct],
+        cpn_m_sales_total_sales_dscnts_controller_attributes: [:cpn_id, :sales_range_no,:sales_range_min,:dscnt,:dscnt_rate],
       )
     end
 end
